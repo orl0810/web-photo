@@ -1,0 +1,11 @@
+<div *ngIf="movie() as m" class="movie-detail">
+  <img [src]="m.image.url" [alt]="m.image.title" />
+  
+  <div class="details">
+    <h1>{{ m.title }}</h1>
+  </div>
+</div>
+
+<div *ngIf="!movie()" class="no-movie">
+  <p>Movie not found.</p>
+</div>

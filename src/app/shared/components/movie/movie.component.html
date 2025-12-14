@@ -1,0 +1,10 @@
+<a [routerLink]="['/movie', movie.slug]" class="movie-item">
+    <div class="poster">
+      <img [src]="movie.image.url" [alt]="movie.image.title" />
+      <div class="overlay">
+        <h4>{{ movie.title }}</h4>
+        <p>{{ movie.genres.join(', ') }}</p>
+      </div>
+    </div>
+  </a>
+  

@@ -1,0 +1,11 @@
+<div class="side-menu" [class.collapsed]="isCollapsed">
+  <button class="toggle-btn" (click)="toggleMenu()">
+    {{ isCollapsed ? '☰' : '×' }}
+  </button>
+
+  <nav class="menu-items">
+    <a href="home" *ngIf="!isCollapsed">Home</a>
+    <a href="movies" *ngIf="!isCollapsed">Movies</a>
+  </nav>
+</div>
+  

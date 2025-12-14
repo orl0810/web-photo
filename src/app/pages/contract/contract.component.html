@@ -1,0 +1,91 @@
+<section class="contract">
+    <h1>Photography Services Agreement</h1>
+  
+    <div class="contract-party">
+      <p><strong>Photographer:</strong> Orlando Benavides, based in Malta, reachable at orlan9608&#64;gmail.com / +356 79552176.</p>
+      <p><strong>Client:     </strong> <input [(ngModel)]="clientName" type="text" placeholder="Tab your name">
+        , Based in <input [(ngModel)]="clientBased" type="text" placeholder="Country of residence">
+        , reachable at <input [(ngModel)]="clientEmail" type="text" placeholder="Tab your email or phone">.</p>
+    </div>
+  
+    <div class="contract-section">
+      <h2>1. Scope of Service</h2>
+      <ul>
+        <li>
+            <strong>Type of session:     </strong>
+            <select name="type" id="type" [(ngModel)]="sessionType">
+                <option value="Portrait">Portrait</option>
+                <option value="Couple">Couple</option>
+                <option value="Event">Event</option>
+                <option value="Collab">Collab</option>
+                <option value="Other">Other</option>
+              </select>
+        </li>
+        <li>
+            <strong>Date:      </strong>
+            <input [(ngModel)]="sessionDate" type="date" id="photoshoot" name="photoshoot">
+        </li>
+        <!-- <li>
+            <strong>Session Duration:     </strong>
+            <select [(ngModel)]="sessionDuration" name="duration" id="duration">
+                <option value="1">1 hour</option>
+                <option value="2">1 - 2 hours</option>
+                <option value="3">2 - 3 hours</option>
+                <option value="Other">More than 3 hours</option>
+              </select>
+        </li> -->
+        <li><strong>Includes:</strong> A link to download all edited photos via private gallery in high quality for social media</li>
+      </ul>
+    </div>
+  
+    <div class="contract-section">
+      <h2>2. Fees and Payment</h2>
+      <ul>
+        <!-- <li><strong>Total Price:</strong> €[Amount]</li> -->
+        <li><strong>Deposit:</strong> 50% of the total price</li>
+        <li><strong>Balance:</strong> Due on the session day</li>
+      </ul>
+    </div>
+  
+    <div class="contract-section">
+      <h2>3. Copyright and Image Use</h2>
+      <p>The Photographer retains copyright. Client receives personal-use rights only.</p>
+      <p><strong>Image Usage Consent:</strong></p>
+      <label><input [(ngModel)]="rights" [checked]="rights" (change)="onPermissionChange(true)" type="checkbox"> I grant permission to use the images for portfolio & promotion.</label><br>
+      <label><input  [checked]="!rights" (change)="onPermissionChange(false)" type="checkbox"> I do NOT grant permission to use the images publicly.</label>
+    </div>
+  
+    <div class="contract-section">
+      <h2>4. Cancellations and Rescheduling</h2>
+      <p>If the Client cancels, deposit is refundable up to 5 days before the photoshoot. If the Photographer cancels, a full refund will be issued. Rescheduling allowed with 48h notice.</p>
+    </div>
+  
+    <div class="contract-section">
+      <h2>5. Delivery</h2>
+      <p>Final edited photos will be delivered within 10 business days via WeTransfer.</p>
+    </div>
+  
+    <div class="contract-section">
+      <h2>6. Liability</h2>
+      <p>The Photographer is not liable for injuries, loss, or damage during the session.</p>
+    </div>
+  
+   <!--  <div class="signatures">
+      <div>
+        <p>Photographer Signature: _____________________</p>
+        <p>Date: _____________________</p>
+      </div>
+      <div>
+        <p>Client Signature: _____________________</p>
+        <p>Date: _____________________</p>
+      </div>
+    </div> -->
+  
+    <div class="button-wrapper">
+        <button (click)="sendToWhatsApp()"
+        [disabled]="!clientName || !sessionType || !sessionDate || !clientEmail || rights === null"
+        class="sign-button"
+        type="submit">Sign & Submit</button>
+      </div>
+</section>
+  

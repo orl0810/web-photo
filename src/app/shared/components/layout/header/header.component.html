@@ -1,0 +1,14 @@
+@if (route != '/contract') {
+  <header class="app-header">
+    <div class="left">
+      <span class="logo">Orlando.photo</span>
+    </div>
+  
+    <div class="right">
+      <button class="action-icon" [routerLink]="route == '/gallery' ? ['/home'] : ['/gallery']">
+       @if (route == '/gallery') { 👈🏼 }
+       @else { 📸 }
+      </button>
+    </div>
+  </header>
+  }

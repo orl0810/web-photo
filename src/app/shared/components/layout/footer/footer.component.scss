@@ -1,0 +1,48 @@
+
+:host {
+    display: block;
+    width: 100%;
+    max-height: 20%;
+    background-color: black;
+    color: #f5f5f5;
+    padding: 1rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+    position: sticky;
+    bottom: 0px;
+  }
+  
+  .last-visited {
+    //max-width: 1200px;
+    margin: 0 auto;
+  
+    h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ff9800;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+  
+      li {
+        a {
+          color: #f5f5f5;
+          font-size: 0.9rem;
+          border-bottom: 1px dashed transparent;
+          transition: all 0.3s ease;
+          cursor: pointer;
+  
+          &:hover {
+            color: #ff9800;
+            border-color: #ff9800;
+          }
+        }
+      }
+    }
+  }

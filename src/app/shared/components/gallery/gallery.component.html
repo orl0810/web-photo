@@ -1,0 +1,19 @@
+<div class="gallery-wrapper">
+  <div class="masonry">
+    <div class="masonry-item" *ngFor="let photo of photos()" [ngStyle]="{ 'box-shadow': getDynamicShadow(photo['image-url']) }">
+      <div class="image-container">
+        <img [src]="photo['image-url']" [alt]="photo['model-name']" />
+        <div class="photo-overlay">
+          <p class="model-name">{{ photo['model-name'] }}</p>
+          
+          
+            <p class="location"><span class="material-icons">
+            location_on
+            </span>{{ photo['location'] }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
