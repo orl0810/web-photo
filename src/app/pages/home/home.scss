@@ -3,7 +3,7 @@
 	height: 100vh;
 	overflow: hidden;
   font-family: "Times New Roman", Times, serif;
-	  
+
 	.hero-image {
 	  position: relative;
 	  width: 100%;
@@ -14,7 +14,7 @@
 	  display: flex;
 	  align-items: center;
 	  justify-content: center;
-  
+
 	  .overlay {
 		width: 90%;
 		background: rgba(0, 0, 0, 0.023);
@@ -24,13 +24,13 @@
 		border-radius: 1rem;
 		text-align: center;
 		color: white;
-  
+
 		.title {
 		  font-size: 2.2rem;
 		  font-weight: bold;
 		  margin-bottom: 18rem;
 		}
-  
+
 		.subtitle {
 		  margin-top: 0.5rem;
 		  font-size: 1.1rem;
@@ -50,24 +50,24 @@
 			box-shadow: 0 4px 14px rgba(0, 123, 255, 0.4);
 			transition: all 0.3s ease;
 			cursor: pointer;
-		  
+
 			i {
 			  font-size: 1.2rem;
 			}
-		  
+
 			&:hover {
 			  background-color: #0056d2;
 			  transform: translateY(-2px);
 			  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
 			}
-		  
+
 			&:active {
 			  transform: scale(0.98);
 			}
 		  }
-		  
-		  
-  
+
+
+
 		.cta-button {
 		  margin-top: 1rem;
 		  padding: 0.75rem 1.5rem;
@@ -78,7 +78,7 @@
 		  font-size: 1rem;
 		  cursor: pointer;
 		  transition: background-color 0.3s;
-  
+
 		  &:hover {
 			background-color: #f0f0f0;
 		  }
@@ -94,18 +94,17 @@
 		display: flex;
 		gap: 2rem;
 		z-index: 10;
-	  
+
 		a {
 		  color: white;
 		  font-size: 1.5rem;
 		  transition: transform 0.2s ease, color 0.2s ease;
-	  
+
 		  &:hover {
 			transform: scale(1.2);
 			color: #ff4081; // puedes ajustar el color a tu gusto
 		  }
 		}
 	  }
-	  
+
   }
-  

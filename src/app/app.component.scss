@@ -1,11 +1,102 @@
 .layout {
     min-height: 100%;
   }
-  
+
   .main-content {
     align-items: center;
     width: 100%;
     flex: 1;
   }
-    
-    
+
+
+/* FAB BUTTON */
+.fab-menu {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25),
+    0 4px 10px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 1000;
+
+  &:hover {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+.fab-icon {
+  font-size: 1.75rem;
+  transition: transform 0.3s ease;
+
+  &.open {
+    transform: rotate(90deg);
+  }
+}
+
+/* MENU */
+.fab-nav {
+  position: fixed;
+  bottom: 6.5rem;
+  right: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  z-index: 999;
+
+  &.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+}
+
+.fab-nav-item {
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+
+  background: rgba(20, 20, 30, 0.85);
+  backdrop-filter: blur(10px);
+
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+
+  &:hover {
+    transform: translateX(-4px);
+    background: rgba(99, 102, 241, 0.9);
+  }
+}
+
+

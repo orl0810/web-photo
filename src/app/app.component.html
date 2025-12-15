@@ -4,5 +4,50 @@
   <!-- <app-side-menu></app-side-menu> -->
   <div class="main-content">
     <router-outlet></router-outlet>
+    <!-- FAB -->
+    <button
+      class="fab-menu"
+      (click)="isMenuOpen = !isMenuOpen"
+      aria-label="Open menu"
+    >
+      <span class="fab-icon" [class.open]="isMenuOpen">☰</span>
+    </button>
+
+    <!-- Menu -->
+    <nav class="fab-nav" [class.open]="isMenuOpen">
+      <a
+        class="fab-nav-item"
+        routerLink="/home"
+        (click)="closeMenu()"
+      >
+        Home
+      </a>
+
+      <a
+        class="fab-nav-item"
+        routerLink="/portfolio"
+        (click)="closeMenu()"
+      >
+        Portfolio
+      </a>
+
+      <a
+        class="fab-nav-item"
+        routerLink="/about"
+        (click)="closeMenu()"
+      >
+        About
+      </a>
+
+      <a
+        class="fab-nav-item"
+        routerLink="/suggestions"
+        (click)="closeMenu()"
+      >
+        Suggestions
+      </a>
+    </nav>
+
+
   </div>
 </div>

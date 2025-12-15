@@ -15,7 +15,7 @@ export class ContractComponent {
     sessionDate: string = '';
     sessionDuration: string = '';
     rights: boolean = true;
-	
+
     constructor(
 	) {
 	}
@@ -29,12 +29,12 @@ export class ContractComponent {
         Session Type: ${this.sessionType}
         Date: ${this.sessionDate}
         Permission to use photos: ${this.rights ? 'YES' : 'NO'}`;
-            
+
         const phoneNumber = '35679552176';
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    
+
         window.open(url, '_blank');
-        window.location.href = '/gallery';
+        window.location.href = '/portfolio';
       }
 
     onPermissionChange(value: boolean) {

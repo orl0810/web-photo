@@ -1,19 +1,93 @@
-<div class="gallery-wrapper">
-  <div class="masonry">
-    <div class="masonry-item" *ngFor="let photo of photos()" [ngStyle]="{ 'box-shadow': getDynamicShadow(photo['image-url']) }">
-      <div class="image-container">
-        <img [src]="photo['image-url']" [alt]="photo['model-name']" />
-        <div class="photo-overlay">
-          <p class="model-name">{{ photo['model-name'] }}</p>
-          
-          
-            <p class="location"><span class="material-icons">
-            location_on
-            </span>{{ photo['location'] }}</p>
+<div class="gallery-container">
+
+  <!-- 1. Botón para Móvil (Solo visible en pantallas pequeñas) -->
+  <button class="mobile-filter-toggle" (click)="toggleFilters()">
+    <span class="icon">⚙️</span> Filters
+  </button>
+
+  <!-- 2. Fondo oscuro (Overlay) para cerrar al hacer clic fuera -->
+  <div class="filter-overlay"
+       [class.active]="isFiltersOpen"
+       (click)="toggleFilters()">
+  </div>
+
+  <!-- 3. Tu Sidebar con la clase dinámica -->
+  <aside class="filters" [class.open]="isFiltersOpen">
+
+    <div class="filter-header">
+      <h3>Filters</h3>
+      <!-- Botón X para cerrar dentro del menú -->
+      <button class="close-btn" (click)="toggleFilters()">✕</button>
+    </div>
+
+    <!-- TUS FILTROS ORIGINALES (Sin cambios) -->
+    <div class="filter-group">
+      <label>Category</label>
+      <select [(ngModel)]="filters.category" (change)="onFilterChange()">
+        <option value="">All</option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Date Range</label>
+      <input type="date" [(ngModel)]="filters.startDate" (change)="onFilterChange()">
+      <input type="date" [(ngModel)]="filters.endDate" (change)="onFilterChange()">
+    </div>
+
+    <!-- ... resto de tus filtros ... -->
+    <div class="filter-group">
+      <label>Model Gender</label>
+      <select [(ngModel)]="filters.gender" (change)="onFilterChange()">
+        <option value="">All</option>
+        <option *ngFor="let g of genders" [value]="g">{{ g }}</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Nationality</label>
+      <input type="text" [(ngModel)]="filters.nationality" (input)="onFilterChange()" placeholder="e.g. French">
+    </div>
+
+    <div class="filter-group">
+      <label>Location</label>
+      <input type="text" [(ngModel)]="filters.locationName" (input)="onFilterChange()" placeholder="e.g. Paris">
+    </div>
+
+  </aside>
+
+  <!-- Photo Grid -->
+  <main class="grid-area">
+    <div class="photo-grid">
+      <div
+        class="photo-card"
+        *ngFor="let photo of photos; trackBy: trackByPhotoId"
+      >
+        <div class="image-wrapper">
+          <!-- Native Lazy Loading for Optimization -->
+          <img
+            [src]="photo.url"
+            [alt]="photo.title"
+            loading="lazy"
+            width="400"
+            height="300"
+          >
+          <div class="overlay">
+            <button (click)="openMap(photo.location)">📍 View on Map</button>
+          </div>
+        </div>
+        <div class="info">
+          <h4>{{ photo.title }}</h4>
+          <span class="meta">{{ photo.date | date }} • {{ photo.category }}</span>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-  
+    <!-- Load More / Infinite Scroll Trigger -->
+    <div class="actions">
+      <button class="btn-load" (click)="loadMore()" [disabled]="isLoading">
+        {{ isLoading ? 'Loading...' : 'Load More' }}
+      </button>
+    </div>
+  </main>
+</div>

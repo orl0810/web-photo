@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'orlando-photo-web';
+
+  isMenuOpen = false;
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
+
+
 }

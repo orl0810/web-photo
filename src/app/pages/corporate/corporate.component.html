@@ -1,0 +1,299 @@
+<!--
+<div class="pricing-container">
+  <div class="pricing-grid">
+    <div
+      *ngFor="let tier of pricingTiers"
+      class="pricing-card"
+      [class.recommended]="tier.recommended">
+
+      <div class="recommended-badge" *ngIf="tier.recommended">
+        Recommended
+      </div>
+
+      <div class="card-header">
+        <h3 class="tier-name">{{ tier.name }}</h3>
+
+        <div class="price-section">
+          <span class="currency" *ngIf="tier.price !== null">$</span>
+          <span class="price" *ngIf="tier.price !== null">{{ tier.price }}</span>
+          <span class="price custom" *ngIf="tier.price === null">Custom pricing</span>
+          <span class="period" *ngIf="tier.price !== null">{{ tier.period }}</span>
+        </div>
+
+        <p class="subtitle">{{ tier.subtitle }}</p>
+
+        <button [class]="'btn ' + tier.buttonClass">
+          {{ tier.buttonText }}
+        </button>
+      </div>
+
+      <div class="card-body">
+        <h4 class="features-title">
+          Everything in {{ tier.name }}
+          <span *ngIf="tier.name !== 'Free'">, plus:</span>
+          <span *ngIf="tier.name === 'Free'"> includes:</span>
+        </h4>
+
+        <ul class="features-list">
+          <li *ngFor="let feature of tier.features" class="feature-item">
+            <svg class="checkmark" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            {{ feature.text }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+
+<!-- Hero Banner Section -->
+<section class="hero-banner">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">
+      Capture Your Corporate Moments
+      <span class="highlight">That Last Forever</span>
+    </h1>
+    <p class="hero-subtitle">
+      Professional photography and videography services for your corporate events,
+      conferences, and special occasions. Five years of experience capturing stories with care and creativity.
+    </p>
+    <div class="hero-buttons">
+      <button class="btn btn-primary" (click)="scrollToPackages()">
+        View Packages
+      </button>
+      <button class="btn btn-outline" (click)="scrollToContact()">
+        Contact Us
+      </button>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200" alt="Corporate Event">
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-us">
+  <div class="container">
+    <h2 class="section-title">Why Choose Orlando Photo?</h2>
+    <p class="section-subtitle">Your story, through my lens</p>
+
+    <div class="why-us-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>5 Years Experience</h3>
+        <p>Professional expertise in capturing corporate events, portraits, and special moments with precision and care.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">❤️</div>
+        <h3>Passion for People</h3>
+        <p>We capture stories, emotions, and the beauty in every detail. Each moment is approached with creativity and responsibility.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Fast Delivery</h3>
+        <p>All materials delivered within one week maximum. Plus, get instant content to post during your event!</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎥</div>
+        <h3>Professional Equipment</h3>
+        <p>4K video quality, multiple cameras, and professional editing to ensure your memories are preserved beautifully.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Preview Section -->
+<section class="gallery-preview">
+  <div class="container">
+    <h2 class="section-title">Recent Corporate Events</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600" alt="Corporate Event 1">
+        <div class="gallery-overlay">
+          <span>Conference 2024</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600" alt="Corporate Event 2">
+        <div class="gallery-overlay">
+          <span>Team Building</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600" alt="Corporate Event 3">
+        <div class="gallery-overlay">
+          <span>Product Launch</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600" alt="Corporate Event 4">
+        <div class="gallery-overlay">
+          <span>Annual Gala</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Packages Section -->
+<section id="packages" class="packages-section">
+  <div class="container">
+    <h2 class="section-title">Our Packages</h2>
+    <p class="section-subtitle">Choose the perfect package for your corporate event</p>
+
+    <div class="packages-grid">
+      <div
+        *ngFor="let package of packages"
+        class="package-card"
+        [class.featured]="package.featured">
+
+        <div class="featured-badge" *ngIf="package.featured">
+          Most Popular
+        </div>
+
+        <div class="package-header">
+          <h3 class="package-name">{{ package.name }}</h3>
+          <div class="package-duration">{{ package.duration }}</div>
+
+          <div class="price-section">
+            <span class="price">{{ package.price }}€</span>
+          </div>
+
+          <p class="package-subtitle">{{ package.subtitle }}</p>
+
+          <div class="gift-badge" *ngIf="package.gift">
+            🎁 {{ package.gift }}
+          </div>
+
+          <button [class]="'btn ' + package.buttonClass">
+            {{ package.buttonText }}
+          </button>
+        </div>
+
+        <div class="package-body">
+          <h4 class="features-title">What's Included:</h4>
+
+          <ul class="features-list">
+            <li *ngFor="let feature of package.features" class="feature-item">
+              <svg class="checkmark" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              {{ feature }}
+            </li>
+          </ul>
+
+          <div class="extra-hour" *ngIf="package.extraHourPrice">
+            <small>Extra hour: +{{ package.extraHourPrice }}€</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hiring Process Section -->
+<section class="hiring-process">
+  <div class="container">
+    <h2 class="section-title">Hiring Process</h2>
+    <p class="section-subtitle">Simple steps to something unforgettable</p>
+
+    <div class="process-timeline">
+      <div
+        *ngFor="let step of processSteps; let i = index"
+        class="process-step"
+        [class.even]="i % 2 === 1">
+
+        <div class="step-number">{{ step.number }}</div>
+
+        <div class="step-content">
+          <div class="step-icon">{{ step.icon }}</div>
+          <h3 class="step-title">{{ step.title }}</h3>
+          <p class="step-description">{{ step.description }}</p>
+        </div>
+
+        <div class="step-connector" *ngIf="i < processSteps.length - 1"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Commitment Section -->
+<section class="commitment">
+  <div class="container">
+    <div class="commitment-content">
+      <h2>Your Day, Our Commitment</h2>
+      <p>
+        We understand how meaningful your corporate event is. Let us capture every detail
+        with care and creativity, so the memories stay alive and beautiful — not just today,
+        but forever. We'll treat it with the care it deserves.
+      </p>
+      <button class="btn btn-primary" (click)="scrollToContact()">
+        Get Started Today
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Ready to Book?</h2>
+    <p class="section-subtitle">Let's discuss your event and make it unforgettable</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <div class="contact-item">
+          <span class="icon">📧</span>
+          <div>
+            <strong>Email</strong>
+            <p>orlandoorlandomphoto.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="icon">📱</span>
+          <div>
+            <strong>Phone</strong>
+            <p>+1 (555) 123-4567</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="icon">📍</span>
+          <div>
+            <strong>Location</strong>
+            <p>Available for events worldwide</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Event Date</label>
+            <input type="date" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="4" placeholder="Tell us about your event..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

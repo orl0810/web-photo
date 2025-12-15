@@ -1,0 +1,51 @@
+.gallery-wrapper {
+  padding: 1rem;
+  padding-top: 5rem;
+  background-color: #121212;
+  color: white;
+
+  .masonry {
+    column-count: 2;
+    column-gap: 1rem;
+
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
+
+      .image-container {
+        position: relative;
+
+        img {
+          width: 100%;
+          display: block;
+          border-radius: 0.5rem;
+        }
+
+        .photo-overlay {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          padding: 0.5rem;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+          color: white;
+
+          .model-name {
+            font-weight: bold;
+            margin: 0%;
+          }
+
+          .location {
+            font-size: 0.85rem;
+            margin: 0%;
+
+            .material-icons {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

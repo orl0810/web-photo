@@ -22,18 +22,18 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
         '#662d91', // 11. Púrpura oscuro
         '#2e3192'  // 12. Azul oscuro
       ];
-      
+
       activeIndices1 = [0, 6]; // inicial: 0 y su opuesto (6 posiciones adelante)
       intervalId1: any;
 
       activeIndices2 = [0, 1, 2]; // inicial: 0 y su opuesto (6 posiciones adelante)
       intervalId2: any;
-      
+
       ngOnInit() {
         this.startAnimation();
         this.startSecondAnimation();
       }
-      
+
       startAnimation() {
         let index = 0;
         this.intervalId1 = setInterval(() => {
@@ -49,24 +49,24 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
           index = (index + 1) % 12;
         }, 1500); // Cambia pareja cada 1.5s
       }
-      
+
       ngOnDestroy() {
         clearInterval(this.intervalId1);
         clearInterval(this.intervalId2);
       }
-      
+
 
       get segmentsReversed() {
         return [...this.segments].reverse();
       }
-      
+
 
   content = {
     en: [
       {
         section: 'time',
         title: '🕒 Time is yours!',
-        img: '../../../assets/home-gallery/_JCM5823-min.jpg',
+        img: '../../../assets/home-portfolio/_JCM5823-min.jpg',
         alt: 'marsaskala-couple-photoshoot.jpg',
         tips: [
             'I could give u the money back but not the time.',
@@ -74,7 +74,7 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
             "I'll be there 10 min before and if you too we can do more photos ;)"
         ]
       },
-      { 
+      {
         section: 'style',
         title: '👗 Outfit & Style',
         img: 'gozo-climbs-couple-photoshoot.jpg',
@@ -89,7 +89,7 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
         section: 'makeup',
         title: '💄 Makeup & Hair',
         img: 'your-image-3.jpg',
-        alt: 'your-image-3.jpg', 
+        alt: 'your-image-3.jpg',
         tips: [
             'Go for soft yet defined makeup to stand out on camera.',
             'Wind is common—use hairspray if wearing hair down.'
@@ -103,7 +103,7 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
         title: '📍 Meeting Point', img: 'your-image-5.jpg', tips: ['I’ll send you the exact location the day before the shoot.', 'Some streets have stairs or cobblestones—comfy shoes help.'] },
       {
         section: 'after',
-        title: '💬 During & After', img: 'your-image-6.jpg', tips: ['No need to pose perfectly—I’ll guide you naturally.', 'You’ll receive your photos via a private online gallery.'] }
+        title: '💬 During & After', img: 'your-image-6.jpg', tips: ['No need to pose perfectly—I’ll guide you naturally.', 'You’ll receive your photos via a private online portfolio.'] }
     ],
     es: [
       {
@@ -121,5 +121,5 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
   toggleLanguage() {
     this.currentLang = this.currentLang === 'en' ? 'es' : 'en';
   }
-  
+
 }
