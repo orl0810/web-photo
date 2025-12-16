@@ -1,0 +1,34 @@
+<section class="services-container">
+  <header class="services-header">
+    <h2 class="subtitle">What We Do</h2>
+    <h1 class="title">Our Premium Services</h1>
+    <p class="description">
+      Elevate your visual storytelling with our dedicated professional services.
+    </p>
+  </header>
+
+  <div class="services-grid">
+    <div
+      class="service-card"
+      *ngFor="let service of services"
+      (click)="navigateToService(service.route)"
+      tabindex="0"
+      (keydown.enter)="navigateToService(service.route)">
+
+      <!-- Image Background Layer -->
+      <div class="card-background" [style.backgroundImage]="'url(' + service.image + ')'"></div>
+
+      <!-- Content Overlay -->
+      <div class="card-content">
+        <div class="icon-wrapper">
+          <span class="icon">{{ service.icon }}</span>
+        </div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <span class="cta-link">
+          Explore Service <span class="arrow">→</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

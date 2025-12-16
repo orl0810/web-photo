@@ -25,7 +25,8 @@ export class GalleryComponent implements OnInit {
   pageSize = 20;
   isLoading = false;
   isFiltersOpen = false;
-
+  selectedPhoto: Photo | null = null;
+  relatedPhotos: Photo[] = [];
   hasMore = true;
 
   // Dropdown options (could also come from service)
@@ -83,5 +84,37 @@ export class GalleryComponent implements OnInit {
   // Optimization: Angular won't re-render DOM nodes if ID hasn't changed
   trackByPhotoId(index: number, photo: Photo): string {
     return photo.id;
+  }
+
+  // Función para abrir el modal
+  openPhoto(photo: Photo) {
+    this.selectedPhoto = photo;
+
+    // LOGICA PARA ENCONTRAR LA SESIÓN
+    // Opción A: Si tienes un campo 'sessionId' en tu base de datos (Lo ideal)
+    // this.relatedPhotos = this.photos.filter(p => p.sessionId === photo.sessionId && p.id !== photo.id);
+
+    // Opción B: Si no tienes sessionId, agrupamos por Categoría y Fecha (aprox)
+    this.relatedPhotos = this.photos.filter(p =>
+      p.category === photo.category &&
+      p.id !== photo.id // Excluimos la foto que ya estamos viendo en grande
+    );
+
+    // Bloquear el scroll del body para que no se mueva la página de fondo
+    document.body.style.overflow = 'hidden';
+  }
+
+// Función para cerrar
+  closeModal() {
+    this.selectedPhoto = null;
+    this.relatedPhotos = [];
+    document.body.style.overflow = 'auto'; // Restaurar scroll
+  }
+
+// Función para cambiar la foto principal desde las relacionadas
+  switchPhoto(photo: Photo) {
+    this.openPhoto(photo);
+    // Scroll suave hacia arriba del modal
+    document.querySelector('.photo-modal')?.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

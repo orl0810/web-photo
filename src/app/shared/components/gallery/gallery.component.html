@@ -58,31 +58,49 @@
 
   <!-- Photo Grid -->
   <main class="grid-area">
+    <!-- GRID PRINCIPAL (Estilo Pinterest) -->
     <div class="photo-grid">
-      <div
-        class="photo-card"
-        *ngFor="let photo of photos; trackBy: trackByPhotoId"
-      >
-        <div class="image-wrapper">
-          <!-- Native Lazy Loading for Optimization -->
-          <img
-            [src]="photo.url"
-            [alt]="photo.title"
-            loading="lazy"
-            width="400"
-            height="300"
-          >
-          <div class="overlay">
-            <button (click)="openMap(photo.location)">📍 View on Map</button>
-          </div>
-        </div>
-        <div class="info">
-          <h4>{{ photo.title }}</h4>
-          <span class="meta">{{ photo.date | date }} • {{ photo.category }}</span>
+      <div class="photo-card" *ngFor="let photo of photos; trackBy: trackByPhotoId" (click)="openPhoto(photo)">
+        <img [src]="photo.url" [alt]="photo.title" loading="lazy">
+        <!-- Opcional: Overlay con título al pasar mouse -->
+        <div class="info-overlay">
+          <span>{{ photo.title }}</span>
         </div>
       </div>
     </div>
 
+    <!-- MODAL (Se muestra solo si selectedPhoto existe) -->
+    <div class="photo-modal" *ngIf="selectedPhoto" (click)="closeModal()">
+
+      <!-- Botón cerrar -->
+      <button class="close-btn" (click)="closeModal()">✕</button>
+
+      <!-- Contenido (stopPropagatin para que al clickear la foto no se cierre el modal) -->
+      <div class="modal-content" (click)="$event.stopPropagation()">
+
+        <!-- Foto Grande -->
+        <img [src]="selectedPhoto.url" class="main-photo">
+
+        <div class="details">
+          <h1>{{ selectedPhoto.title }}</h1>
+          <p>{{ selectedPhoto.category }} • {{ selectedPhoto.location }}</p>
+          <button class="btn-map" (click)="openMap(selectedPhoto.location)">📍 Ver ubicación</button>
+        </div>
+
+        <!-- Sección "Más de esta sesión" -->
+        <div class="session-section" *ngIf="relatedPhotos.length > 0">
+          <h3>More like this</h3>
+          <div class="related-grid">
+            <img
+              *ngFor="let related of relatedPhotos"
+              [src]="related.url"
+              (click)="switchPhoto(related)"
+            >
+          </div>
+        </div>
+
+      </div>
+    </div>
     <!-- Load More / Infinite Scroll Trigger -->
     <div class="actions">
       <button class="btn-load" (click)="loadMore()" [disabled]="isLoading">
