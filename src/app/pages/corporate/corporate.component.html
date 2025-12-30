@@ -61,30 +61,30 @@
 <!-- Gallery Preview Section -->
 <section class="gallery-preview">
   <div class="container">
-    <h2 class="section-title">Recent Corporate Events</h2>
+    <h2 class="section-title">Recent Events</h2>
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600" alt="Corporate Event 1">
+        <img src="../../../assets/events/_JCM0016.jpg" alt="Esme Bachata Concert Valeta">
         <div class="gallery-overlay">
-          <span>Conference 2024</span>
+          <span>Esme Bachata Concert</span>
         </div>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600" alt="Corporate Event 2">
+        <img src="../../../assets/events/_JCM3366.jpg" alt="Sigma World With 1XBet">
         <div class="gallery-overlay">
-          <span>Team Building</span>
+          <span>Sigma World With 1XBet</span>
         </div>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600" alt="Corporate Event 3">
+        <img src="../../../assets/events/_JCM6821.jpg" alt="Corporate Event NIIT">
         <div class="gallery-overlay">
-          <span>Product Launch</span>
+          <span>Corporate Company Event</span>
         </div>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600" alt="Corporate Event 4">
+        <img src="../../../assets/events/_JCM2384.jpg" alt="Malta Fusion Weekend">
         <div class="gallery-overlay">
-          <span>Annual Gala</span>
+          <span>Malta Fusion Weekend</span>
         </div>
       </div>
     </div>
@@ -97,11 +97,41 @@
     <h2 class="section-title">Our Packages</h2>
     <p class="section-subtitle">Choose the perfect package for your corporate event</p>
 
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button
+        class="filter-btn"
+        [class.active]="selectedFilter === 'photo'"
+        (click)="setFilter('photo')">
+        📸 Photo
+      </button>
+      <button
+        class="filter-btn"
+        [class.active]="selectedFilter === 'video'"
+        (click)="setFilter('video')">
+        🎥 Video
+      </button>
+      <button
+        class="filter-btn"
+        [class.active]="selectedFilter === 'photo-video'"
+        (click)="setFilter('photo-video')">
+        📸🎥 Photo + Video
+      </button>
+      <button
+        class="filter-btn"
+        [class.active]="selectedFilter === 'full'"
+        (click)="setFilter('full')">
+        📸🎥📱 FULL CONTENT
+      </button>
+    </div>
+
+    <!-- Packages Grid with Animation -->
     <div class="packages-grid">
       <div
-        *ngFor="let package of packages"
+        *ngFor="let package of filteredPackages"
         class="package-card"
-        [class.featured]="package.featured">
+        [class.featured]="package.featured"
+        [@fadeIn]>
 
         <div class="featured-badge" *ngIf="package.featured">
           Most Popular
@@ -112,7 +142,7 @@
           <div class="package-duration">{{ package.duration }}</div>
 
           <div class="price-section">
-            <span class="price">{{ package.price }}€</span>
+            <span class="price">{{ package.price }} €</span>
           </div>
 
           <p class="package-subtitle">{{ package.subtitle }}</p>
@@ -121,7 +151,7 @@
             🎁 {{ package.gift }}
           </div>
 
-          <button [class]="'btn ' + package.buttonClass">
+          <button [class]="'btn ' + package.buttonClass" (click)="scrollToContact()">
             {{ package.buttonText }}
           </button>
         </div>
@@ -144,9 +174,13 @@
         </div>
       </div>
     </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" *ngIf="filteredPackages.length === 0">
+      <p>No packages available for this category.</p>
+    </div>
   </div>
 </section>
-
 <!-- Hiring Process Section -->
 <section class="hiring-process">
   <div class="container">
@@ -193,7 +227,7 @@
 <!-- Contact Section -->
 <section id="contact" class="contact-section">
   <div class="container">
-    <h2 class="section-title">Ready to Book?</h2>
+    <h2 class="section-title">Ready to book?</h2>
     <p class="section-subtitle">Let's discuss your event and make it unforgettable</p>
 
     <div class="contact-grid">
@@ -203,26 +237,28 @@
           <span class="icon">📧</span>
           <div>
             <strong>Email</strong>
-            <p>orlandoorlandomphoto.com</p>
+            <p><a href="mailto:orlan9608@gmail.com">orlan9608&#64;gmail.com</a></p>
           </div>
         </div>
         <div class="contact-item">
           <span class="icon">📱</span>
           <div>
             <strong>Phone</strong>
-            <p>+1 (555) 123-4567</p>
+            <p><a href="tel:35679552176">Call me at (+ 356) 79552176</a></p>
+            <br>
+            <p><a href="https://wa.me/35679552176?text=Hi%20Orlando!%20I%20saw%20your%20photography%20website%20and%20I’d%20love%20to%20book%20an%20event%20session.">or text me at (+ 356) 79552176</a></p>
           </div>
         </div>
         <div class="contact-item">
           <span class="icon">📍</span>
           <div>
             <strong>Location</strong>
-            <p>Available for events worldwide</p>
+            <p>Malta</p>
           </div>
         </div>
       </div>
 
-      <div class="contact-form">
+      <!--<div class="contact-form">
         <form>
           <div class="form-group">
             <label>Name</label>
@@ -242,7 +278,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
-      </div>
+      </div>-->
     </div>
   </div>
 </section>

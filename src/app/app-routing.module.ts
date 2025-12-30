@@ -22,11 +22,11 @@ const ROUTES: Routes = [
         loadComponent: () => import('./pages/services/services.component').then(m => m.ServicesComponent),
         title: 'Our Services'
       },
-      /*{
+      {
         path: 'photo-sessions',
         loadComponent: () => import('./pages/photo-sessions/photo-sessions.component').then(m => m.PhotoSessionsComponent),
         title: 'Photo Sessions'
-      },*/
+      },
       {
         path: 'events',
         loadComponent: () => import('./pages/corporate/corporate.component').then(m => m.CorporateComponent),

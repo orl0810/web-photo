@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {CommonModule} from "@angular/common";
+import { trigger, transition, style, animate } from '@angular/animations';
 
 interface PricingTier {
   name: string;
@@ -28,6 +29,7 @@ interface Package {
   features: string[];
   extraHourPrice?: number;
   gift?: string;
+  type: 'photo' | 'video' | 'photo-video'| 'full';
 }
 
 interface ProcessStep {
@@ -42,191 +44,160 @@ interface ProcessStep {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './corporate.component.html',
-  styleUrl: './corporate.component.scss'
+  styleUrl: './corporate.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(20px)' }),
+        animate('400ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ])
+  ]
 })
 export class CorporateComponent {
-  pricingTiers: PricingTier[] = [
-    {
-      name: 'Free',
-      price: 0,
-      period: '/mo',
-      subtitle: 'Up to 1,000 credits/mo',
-      buttonText: 'Get started',
-      buttonClass: 'btn-dark',
-      features: [
-        { text: '1,000 credits/month', included: true },
-        { text: 'No-code visual workflow builder', included: true },
-        { text: '3000+ apps', included: true },
-        { text: 'Routers & filters', included: true },
-        { text: 'Customer support', included: true },
-        { text: '15-minute minimum interval between runs', included: true }
-      ]
-    },
-    {
-      name: 'Core',
-      price: 9,
-      period: '/mo',
-      subtitle: 'Price for 10k credits/mo',
-      buttonText: 'Get started',
-      buttonClass: 'btn-dark',
-      features: [
-        { text: 'Unlimited active scenarios', included: true },
-        { text: 'More control with scheduled scenarios, down to the minute', included: true },
-        { text: 'Increased data transfer limits', included: true },
-        { text: 'Access to the Make API', included: true }
-      ]
-    },
-    {
-      name: 'Pro',
-      price: 16,
-      period: '/mo',
-      subtitle: 'Price for 10k credits/mo',
-      buttonText: 'Get started',
-      buttonClass: 'btn-primary',
-      recommended: true,
-      features: [
-        { text: 'Priority scenario execution', included: true },
-        { text: 'Custom variables', included: true },
-        { text: 'Full-text execution log search', included: true }
-      ]
-    },
-    {
-      name: 'Teams',
-      price: 29,
-      period: '/mo',
-      subtitle: 'Price for 10k credits/mo',
-      buttonText: 'Get started',
-      buttonClass: 'btn-dark',
-      features: [
-        { text: 'Invite and team roles', included: true },
-        { text: 'Create and share scenario templates', included: true }
-      ]
-    },
-    {
-      name: 'Enterprise',
-      price: 0,
-      period: '',
-      subtitle: "Let's grow your business together",
-      buttonText: 'Talk to sales',
-      buttonClass: 'btn-dark',
-      features: [
-        { text: 'Custom functions support', included: true },
-        { text: 'Enterprise app integrations', included: true },
-        { text: '24/7 Enterprise support', included: true },
-        { text: 'Access to Value Engineering team', included: true },
-        { text: 'Overage protection', included: true },
-        { text: 'Advanced security features', included: true }
-      ]
-    }
-  ];
+
+  selectedFilter: 'photo' | 'video' | 'photo-video' | 'full' = 'photo-video';
 
   packages: Package[] = [
     {
-      name: 'PREMIUM',
-      price: 240,
+      name: 'PREMIUM PHOTO',
+      price: 220,
       duration: '2 hours',
       subtitle: 'Professional coverage for your corporate event',
       buttonText: 'Book Now',
       buttonClass: 'btn-dark',
-      gift: 'Fast content to post',
+      type: 'photo',
       features: [
         '+- 50 final photos in high quality',
         '3 to 5 clips (without edition)',
         'Professional coverage of key moments',
         'Curated set of edited images'
       ],
-      extraHourPrice: 150
+      extraHourPrice: 100
     },
     {
-      name: 'PREMIUM',
-      price: 440,
-      duration: '2 hours',
-      subtitle: 'Photography & Video coverage',
-      buttonText: 'Book Now',
-      buttonClass: 'btn-dark',
-      gift: 'Fast content to post',
-      features: [
-        'All photos edited in high quality',
-        'All clips (without edition)',
-        '1 trailer (YouTube format) OR 2 reels (Instagram/TikTok)',
-        'Professional photography and video'
-      ],
-      extraHourPrice: 150
-    },
-    {
-      name: 'DELUX',
-      price: 590,
-      duration: '2 hours',
-      subtitle: 'Complete Photography + Video Package',
-      buttonText: 'Book Now',
-      buttonClass: 'btn-primary',
-      featured: true,
-      gift: 'Fast post + 10 photos to post during event',
-      features: [
-        'All photos edited in high quality',
-        'All clips in 4K (camera + phone clips)',
-        '1 trailer (1.30 min) + 4 reels OR 6 reels',
-        '2 cameras + 1 phone coverage',
-        '10 photos to post straight during the event'
-      ],
-      extraHourPrice: 250
-    },
-    {
-      name: 'PREMIUM',
+      name: 'PREMIUM PHOTO',
       price: 400,
       duration: '4 hours',
       subtitle: 'Extended Photography Coverage',
       buttonText: 'Book Now',
       buttonClass: 'btn-dark',
-      gift: 'Fast post',
+      type: 'photo',
       features: [
         '+- 100 final photos in high quality',
         '3 to 5 clips (without edition)',
         'Extended event coverage',
         'All key moments captured'
       ],
+      extraHourPrice: 100
+    },
+    {
+      name: 'PREMIUM VIDEO',
+      price: 240,
+      duration: '2 hours',
+      subtitle: 'Video coverage',
+      buttonText: 'Book Now',
+      buttonClass: 'btn-dark',
+      type: 'video',
+      features: [
+        '1 trailer (YouTube format) or 2 reels (Instagram/TikTok)',
+        'All clips (without edition) if need',
+      ],
       extraHourPrice: 150
     },
     {
-      name: 'PREMIUM',
-      price: 800,
+      name: 'PREMIUM VIDEO',
+      price: 420,
       duration: '4 hours',
-      subtitle: 'Extended Photography & Video',
+      subtitle: 'Extended Video coverage',
       buttonText: 'Book Now',
       buttonClass: 'btn-dark',
-      gift: 'Fast post',
+      type: 'video',
       features: [
-        'All photos edited in high quality',
-        'All clips (without edition)',
-        '1 trailer OR 2 reels',
-        'Extended professional coverage'
+        '1 trailer (YouTube format) AND 1 reels (Instagram/TikTok)' +
+        ' OR 3 reels (Instagram/TikTok)',
+        'All clips (without edition) if need',
       ],
       extraHourPrice: 150
     },
     {
       name: 'DELUX',
-      price: 930,
+      price: 440,
+      duration: '2 hours',
+      subtitle: 'Complete Photography + Video Package',
+      buttonText: 'Book Now',
+      buttonClass: 'btn-primary',
+      type: 'photo-video',
+      features: [
+        'All photos edited in high quality',
+        'All clips in 4K (camera + phone clips)',
+        '1 trailer (1.30 min) + 4 reels OR 6 reels',
+        '2 cameras + 1 phone coverage',
+      ],
+      extraHourPrice: 250
+    },
+    {
+      name: 'DELUX',
+      price: 800,
       duration: '4 hours',
       subtitle: 'Premium Full Event Coverage',
       buttonText: 'Book Now',
       buttonClass: 'btn-primary',
       featured: true,
-      gift: 'Fast post + 10 photos during event',
+      gift: 'Fast post! 5 photos during event',
+      type: 'photo-video',
       features: [
         'All photos edited in high quality',
         'All clips in 4K (2 cameras + 1 phone)',
         '1 trailer + 4 reels OR 6 reels',
-        '10 photos to post straight during event',
+        '5 photos to post straight during event',
         'Complete professional coverage'
       ],
       extraHourPrice: 250
+    },
+    {
+      name: 'FULL CONTENT',
+      price: 590,
+      duration: '2 hours',
+      subtitle: 'Complete Photography + Video Package',
+      buttonText: 'Book Now',
+      buttonClass: 'btn-primary',
+      gift: 'Fast post!',
+      type: 'full',
+      features: [
+        'All photos edited in high quality',
+        'All clips in 4K (camera + phone clips) if requested',
+        '1 trailer (YouTube format) + 4 reels OR 6 reels (Instagram/TikTok)',
+        '2 cameras + 1 phone coverage',
+        '5 photos and 1 simple reel to post during event',
+        'Complete professional coverage'
+      ],
+      extraHourPrice: 300
+    },
+    {
+      name: 'FULL CONTENT',
+      price: 1000,
+      duration: '4 hours',
+      subtitle: 'Premium Full Event Coverage',
+      buttonText: 'Book Now',
+      buttonClass: 'btn-primary',
+      featured: true,
+      gift: 'Fast post! 5 photos during event',
+      type: 'full',
+      features: [
+        'All photos edited in high quality',
+        'All clips in 4K (2 cameras + 1 phone) if requested',
+        '1 trailer (YouTube format) + 4 reels OR 6 reels (Instagram/TikTok)',
+        '5 photos and 1 simple reel to post during event',
+        'Complete professional coverage'
+      ],
+      extraHourPrice: 300
     }
   ];
-
   processSteps: ProcessStep[] = [
     {
       number: 1,
-      title: 'Let\'s Meet',
+      title: 'Let\'s Talk',
       description: 'We\'ll meet before the event to discuss all the important details. We can do this in person or via video call to ensure everything is perfect.',
       icon: '👋'
     },
@@ -251,10 +222,18 @@ export class CorporateComponent {
     {
       number: 5,
       title: 'Fast Delivery',
-      description: 'All material delivered within one week maximum. If we can deliver sooner, even better! You can request adjustments twice.',
+      description: 'All material delivered within one week maximum. If we can deliver sooner, even better! You can request adjustments once.',
       icon: '🎁'
     }
   ];
+
+  get filteredPackages(): Package[] {
+    return this.packages.filter(pkg => pkg.type === this.selectedFilter);
+  }
+
+  setFilter(filter: 'photo' | 'video' | 'photo-video' | 'full'): void {
+    this.selectedFilter = filter;
+  }
 
   scrollToPackages(): void {
     document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' });

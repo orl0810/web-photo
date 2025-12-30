@@ -75,14 +75,29 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
         ]
       },
       {
+        section: 'general',
+        title: '💡 General & During',
+        img: 'gozo-climbs-couple-photoshoot.jpg',
+        alt: 'gozo-climbs-couple-photoshoot.jpg',
+        tips: [
+          'No need to pose perfectly — I’ll guide you naturally.',
+          'Most important is to look comfortable for the camera',
+          'Do NOT eat gum during the session.',
+          'Do NOT leave big elements (like your phone) in your pants pockets.'
+        ]
+      },
+      {
         section: 'style',
         title: '👗 Outfit & Style',
         img: 'gozo-climbs-couple-photoshoot.jpg',
         alt: 'gozo-climbs-couple-photoshoot.jpg',
         tips: [
-            'Avoid large logos or text. Simplicity is key.',
-            'Neutral or warm tones work beautifully in Malta’s light.',
-            'Couples: coordinate, don’t match identically.'
+          'Use complementary colors (left wheel) to generate contrast.',
+          'Use analog colors (right wheel) to reflect harmony.',
+          'Avoid large logos or text. Simplicity is key.',
+          'Accessories like earrings, hats, umbrella, fan, glasses... are more than welcome',
+          'Neutral or warm tones work beautifully in Malta’s light.',
+          'Couples: coordinate, don’t match identically.',
         ]
       },
       {
@@ -97,25 +112,105 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
     },
       {
         section: 'skin',
-        title: '🧴 Skin & Wellness', img: 'your-image-4.jpg', tips: ['Stay hydrated and get good rest the night before.', 'Use sunscreen (but avoid shine on the face).'] },
+        title: '🧴 Skin & Wellness', img: 'your-image-4.jpg',
+        tips: [
+          'Stay hydrated and get good rest the night before.',
+          'Use sunscreen (but avoid shine on the face).'
+        ]
+      },
       {
         section: 'location',
-        title: '📍 Meeting Point', img: 'your-image-5.jpg', tips: ['I’ll send you the exact location the day before the shoot.', 'Some streets have stairs or cobblestones—comfy shoes help.'] },
+        title: '📍 Meeting Point', img: 'your-image-5.jpg',
+        tips: [
+          'I’ll send you the exact location the day before the shoot.',
+          'Some streets have stairs or cobblestones—comfy shoes help.'
+        ]
+      },
       {
         section: 'after',
-        title: '💬 During & After', img: 'your-image-6.jpg', tips: ['No need to pose perfectly—I’ll guide you naturally.', 'You’ll receive your photos via a private online portfolio.'] }
+        title: '💬  After', img: 'your-image-6.jpg',
+        tips: [
+          'You’ll receive your photos on a link where you can download all of them.',
+          'This link will last active for 1 month.'
+        ]
+      }
     ],
     es: [
       {
         section: 'time',
-      title: '🕒 Llega a Tiempo', img: 'your-image-1.jpg', tips: ['Llega 10–15 minutos antes para empezar relajado.', 'Ten en cuenta el tráfico o calles peatonales, especialmente en lugares como Valletta o Mdina.'] },
+        title: '🕒 ¡El tiempo es tuyo!',
+        img: '../../../assets/home-portfolio/_JCM5823-min.jpg',
+        alt: 'marsaskala-couple-photoshoot.jpg',
+        tips: [
+          'Puedo devolverte el dinero, pero no el tiempo.',
+          'Planifica el tráfico, el aparcamiento o las calles peatonales, especialmente en zonas como Sliema o Mdina.',
+          'Yo estaré allí 10 minutos antes y, si tú también, ¡podremos hacer más fotos 😉!'
+        ]
+      },
       {
-        section: 'style', title: '👗 Ropa y Estilo', img: 'your-image-2.jpg', tips: ['Evita logos grandes o textos. La simplicidad es clave.', 'Los tonos neutros o cálidos lucen mejor con la luz de Malta.', 'Parejas: combinen sin vestir exactamente igual.'] },
-      { section: 'makeup', title: '💄 Maquillaje y Pelo', img: 'your-image-3.jpg', tips: ['Usa un maquillaje suave pero definido para destacar.', 'El viento es común—usa fijador si llevas el pelo suelto.'] },
-      { section: 'skin', title: '🧴 Piel y Bienestar', img: 'your-image-4.jpg', tips: ['Mantente hidratado y duerme bien la noche anterior.', 'Usa protector solar (evita el brillo en el rostro).'] },
-      { section: 'location', title: '📍 Punto de Encuentro', img: 'your-image-5.jpg', tips: ['Te enviaré la ubicación exacta el día anterior.', 'Algunas calles tienen escaleras o adoquines—lleva calzado cómodo.'] },
-      { section: 'after', title: '💬 Durante y Después', img: 'your-image-6.jpg', tips: ['No necesitas posar perfecto—te iré guiando.', 'Recibirás tus fotos en una galería privada online.'] }
-    ]
+        section: 'general',
+        title: '💡 General & Durante la sesión',
+        img: 'gozo-climbs-couple-photoshoot.jpg',
+        alt: 'gozo-climbs-couple-photoshoot.jpg',
+        tips: [
+          'No necesitas posar perfectamente — te guiaré de forma natural.',
+          'Lo más importante es que te veas cómodo/a frente a la cámara.',
+          'NO mastiques chicle durante la sesión.',
+          'NO dejes objetos grandes (como el móvil) en los bolsillos del pantalón.'
+        ]
+      },
+      {
+        section: 'style',
+        title: '👗 Vestuario & Estilo',
+        img: 'gozo-climbs-couple-photoshoot.jpg',
+        alt: 'gozo-climbs-couple-photoshoot.jpg',
+        tips: [
+          'Usa colores complementarios (rueda izquierda) para generar contraste.',
+          'Usa colores análogos (rueda derecha) para transmitir armonía.',
+          'Evita logos grandes o texto. La simplicidad es clave.',
+          'Accesorios como pendientes, sombreros, paraguas, abanicos o gafas son más que bienvenidos.',
+          'Los tonos neutros o cálidos funcionan genial con la luz de Malta.',
+          'Parejas: coordinad, pero no vayáis vestidos exactamente igual.'
+        ]
+      },
+      {
+        section: 'makeup',
+        title: '💄 Maquillaje & Pelo',
+        img: 'your-image-3.jpg',
+        alt: 'your-image-3.jpg',
+        tips: [
+          'Opta por un maquillaje suave pero definido para destacar en cámara.',
+          'El viento es habitual — usa laca si llevas el pelo suelto.'
+        ]
+      },
+      {
+        section: 'skin',
+        title: '🧴 Piel & Bienestar',
+        img: 'your-image-4.jpg',
+        tips: [
+          'Mantente bien hidratado/a y duerme bien la noche anterior.',
+          'Usa protector solar (pero evita el brillo excesivo en el rostro).'
+        ]
+      },
+      {
+        section: 'location',
+        title: '📍 Punto de encuentro',
+        img: 'your-image-5.jpg',
+        tips: [
+          'Te enviaré la ubicación exacta el día anterior a la sesión.',
+          'Algunas calles tienen escaleras o adoquines — llevar calzado cómodo ayuda.'
+        ]
+      },
+      {
+        section: 'after',
+        title: '💬 Después',
+        img: 'your-image-6.jpg',
+        tips: [
+          'Recibirás tus fotos a través de un link privado.',
+          'Este link puede durar activo un mes.'
+        ]
+      }
+    ],
   };
 
   toggleLanguage() {

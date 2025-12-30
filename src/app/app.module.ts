@@ -19,6 +19,7 @@ import { provideStorage } from '@angular/fire/storage';
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
+import {provideAnimations} from "@angular/platform-browser/animations";
 
 
 const COMPONENTS = [
@@ -54,7 +55,8 @@ const COMPONENTS = [
       "measurementId":"G-XTJFQ4ZCNQ",
       })),
     provideFirestore(() => getFirestore('photo')),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    provideAnimations()
   ],
   bootstrap: [AppComponent]
 })

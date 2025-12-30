@@ -1,0 +1,165 @@
+<div class="landing-container">
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Capture The Moment</h1>
+      <p class="subtitle">Professional Photography for Travelers, Couples & Visionaries</p>
+      <button class="btn-primary" (click)="scrollToBooking()">Book Your Session</button>
+    </div>
+  </header>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio">
+    <div class="section-header">
+      <h2>Selected Works</h2>
+      <p>A glimpse into the stories we create together.</p>
+    </div>
+    <div class="gallery-grid">
+      <!-- We add 'let i = index' to identify the first few images -->
+      <div class="gallery-item" *ngFor="let img of portfolioImages; let i = index">
+
+        <img
+          [ngSrc]="img.src"
+          [alt]="img.alt"
+          fill
+          [priority]="i < 2"
+          class="gallery-img"
+        >
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Pricing Section -->
+  <section class="pricing">
+    <div class="section-header">
+      <h2>Investment</h2>
+      <p>Choose the experience that fits your journey.</p>
+    </div>
+
+    <div class="pricing-cards">
+      <div class="card" *ngFor="let pkg of packages" [class.highlight]="pkg.isPopular">
+        <div class="card-tag" *ngIf="pkg.isPopular">Best Value</div>
+        <h3>{{ pkg.title }}</h3>
+        <p class="audience">{{ pkg.targetAudience }}</p>
+        <div class="price">
+          <span class="currency">{{ pkg.currency }}</span>
+          <span class="amount">{{ pkg.price }}</span>
+        </div>
+        <p class="duration"><i class="icon-clock"></i> {{ pkg.duration }}</p>
+
+        <ul class="features">
+          <li *ngFor="let feature of pkg.features">
+            <span class="check">✓</span> {{ feature }}
+          </li>
+        </ul>
+
+        <p class="exclusion">* {{ pkg.excluded }}</p>
+        <button class="btn-outline" (click)="scrollToBooking()">Select Package</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add-Ons Section -->
+  <section class="addons">
+    <h3>Enhance Your Experience</h3>
+    <div class="addon-grid">
+      <div class="addon-item" *ngFor="let item of addOns">
+        <div class="addon-info">
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.description }}</p>
+        </div>
+        <div class="addon-price">+€{{ item.price }}</div>
+      </div>
+    </div>
+  </section>
+
+ <!--  Booking / Contact Section
+  <section id="booking" class="booking">
+    <div class="booking-content">
+      <h2>Ready to Shoot?</h2>
+      <p>Let's plan your perfect session. Fill out the form below to check availability.</p>
+
+      <form class="booking-form">
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+          <select>
+            <option value="" disabled selected>Select Package</option>
+            <option *ngFor="let pkg of packages" [value]="pkg.title">{{ pkg.title }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Tell me about your vision or desired dates..." rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn-primary full-width">Inquire Now</button>
+      </form>
+    </div>
+  </section>
+-->
+
+  <!-- Contact Section -->
+  <section id="booking" class="booking">
+    <div class="container">
+      <h2 class="section-title">Ready to book?</h2>
+      <p class="section-subtitle">Let's discuss your event and make it unforgettable</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <div class="contact-item">
+            <span class="icon">📧</span>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:orlan9608@gmail.com">orlan9608&#64;gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="icon">📱</span>
+            <div>
+              <strong>Phone</strong>
+              <p><a href="tel:35679552176">Call me at (+ 356) 79552176</a></p>
+              <br>
+              <p><a href="https://wa.me/35679552176?text=Hi%20Orlando!%20I%20saw%20your%20photography%20website%20and%20I’d%20love%20to%20book%20an%20event%20session.">or text me at (+ 356) 79552176</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="icon">📍</span>
+            <div>
+              <strong>Location</strong>
+              <p>Malta</p>
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="contact-form">
+          <form>
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label>Event Date</label>
+              <input type="date" />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea rows="4" placeholder="Tell us about your event..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>-->
+      </div>
+    </div>
+  </section>
+</div>

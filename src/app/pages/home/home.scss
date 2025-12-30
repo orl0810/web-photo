@@ -16,7 +16,8 @@
 	  justify-content: center;
 
 	  .overlay {
-		width: 90%;
+		  width: 90%;
+      display: inline;
 		background: rgba(0, 0, 0, 0.023);
 		padding: 2rem;
 		position: fixed;
@@ -25,10 +26,21 @@
 		text-align: center;
 		color: white;
 
+      .logo {
+        width: 80%;
+      }
+
+      @media (min-width: 960px) {
+        .logo {
+          padding-top: 50px;
+          width: 30%;
+        }
+    }
+
 		.title {
 		  font-size: 2.2rem;
 		  font-weight: bold;
-		  margin-bottom: 18rem;
+		  margin-bottom: 16rem;
 		}
 
 		.subtitle {
@@ -40,7 +52,7 @@
 			display: inline-flex;
 			align-items: center;
 			gap: 0.5rem;
-			background-color: #007BFF;
+			background-color: rgba(17, 255, 0, 0.8);
 			color: white;
 			padding: 0.75rem 1.25rem;
 			font-size: 1rem;
@@ -102,7 +114,7 @@
 
 		  &:hover {
 			transform: scale(1.2);
-			color: #ff4081; // puedes ajustar el color a tu gusto
+			color: #ff4081;
 		  }
 		}
 	  }

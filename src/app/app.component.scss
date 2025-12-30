@@ -20,7 +20,7 @@
   border: none;
   cursor: pointer;
 
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #6366f1, #007bff);
   color: white;
 
   display: flex;
@@ -99,4 +99,22 @@
   }
 }
 
+// Footer
+footer {
+  padding: 2rem;
+  text-align: center;
+  background: #111;
+  color: #666;
+  font-size: 0.8rem;
+
+  .social-links {
+    margin-top: 1rem;
+    a {
+      color: #999;
+      margin: 0 10px;
+      text-decoration: none;
+      &:hover { color: #ffffff; }
+    }
+  }
+}
 

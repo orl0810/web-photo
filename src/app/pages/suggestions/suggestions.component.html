@@ -2,11 +2,11 @@
     <h1>{{ currentLang === 'en' ? 'Tips for Your Photo Session in Malta' : 'Consejos para tu sesión de fotos en Malta' }}</h1>
     <p>{{ currentLang === 'en' ? 'Get ready and enjoy every moment with these helpful tips to make the most of your session.' : 'Prepárate y disfruta cada momento con estos consejos útiles para aprovechar al máximo tu sesión.' }}</p>
   </header>
-  
+
   <div class="language-toggle">
     <button (click)="toggleLanguage()">Español / English</button>
   </div>
-  
+
   <div class="cta-button">
     <a href="https://wa.me/35679552176?text=Hi%20Orlando!%20I%20saw%20your%20photography%20website%20and%20I’d%20love%20to%20book%20a%20session." target="_blank">Book Your Session</a>
   </div>
@@ -40,7 +40,7 @@
                   [class.active]="activeIndices1.includes(i)"
                 ></div>
               </div>
-    
+
               <div class="color-wheel">
                 <div
                   *ngFor="let color of segments; let i = index"
@@ -52,16 +52,12 @@
                   [class.active]="activeIndices2.includes(i)"
                 ></div>
               </div>
-          </div> 
+          </div>
     }
-    @else {
+    <!--@else {
         <img [src]="item.img" [alt]="item.title">
-    }
+    }-->
     <ul>
       <li *ngFor="let tip of item.tips">{{ tip }}</li>
     </ul>
   </section>
-  
-  <footer>
-    <p>© 2025 Photography by [Your Name] | Soulful & stylish sessions in Malta</p>
-  </footer>

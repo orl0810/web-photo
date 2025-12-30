@@ -31,7 +31,7 @@ export class GalleryComponent implements OnInit {
 
   // Dropdown options (could also come from service)
   categories = ['Portrait', 'Landscape', 'Street', 'Fashion', 'Nature'];
-  genders = ['Male', 'Female', 'Non-Binary'];
+  genders = ['Male', 'Female', 'Couple', 'Non-Binary'];
   orientations = ['Landscape', 'Portrait', 'Square'];
 
   constructor(
