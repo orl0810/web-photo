@@ -1,0 +1,57 @@
+@use 'variables' as *;
+
+@mixin respond-below($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-above($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin heading-serif($size: 2.5rem, $weight: 400) {
+  font-family: $font-family-serif;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: 1.2;
+}
+
+@mixin body-text {
+  font-family: $font-family-sans;
+  color: $color-text;
+  line-height: $line-height-base;
+}
+
+@mixin card-surface {
+  background: $color-white;
+  box-shadow: $shadow-soft;
+  transition: transform $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-card;
+  }
+}
+
+@mixin image-zoom-hover($scale: 1.05) {
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+@mixin focus-ring($color: $color-accent) {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba($color, 0.35);
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color;
+    outline-offset: 2px;
+  }
+}

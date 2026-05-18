@@ -1,15 +1,20 @@
+@use 'variables' as *;
+@use 'mixins' as *;
 
 .movies-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: $spacing-sm;
+  padding: $spacing-lg;
+  background: $color-bg-light;
+  min-height: 100vh;
 }
-  
+
 .filter-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin: 1.5rem 0;
+  gap: $spacing-lg;
+  margin: $spacing-md 0;
 
   .form-group {
     display: flex;
@@ -18,47 +23,43 @@
     label {
       font-weight: 600;
       margin-bottom: 0.4rem;
+      color: $color-primary;
     }
 
     input[type='text'],
     select {
       padding: 0.5rem 0.75rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      border-radius: $radius-sm;
+      border: 1px solid $color-border;
       font-size: 1rem;
-      outline: none;
 
       &:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+        border-color: $color-primary;
+        box-shadow: 0 0 0 2px rgba($color-primary, 0.1);
       }
     }
 
     select {
       height: 100px;
       overflow-y: auto;
-      background-color: #fff;
+      background-color: $color-white;
     }
   }
 
-  .genres-filter {
-    position: relative;
+  .genres-filter button {
+    margin-top: $spacing-sm;
+    padding: 0.3rem 0.6rem;
+    border-radius: $radius-sm;
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background $transition-base;
 
-    button {
-      margin-top: 1rem;
-      padding: 0.3rem 0.6rem;
-      border-radius: 6px;
-      background-color: #ef5350;
-      color: white;
-      border: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-
-      &:hover {
-        background-color: #d32f2f;
-      }
+    &:hover {
+      background-color: $color-accent;
     }
   }
 }
@@ -66,6 +67,5 @@
 .movie-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 1rem;
+  gap: $spacing-sm;
 }
-

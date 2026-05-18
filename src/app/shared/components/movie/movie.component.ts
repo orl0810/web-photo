@@ -3,6 +3,7 @@ import { Movie } from "../../client/movie.model";
 
 @Component({
     selector: 'app-movie',
+    standalone: false,
     templateUrl: './movie.component.html',
     styleUrls: ['./movie.component.scss']
   })

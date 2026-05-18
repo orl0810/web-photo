@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
+	standalone: false,
 	templateUrl: './contract.component.html',
 	styleUrls: ['./contract.component.scss'],
 

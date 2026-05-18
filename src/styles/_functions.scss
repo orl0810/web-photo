@@ -1,0 +1,9 @@
+@use 'sass:color';
+
+@function shade($base, $amount) {
+  @return color.adjust($base, $lightness: -$amount);
+}
+
+@function tint($base, $amount) {
+  @return color.adjust($base, $lightness: $amount);
+}

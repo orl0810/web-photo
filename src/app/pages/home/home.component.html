@@ -1,29 +1,192 @@
 <div class="homepage-wrapper">
-	<div class="hero-image">
-	  <div class="overlay">
-      <img src="../../../assets/logo-orlando-photo.png" alt="malta-photographer" class="logo">
-		<h1 class="title">Looking for a photoshoot in Malta?</h1>
-		<p class="subtitle">Smile! :)</p>
-		<a
-  href="https://wa.me/35679552176?text=Hi%20Orlando!%20I%20saw%20your%20photography%20website%20and%20I’d%20love%20to%20book%20a%20session."
-  target="_blank"
-  rel="noopener noreferrer"
-  class="whatsapp-cta"
->
-  <i class="fab fa-whatsapp"></i>
-  Book a Session!
-</a>
+  <section class="hero-section">
+    <div class="hero-slideshow hero-slideshow--desktop" aria-hidden="true">
+      <div
+        *ngFor="let src of desktopHeroSlides; let i = index"
+        class="hero-slide"
+        [class.is-active]="heroSlideIndex === i"
+        [style.backgroundImage]="heroSlideBackground(src)"
+      ></div>
+    </div>
 
-	  </div>
-	</div>
+    <div class="hero-slideshow hero-slideshow--mobile" aria-hidden="true">
+      <div
+        *ngFor="let src of mobileHeroSlides; let i = index"
+        class="hero-slide"
+        [class.is-active]="heroSlideIndex === i"
+        [style.backgroundImage]="heroSlideBackground(src)"
+      ></div>
+    </div>
 
-  <div class="social-media">
-    <a href="https://instagram.com/orland.photo" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://tiktok.com/@orlando.photo" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-tiktok"></i>
-    </a>
-  </div>
+    <div class="hero-overlay">
+      <!-- <img src="../../../assets/logo-orlando-photo.png" alt="malta-photographer" class="logo"> -->
+      <!-- <h1 class="title">Looking for a photoshoot in Malta?</h1> -->
+      <a
+        href="https://wa.me/35679552176?text=Hi%20Orlando!%20I%20saw%20your%20photography%20website%20and%20I’d%20love%20to%20book%20a%20session."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-cta"
+      >
+        <i class="fab fa-whatsapp"></i>
+        Book a Session!
+      </a>
+    </div>
+
+    <nav class="hero-dots" aria-label="Hero slideshow navigation">
+      <button
+        *ngFor="let _ of desktopHeroSlides; let i = index"
+        type="button"
+        class="hero-dot"
+        [class.is-active]="heroSlideIndex === i"
+        [attr.aria-label]="'Show slide ' + (i + 1)"
+        [attr.aria-current]="heroSlideIndex === i ? 'true' : null"
+        (click)="goToHeroSlide(i)"
+      ></button>
+    </nav>
+
+    <!-- <div class="social-media">
+      <a href="https://instagram.com/orland.photo" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://tiktok.com/@orlando.photo" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div> -->
+  </section>
+
+  <section id="services" class="services-container">
+    <header class="services-header">
+      <h2 class="subtitle">What We Do</h2>
+      <h1 class="title">Our Premium Services</h1>
+      <p class="description">
+        Elevate your visual storytelling with our dedicated professional services.
+      </p>
+    </header>
+
+    <div class="services-grid">
+      <div
+        class="service-card"
+        *ngFor="let service of services"
+        (click)="navigateToService(service.route)"
+        tabindex="0"
+        (keydown.enter)="navigateToService(service.route)"
+      >
+        <div class="card-background" [style.backgroundImage]="'url(' + service.image + ')'"></div>
+
+        <div class="card-content">
+          <div class="icon-wrapper">
+            <span class="icon">{{ service.icon }}</span>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <span class="cta-link">
+            Explore Service <span class="arrow">→</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clients" class="clients-container">
+    <header class="clients-header">
+      <h2 class="subtitle">Our Clients</h2>
+      <h1 class="title">Results You Can Expect</h1>
+      <p class="description">
+        Every session is tailored to your story—here’s what you get when you hire us.
+      </p>
+    </header>
+
+    <div class="clients-grid">
+      <article class="client-card" *ngFor="let category of clientCategories">
+        <div class="client-card-image">
+          <img [src]="category.image" [alt]="category.title" loading="lazy" />
+        </div>
+        <div class="client-card-body">
+          <h3>{{ category.title }}</h3>
+          <p>{{ category.description }}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials-container">
+    <header class="testimonials-header">
+      <h2 class="subtitle">Testimonials</h2>
+      <h1 class="title">My clients love what we create</h1>
+    </header>
+
+    <blockquote class="testimonial-quote" aria-live="polite">
+      <span class="quote-mark" aria-hidden="true">“</span>
+      {{ activeTestimonial.quote }}
+      <span class="quote-mark" aria-hidden="true">”</span>
+    </blockquote>
+
+    <div class="testimonial-nav">
+      <button
+        type="button"
+        class="nav-arrow"
+        (click)="previousTestimonial()"
+        aria-label="Previous testimonial"
+      >
+        <span aria-hidden="true">‹</span>
+      </button>
+
+      <div class="testimonial-author">
+        <img
+          [src]="activeTestimonial.photo"
+          [alt]="activeTestimonial.name"
+          class="author-photo"
+          loading="lazy"
+        />
+        <div class="author-info">
+          <p class="author-name">{{ activeTestimonial.name }}</p>
+          <p class="author-description">{{ activeTestimonial.description }}</p>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="nav-arrow"
+        (click)="nextTestimonial()"
+        aria-label="Next testimonial"
+      >
+        <span aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    <div class="logos-row">
+      <img
+        *ngFor="let _ of [1, 2, 3, 4]"
+        src="assets/placeholder-logo.svg"
+        alt="Client logo placeholder"
+        class="logo-item"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <section id="contact" class="contact-cta" aria-labelledby="contact-cta-heading">
+    <div class="contact-cta-card">
+      <header class="contact-cta-header">
+        <h2 class="subtitle">Let's Talk</h2>
+        <h1 class="title" id="contact-cta-heading">Ready when you are</h1>
+        <p class="description">
+          If you have questions or want to request a specific service, contact me here.
+          I'll get back to you as soon as I can.
+        </p>
+      </header>
+
+      <a
+        [href]="whatsAppContactUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-cta-button"
+        aria-label="Message Orlando on WhatsApp"
+      >
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </section>
 
 </div>

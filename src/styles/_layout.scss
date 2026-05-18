@@ -1,0 +1,79 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:root {
+  --site-header-height: 0px;
+}
+
+@include respond-above($breakpoint-md) {
+  :root {
+    --site-header-height: #{$site-header-height};
+  }
+
+  html {
+    scroll-padding-top: var(--site-header-height);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+
+  h2 {
+    @include heading-serif(2.5rem);
+    margin-bottom: $spacing-xs;
+  }
+
+  p {
+    color: $color-text-muted;
+    font-style: italic;
+  }
+}
+
+.section-title {
+  @include heading-serif(2.5rem);
+  text-align: center;
+  margin-bottom: $spacing-sm;
+  color: inherit;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: $color-text-muted;
+  font-style: italic;
+  margin-bottom: $spacing-xl;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-section {
+  padding: $spacing-section $container-padding;
+}
+
+.page-section--light {
+  background: $color-bg-light;
+}
+
+.page-section--dark {
+  background: $color-bg-dark;
+  color: $color-white;
+
+  h2,
+  h3,
+  .section-title {
+    color: $color-white;
+  }
+
+  .section-subtitle,
+  p {
+    color: rgba($color-white, 0.8);
+  }
+}

@@ -7,6 +7,7 @@ import { of } from 'rxjs';
 
 @Component({
   selector: 'app-movies',
+  standalone: false,
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss']
 })

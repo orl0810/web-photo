@@ -1,20 +1,24 @@
-// Variables
-$primary-color: #e91e63;
-$dark-color: #1a0b2e;
-$secondary-dark: #2d1b4e;
-$text-color: #333;
-$light-bg: #f8f9fa;
-$white: #fff;
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'functions' as fn;
+
+$dark-color: $color-primary;
+$secondary-dark: fn.tint($color-primary, 8%);
+$light-bg: $color-bg-light;
 
 // Hero Banner
 .hero-banner {
+  @include respond-above($breakpoint-md) {
+    margin-top: calc(-1 * var(--site-header-height));
+  }
+
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, $dark-color 0%, $secondary-dark 100%);
+  background: linear-gradient(135deg, $color-primary 0%, $secondary-dark 100%);
 
   .hero-overlay {
     position: absolute;
@@ -22,7 +26,7 @@ $white: #fff;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(26, 11, 46, 0.7);
+    background: $color-overlay;
     z-index: 1;
   }
 
@@ -45,13 +49,12 @@ $white: #fff;
     position: relative;
     z-index: 2;
     text-align: center;
-    color: $white;
+    color: $color-white;
     max-width: 900px;
     padding: 0 20px;
 
     .hero-title {
-      font-size: 64px;
-      font-weight: 800;
+      @include heading-serif(4rem, 600);
       margin-bottom: 24px;
       line-height: 1.2;
 
@@ -61,7 +64,7 @@ $white: #fff;
 
       .highlight {
         display: block;
-        color: $primary-color;
+        color: $color-accent;
         margin-top: 10px;
       }
     }
@@ -99,30 +102,30 @@ $white: #fff;
   letter-spacing: 0.5px;
 
   &.btn-primary {
-    background: $primary-color;
-    color: $white;
+    background: $color-accent;
+    color: $color-white;
 
     &:hover {
-      background: darken($primary-color, 10%);
+      background: fn.shade($color-accent, 10%);
       transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba($primary-color, 0.3);
+      box-shadow: 0 10px 25px rgba($color-accent, 0.3);
     }
   }
 
   &.btn-outline {
     background: transparent;
-    color: $white;
-    border: 2px solid $white;
+    color: $color-white;
+    border: 2px solid $color-white;
 
     &:hover {
-      background: $white;
+      background: $color-white;
       color: $dark-color;
     }
   }
 
   &.btn-dark {
     background: $dark-color;
-    color: $white;
+    color: $color-white;
 
     &:hover {
       background: $secondary-dark;
@@ -140,8 +143,7 @@ $white: #fff;
 
 // Section Titles
 .section-title {
-  font-size: 48px;
-  font-weight: 700;
+  @include heading-serif(3rem, 400);
   text-align: center;
   margin-bottom: 16px;
   color: $dark-color;
@@ -170,7 +172,7 @@ $white: #fff;
   }
 
   .feature-card {
-    background: $white;
+    background: $color-white;
     padding: 40px 30px;
     border-radius: 16px;
     text-align: center;
@@ -204,7 +206,7 @@ $white: #fff;
 // Gallery Preview
 .gallery-preview {
   padding: 100px 0;
-  background: $white;
+  background: $color-white;
 
   .gallery-grid {
     display: grid;
@@ -237,7 +239,7 @@ $white: #fff;
       transition: transform 0.3s ease;
 
       span {
-        color: $white;
+        color: $color-white;
         font-size: 18px;
         font-weight: 600;
       }
@@ -266,7 +268,7 @@ $white: #fff;
   .filter-btn {
     padding: 16px 40px;
     border: 2px solid $dark-color;
-    background: $white;
+    background: $color-white;
     color: $dark-color;
     border-radius: 50px;
     font-size: 16px;
@@ -284,20 +286,20 @@ $white: #fff;
 
     &:hover {
       background: $dark-color;
-      color: $white;
+      color: $color-white;
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba($dark-color, 0.3);
     }
 
     &.active {
-      background: $primary-color;
-      border-color: $primary-color;
-      color: $white;
-      box-shadow: 0 5px 20px rgba($primary-color, 0.4);
+      background: $color-accent;
+      border-color: $color-accent;
+      color: $color-white;
+      box-shadow: 0 5px 20px rgba($color-accent, 0.4);
 
       &:hover {
-        background: darken($primary-color, 10%);
-        border-color: darken($primary-color, 10%);
+        background: fn.shade($color-accent, 10%);
+        border-color: fn.shade($color-accent, 10%);
       }
     }
   }
@@ -333,7 +335,7 @@ $white: #fff;
   .package-card {
     max-width: 700px;
     margin: auto;
-    background: $white;
+    background: $color-white;
     border-radius: 16px;
     overflow: hidden;
     display: flex;
@@ -348,7 +350,7 @@ $white: #fff;
     }
 
     &.featured {
-      border-color: $primary-color;
+      border-color: $color-accent;
 
       .package-header {
         padding-top: 60px;
@@ -361,8 +363,8 @@ $white: #fff;
     top: 0;
     left: 0;
     right: 0;
-    background: $primary-color;
-    color: $white;
+    background: $color-accent;
+    color: $color-white;
     text-align: center;
     padding: 10px;
     font-size: 14px;
@@ -385,7 +387,7 @@ $white: #fff;
 
   .package-duration {
     font-size: 14px;
-    color: $primary-color;
+    color: $color-accent;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -443,7 +445,7 @@ $white: #fff;
     gap: 12px;
     margin-bottom: 14px;
     font-size: 14px;
-    color: $text-color;
+    color: $color-text;
     line-height: 1.5;
 
     .checkmark {
@@ -469,7 +471,7 @@ $white: #fff;
 // Hiring Process
 .hiring-process {
   padding: 100px 0;
-  background: $white;
+  background: $color-white;
 
   .process-timeline {
     max-width: 900px;
@@ -500,8 +502,8 @@ $white: #fff;
     .step-number {
       width: 80px;
       height: 80px;
-      background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
-      color: $white;
+      background: linear-gradient(135deg, $color-accent, fn.shade($color-accent, 10%));
+      color: $color-white;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -509,7 +511,7 @@ $white: #fff;
       font-size: 32px;
       font-weight: 700;
       flex-shrink: 0;
-      box-shadow: 0 10px 30px rgba($primary-color, 0.3);
+      box-shadow: 0 10px 30px rgba($color-accent, 0.3);
     }
 
     .step-content {
@@ -543,7 +545,7 @@ $white: #fff;
       top: 80px;
       width: 3px;
       height: 60px;
-      background: linear-gradient(to bottom, $primary-color, transparent);
+      background: linear-gradient(to bottom, $color-accent, transparent);
 
       @media (max-width: 768px) {
         display: none;
@@ -555,8 +557,8 @@ $white: #fff;
 // Commitment Section
 .commitment {
   padding: 100px 0;
-  background: linear-gradient(135deg, $dark-color 0%, $secondary-dark 100%);
-  color: $white;
+  background: linear-gradient(135deg, $color-primary 0%, $secondary-dark 100%);
+  color: $color-white;
   text-align: center;
 
   .commitment-content {
@@ -631,7 +633,7 @@ $white: #fff;
   }
 
   .contact-form {
-    background: $white;
+    background: $color-white;
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -658,7 +660,7 @@ $white: #fff;
 
         &:focus {
           outline: none;
-          border-color: $primary-color;
+          border-color: $color-accent;
         }
       }
 

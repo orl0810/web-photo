@@ -5,6 +5,7 @@ import { Photo2Service } from 'src/app/core/services/photo2.service';
 
 @Component({
   selector: 'app-portfolio',
+  standalone: false,
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })

@@ -1,0 +1,340 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'functions' as fn;
+
+// Shared card pattern (pricing, services, etc.)
+.elegant-card {
+  @include card-surface;
+  background: $color-white;
+  padding: $spacing-xl $spacing-lg;
+  text-align: center;
+
+  h3 {
+    @include heading-serif(1.8rem);
+    margin-bottom: $spacing-xs;
+  }
+
+  &.highlight {
+    border: 1px solid $color-accent;
+  }
+}
+
+.card-tag {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $color-accent;
+  color: $color-white;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+// Site footer (used in app.component.html)
+.site-footer {
+  padding: $spacing-xl $spacing-lg $spacing-lg;
+  background: $color-primary;
+  color: $color-text-muted;
+  border-top: 1px solid rgba($color-white, 0.08);
+}
+
+.site-footer-inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.site-footer-tagline {
+  margin: 0 0 $spacing-md;
+  @include heading-serif(1.1rem, 500);
+  color: rgba($color-white, 0.9);
+  letter-spacing: 0.02em;
+}
+
+.site-footer-contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-sm;
+  list-style: none;
+  margin: 0 0 $spacing-lg;
+  padding: 0;
+
+  @include respond-above($breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-sm $spacing-lg;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include respond-above($breakpoint-md) {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: none;
+    gap: $spacing-md;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  a,
+  .site-footer-location {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+    width: 100%;
+    font-size: 0.875rem;
+    color: $color-text-light;
+    text-decoration: none;
+    transition: color $transition-base;
+
+    @include respond-above($breakpoint-md) {
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  a:hover {
+    color: $color-accent;
+
+    i {
+      color: $color-accent;
+    }
+  }
+
+  i {
+    flex-shrink: 0;
+    width: 1.1rem;
+    font-size: 1rem;
+    color: $color-accent;
+    transition: color $transition-base;
+
+    @include respond-above($breakpoint-md) {
+      width: auto;
+      font-size: 1.25rem;
+    }
+  }
+
+  .site-footer-location {
+    cursor: default;
+  }
+}
+
+.site-footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-sm;
+  padding-top: $spacing-md;
+  border-top: 1px solid rgba($color-white, 0.08);
+
+  @include respond-above($breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: $spacing-lg;
+  }
+}
+
+.site-footer-copy {
+  margin: 0;
+  font-size: 0.75rem;
+  color: $color-text-muted;
+  letter-spacing: 0.02em;
+}
+
+.site-footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-md;
+  margin: 0;
+
+  a {
+    color: $color-text-muted;
+    font-size: 1.35rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, color $transition-base;
+
+    &:hover {
+      transform: scale(1.12);
+      color: $color-accent;
+    }
+  }
+}
+
+// Desktop site header
+.site-header {
+  display: none;
+
+  @include respond-above($breakpoint-md) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-sm $spacing-lg;
+    background: rgba($color-primary, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba($color-white, 0.08);
+  }
+}
+
+.site-header-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity $transition-base;
+
+  .site-logo-img {
+    height: $site-header-logo-height;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.site-header-nav {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.site-header-link {
+  color: $color-white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  &.router-link-active {
+    color: $color-accent;
+  }
+}
+
+.site-logo-img {
+  display: block;
+  width: auto;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+// Floating action menu (mobile only)
+.fab-menu {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba($color-white, 0.2);
+  cursor: pointer;
+  background: $color-primary;
+  color: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $shadow-soft;
+  transition: transform $transition-base, box-shadow $transition-base;
+  z-index: 1000;
+
+  @include respond-above($breakpoint-md) {
+    display: none;
+  }
+
+  .site-logo-img {
+    height: 32px;
+  }
+
+  &.open {
+    border-color: rgba($color-accent, 0.5);
+    box-shadow: $shadow-card;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-card;
+    background: fn.shade($color-primary, 4%);
+  }
+}
+
+.fab-nav {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity $transition-base, transform $transition-base;
+  z-index: 999;
+
+  @include respond-above($breakpoint-md) {
+    display: none;
+  }
+
+  &.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+.fab-nav-item {
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: $color-primary;
+  color: $color-white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: $shadow-soft;
+  transition: transform 0.2s ease, background $transition-base;
+
+  &:hover {
+    transform: translateX(-4px);
+    background: $color-accent;
+    color: $color-white;
+  }
+}
+
+// Error banner
+.error-banner {
+  background: fn.tint($color-accent, 42%);
+  color: fn.shade($color-accent, 25%);
+  padding: $spacing-sm;
+  margin: $spacing-sm;
+  border-radius: $radius-sm;
+  text-align: center;
+  border: 1px solid rgba($color-accent, 0.3);
+
+  button {
+    margin-top: $spacing-xs;
+    background: transparent;
+    border: 1px solid currentColor;
+    color: inherit;
+    padding: 0.25rem 0.75rem;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    transition: background $transition-base;
+
+    &:hover {
+      background: rgba($color-accent, 0.15);
+    }
+  }
+}

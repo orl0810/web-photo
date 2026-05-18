@@ -1,0 +1,65 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.form-group {
+  margin-bottom: $spacing-md;
+
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $color-primary;
+    margin-bottom: $spacing-xs;
+  }
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid $color-border;
+  border-radius: $radius-sm;
+  font-size: $font-size-base;
+  font-family: $font-family-sans;
+  color: $color-text;
+  background: $color-white;
+  transition: border-color $transition-base;
+  @include focus-ring($color-primary);
+
+  &::placeholder {
+    color: $color-text-light;
+  }
+
+  &:focus {
+    border-color: $color-primary;
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form--on-dark {
+  input,
+  select,
+  textarea {
+    border: none;
+    background: rgba($color-white, 0.1);
+    color: $color-white;
+
+    &::placeholder {
+      color: rgba($color-white, 0.6);
+    }
+
+    &:focus {
+      outline: 1px solid $color-accent;
+      border-color: transparent;
+    }
+  }
+
+  select option {
+    color: $color-text;
+  }
+}

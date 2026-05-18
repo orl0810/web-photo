@@ -5,6 +5,7 @@ import { Movie } from '../../shared/client/movie.model';
 
 @Component({
   selector: 'app-movie-detail',
+  standalone: false,
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.scss']
 })

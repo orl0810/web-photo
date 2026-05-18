@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
+import { scrollToElementId } from '../../shared/utils/scroll-to-element';
 
 interface Package {
   title: string;
@@ -34,7 +35,9 @@ export class PhotoSessionsComponent {
     { src: '../../../assets/home-gallery/_JCM5969.jpg', alt: 'Fashion editorial' },
     { src: '../../../assets/home-gallery/_JCM9071.jpg', alt: 'Candid lifestyle' },
     { src: '../../../assets/home-gallery/_JCM3136.jpg', alt: 'Couple session' },
-    { src: '../../../assets/home-gallery/_JCM9760.jpg', alt: 'Urban exploration' }
+    { src: '../../../assets/home-gallery/_JCM9760.jpg', alt: 'Urban exploration' },
+    { src: '../../../assets/home-gallery/_JCM0700.jpg', alt: 'Proposal photoshoot' },
+    { src: '../../../assets/home-gallery/_JCM1855.jpg', alt: 'Manoel Island photoshoot' }
   ];
 
   packages: Package[] = [
@@ -57,7 +60,7 @@ export class PhotoSessionsComponent {
       title: 'The Content Creator',
       price: 200,
       currency: '€',
-      duration: '1 Hour 45 Minutes',
+      duration: '1 Hour 30 Minutes',
       targetAudience: 'For influencers & personal branding',
       features: [
         'All Good Photos (High Quality)',
@@ -89,7 +92,7 @@ export class PhotoSessionsComponent {
     }
   ];
 
-  scrollToBooking() {
-    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+  scrollToBooking(): void {
+    scrollToElementId('booking');
   }
 }

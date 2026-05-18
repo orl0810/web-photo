@@ -1,0 +1,60 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'functions' as fn;
+
+.btn-primary,
+.btn.btn-primary {
+  display: inline-block;
+  background: $color-white;
+  color: $color-primary;
+  padding: 12px 30px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all $transition-base;
+  @include focus-ring;
+
+  &:hover {
+    background: $color-accent;
+    color: $color-white;
+  }
+}
+
+.btn-outline,
+.btn.btn-outline {
+  display: inline-block;
+  background: transparent;
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: all $transition-base;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  @include focus-ring;
+
+  &:hover {
+    background: $color-primary;
+    color: $color-white;
+  }
+}
+
+.btn-dark {
+  background: $color-primary;
+  color: $color-white;
+  padding: 12px 30px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    background: fn.tint($color-primary, 8%);
+  }
+}

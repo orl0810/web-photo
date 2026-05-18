@@ -1,14 +1,45 @@
 <div class="layout">
   <!-- <app-side-menu></app-side-menu> -->
+  <header class="site-header">
+    <a class="site-header-logo" routerLink="/home" aria-label="Orlando.photo home">
+      <img
+        class="site-logo-img"
+        src="assets/logo-photo.png"
+        alt="Orlando.photo"
+        [style.transform]="'rotate(' + logoRotation + 'deg)'"
+      />
+    </a>
+    <nav class="site-header-nav" aria-label="Main navigation">
+      <a class="site-header-link" routerLink="/home">Home</a>
+      <a
+        class="site-header-link"
+        href="#services"
+        (click)="scrollToServices(); $event.preventDefault()"
+      >
+        Services
+      </a>
+      <a class="site-header-link" routerLink="/portfolio">Portfolio</a>
+      <a class="site-header-link" routerLink="/suggestions">Suggestions</a>
+      <a class="site-header-link" routerLink="/blog">Blog</a>
+    </nav>
+  </header>
+
   <div class="main-content">
     <router-outlet></router-outlet>
-    <!-- FAB -->
+    <!-- FAB (mobile only) -->
     <button
       class="fab-menu"
+      [class.open]="isMenuOpen"
       (click)="isMenuOpen = !isMenuOpen"
-      aria-label="Open menu"
+      [attr.aria-label]="isMenuOpen ? 'Close menu' : 'Open menu'"
+      [attr.aria-expanded]="isMenuOpen"
     >
-      <span class="fab-icon" [class.open]="isMenuOpen">☰</span>
+      <img
+        class="site-logo-img"
+        src="assets/logo-photo.png"
+        alt=""
+        [style.transform]="'rotate(' + logoRotation + 'deg)'"
+      />
     </button>
 
     <!-- Menu -->
@@ -23,18 +54,18 @@
 
       <a
         class="fab-nav-item"
-        routerLink="/portfolio"
-        (click)="closeMenu()"
+        href="#services"
+        (click)="scrollToServices(); $event.preventDefault()"
       >
-        Portfolio
+        Services
       </a>
 
       <a
         class="fab-nav-item"
-        routerLink="/services"
+        routerLink="/portfolio"
         (click)="closeMenu()"
       >
-        Services
+        Portfolio
       </a>
 
      <!-- <a
@@ -52,16 +83,63 @@
       >
         Suggestions
       </a>
+
+      <a
+        class="fab-nav-item"
+        routerLink="/blog"
+        (click)="closeMenu()"
+      >
+        Blog
+      </a>
     </nav>
 
 
   </div>
 </div>
 
-<footer>
-  <p>&copy; 2026 Orlando.photo. All rights reserved.</p>
-  <div class="social-links">
-    <a href="https://instagram.com/orland.photo">Instagram</a>
-    <a href="https://tiktok.com/@orlando.photo">TikTok</a>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="site-footer-tagline">Let&apos;s create something beautiful together</p>
+
+    <ul class="site-footer-contact" aria-label="Contact information">
+      <li>
+        <a href="mailto:orlan9608@gmail.com">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          <span>orlan9608&#64;gmail.com</span>
+        </a>
+      </li>
+      <li>
+        <a href="tel:35679552176">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <span>Call me at (+356) 79552176</span>
+        </a>
+      </li>
+      <li>
+        <a
+          [href]="whatsAppContactUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <span>Message on WhatsApp</span>
+        </a>
+      </li>
+      <li class="site-footer-location">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <span>Malta</span>
+      </li>
+    </ul>
+
+    <div class="site-footer-bottom">
+      <p class="site-footer-copy">&copy; 2026 Orlando.photo. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://instagram.com/orland.photo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://tiktok.com/@orlando.photo" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
   </div>
 </footer>

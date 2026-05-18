@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
+	standalone: false,
 	templateUrl: './suggestions.component.html',
 	styleUrls: ['./suggestions.component.scss'],
 })

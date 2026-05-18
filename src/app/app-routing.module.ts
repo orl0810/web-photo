@@ -8,7 +8,6 @@ import { SuggestionsComponent } from './pages/suggestions/suggestions.component'
 import { PhotoGalleryComponent } from './shared/components/portfolio/portfolio.component';
 import {CorporateComponent} from "./pages/corporate/corporate.component";
 import {GalleryComponent} from "./shared/components/gallery/gallery.component";
-import {ServicesComponent} from "./pages/services/services.component";
 
 const ROUTES: Routes = [
 	{ path: '', pathMatch:'full', redirectTo: 'home' },
@@ -17,11 +16,6 @@ const ROUTES: Routes = [
   {
     path: 'services',
     children: [
-      {
-        path: '',
-        loadComponent: () => import('./pages/services/services.component').then(m => m.ServicesComponent),
-        title: 'Our Services'
-      },
       {
         path: 'photo-sessions',
         loadComponent: () => import('./pages/photo-sessions/photo-sessions.component').then(m => m.PhotoSessionsComponent),
@@ -32,11 +26,6 @@ const ROUTES: Routes = [
         loadComponent: () => import('./pages/corporate/corporate.component').then(m => m.CorporateComponent),
         title: 'Event Coverage'
       },
-      /*{
-        path: 'social-media',
-        loadComponent: () => import('./pages/social-media/social-media.component').then(m => m.SocialMediaComponent),
-        title: 'Social Media Content'
-      }*/
     ]
   },
 
@@ -48,7 +37,13 @@ const ROUTES: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(ROUTES)],
+  imports: [
+    RouterModule.forRoot(ROUTES, {
+      anchorScrolling: 'enabled',
+      scrollPositionRestoration: 'enabled',
+    }),
+    GalleryComponent,
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

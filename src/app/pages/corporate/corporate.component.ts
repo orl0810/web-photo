@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import { trigger, transition, style, animate } from '@angular/animations';
+import { scrollToElementId } from '../../shared/utils/scroll-to-element';
 
 interface PricingTier {
   name: string;
@@ -236,10 +237,10 @@ export class CorporateComponent {
   }
 
   scrollToPackages(): void {
-    document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' });
+    scrollToElementId('packages');
   }
 
   scrollToContact(): void {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    scrollToElementId('contact');
   }
 }

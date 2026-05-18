@@ -10,6 +10,7 @@ import { FooterComponent } from './shared/components/layout/footer/footer.compon
 import { HeaderComponent } from './shared/components/layout/header/header.component';
 import { SideMenuComponent } from './shared/components/layout/side-menu/side-menu.component';
 import { MovieComponent } from './shared/components/movie/movie.component';
+import { provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ContractComponent } from './pages/contract/contract.component';
 import { SuggestionsComponent } from './pages/suggestions/suggestions.component';
@@ -20,8 +21,6 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import {provideAnimations} from "@angular/platform-browser/animations";
-
-
 const COMPONENTS = [
   AppComponent,
   SideMenuComponent,
@@ -42,7 +41,7 @@ const COMPONENTS = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     provideFirebaseApp(() => initializeApp({
@@ -56,7 +55,8 @@ const COMPONENTS = [
       })),
     provideFirestore(() => getFirestore('photo')),
     provideStorage(() => getStorage()),
-    provideAnimations()
+    provideAnimations(),
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })
