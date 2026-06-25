@@ -4,11 +4,17 @@ export interface GeoLocation {
   name: string; // e.g., "Paris, France"
 }
 
+export type GalleryCategory = 'photo-sessions' | 'events';
+
 export interface Photo {
   id: string;
   url: string;
   thumbnailUrl?: string;
+  width: number;
+  height: number;
   title: string;
+  alt?: string;
+  galleryCategory: GalleryCategory;
 
   // Filterable Criteria
   date: Date;

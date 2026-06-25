@@ -1,28 +1,24 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-	standalone: false,
-	templateUrl: './contract.component.html',
-	styleUrls: ['./contract.component.scss'],
-
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './contract.component.html',
+  styleUrls: ['./contract.component.scss'],
 })
 export class ContractComponent {
+  clientName: string | undefined = '';
+  clientBased: string | undefined = '';
+  clientEmail: string | undefined = '';
 
-    clientName: string | undefined = '';
-    clientBased: string | undefined = '';
-    clientEmail: string | undefined = '';
+  sessionType: string = '';
+  sessionDate: string = '';
+  sessionDuration: string = '';
+  rights: boolean = true;
 
-    sessionType: string = '';
-    sessionDate: string = '';
-    sessionDuration: string = '';
-    rights: boolean = true;
-
-    constructor(
-	) {
-	}
-
-    sendToWhatsApp() {
-        const message = `I have read the Photography Services Agreement:
+  sendToWhatsApp() {
+    const message = `I have read the Photography Services Agreement:
 
         Name: ${this.clientName}
         From: ${this.clientBased}
@@ -31,14 +27,14 @@ export class ContractComponent {
         Date: ${this.sessionDate}
         Permission to use photos: ${this.rights ? 'YES' : 'NO'}`;
 
-        const phoneNumber = '35679552176';
-        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const phoneNumber = '35679552176';
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-        window.open(url, '_blank');
-        window.location.href = '/portfolio';
-      }
+    window.open(url, '_blank');
+    window.location.href = '/portfolio';
+  }
 
-    onPermissionChange(value: boolean) {
-        this.rights = value;
-      }
+  onPermissionChange(value: boolean) {
+    this.rights = value;
+  }
 }

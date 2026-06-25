@@ -1,284 +1,108 @@
-<!-- Hero Banner Section -->
-<section class="hero-banner">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1 class="hero-title">
-      Capture Your Corporate Moments
-      <span class="highlight">That Last Forever</span>
-    </h1>
-    <p class="hero-subtitle">
-      Professional photography and videography services for your corporate events,
-      conferences, and special occasions. Five years of experience capturing stories with care and creativity.
-    </p>
-    <div class="hero-buttons">
-      <button class="btn btn-primary" (click)="scrollToPackages()">
-        View Packages
-      </button>
-      <button class="btn btn-outline" (click)="scrollToContact()">
-        Contact Us
-      </button>
-    </div>
-  </div>
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200" alt="Corporate Event">
-  </div>
-</section>
-
-<!-- Why Choose Us Section -->
-<section class="why-us">
-  <div class="container">
-    <h2 class="section-title">Why Choose Orlando Photo?</h2>
-    <p class="section-subtitle">Your story, through my lens</p>
-
-    <div class="why-us-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <h3>5 Years Experience</h3>
-        <p>Professional expertise in capturing corporate events, portraits, and special moments with precision and care.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">❤️</div>
-        <h3>Passion for People</h3>
-        <p>We capture stories, emotions, and the beauty in every detail. Each moment is approached with creativity and responsibility.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>Fast Delivery</h3>
-        <p>All materials delivered within one week maximum. Plus, get instant content to post during your event!</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🎥</div>
-        <h3>Professional Equipment</h3>
-        <p>4K video quality, multiple cameras, and professional editing to ensure your memories are preserved beautifully.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Gallery Preview Section -->
-<section class="gallery-preview">
-  <div class="container">
-    <h2 class="section-title">Recent Events</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="../../../assets/events/_JCM0016.jpg" alt="Esme Bachata Concert Valeta">
-        <div class="gallery-overlay">
-          <span>Esme Bachata Concert</span>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="../../../assets/events/_JCM3366.jpg" alt="Sigma World With 1XBet">
-        <div class="gallery-overlay">
-          <span>Sigma World With 1XBet</span>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="../../../assets/events/_JCM6821.jpg" alt="Corporate Event NIIT">
-        <div class="gallery-overlay">
-          <span>Corporate Company Event</span>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="../../../assets/events/_JCM2384.jpg" alt="Malta Fusion Weekend">
-        <div class="gallery-overlay">
-          <span>Malta Fusion Weekend</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Packages Section -->
-<section id="packages" class="packages-section">
-  <div class="container">
-    <h2 class="section-title">Our Packages</h2>
-    <p class="section-subtitle">Choose the perfect package for your corporate event</p>
-
-    <!-- Filter Buttons -->
-    <div class="filter-buttons">
-      <button
-        class="filter-btn"
-        [class.active]="selectedFilter === 'photo'"
-        (click)="setFilter('photo')">
-        📸 Photo
-      </button>
-      <button
-        class="filter-btn"
-        [class.active]="selectedFilter === 'video'"
-        (click)="setFilter('video')">
-        🎥 Video
-      </button>
-      <button
-        class="filter-btn"
-        [class.active]="selectedFilter === 'photo-video'"
-        (click)="setFilter('photo-video')">
-        📸🎥 Photo + Video
-      </button>
-      <button
-        class="filter-btn"
-        [class.active]="selectedFilter === 'full'"
-        (click)="setFilter('full')">
-        📸🎥📱 FULL CONTENT
-      </button>
-    </div>
-
-    <!-- Packages Grid with Animation -->
-    <div class="packages-grid">
-      <div
-        *ngFor="let package of filteredPackages"
-        class="package-card"
-        [class.featured]="package.featured"
-        [@fadeIn]>
-
-        <div class="featured-badge" *ngIf="package.featured">
-          Most Popular
-        </div>
-
-        <div class="package-header">
-          <h3 class="package-name">{{ package.name }}</h3>
-          <div class="package-duration">{{ package.duration }}</div>
-
-          <div class="price-section">
-            <span class="price">{{ package.price }} €</span>
-          </div>
-
-          <p class="package-subtitle">{{ package.subtitle }}</p>
-
-          <div class="gift-badge" *ngIf="package.gift">
-            🎁 {{ package.gift }}
-          </div>
-
-          <button [class]="'btn ' + package.buttonClass" (click)="scrollToContact()">
-            {{ package.buttonText }}
-          </button>
-        </div>
-
-        <div class="package-body">
-          <h4 class="features-title">What's Included:</h4>
-
-          <ul class="features-list">
-            <li *ngFor="let feature of package.features" class="feature-item">
-              <svg class="checkmark" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              {{ feature }}
-            </li>
-          </ul>
-
-          <div class="extra-hour" *ngIf="package.extraHourPrice">
-            <small>Extra hour: +{{ package.extraHourPrice }}€</small>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Empty State -->
-    <div class="empty-state" *ngIf="filteredPackages.length === 0">
-      <p>No packages available for this category.</p>
-    </div>
-  </div>
-</section>
-<!-- Hiring Process Section -->
-<section class="hiring-process">
-  <div class="container">
-    <h2 class="section-title">Hiring Process</h2>
-    <p class="section-subtitle">Simple steps to something unforgettable</p>
-
-    <div class="process-timeline">
-      <div
-        *ngFor="let step of processSteps; let i = index"
-        class="process-step"
-        [class.even]="i % 2 === 1">
-
-        <div class="step-number">{{ step.number }}</div>
-
-        <div class="step-content">
-          <div class="step-icon">{{ step.icon }}</div>
-          <h3 class="step-title">{{ step.title }}</h3>
-          <p class="step-description">{{ step.description }}</p>
-        </div>
-
-        <div class="step-connector" *ngIf="i < processSteps.length - 1"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Commitment Section -->
-<section class="commitment">
-  <div class="container">
-    <div class="commitment-content">
-      <h2>Your Day, Our Commitment</h2>
-      <p>
-        We understand how meaningful your corporate event is. Let us capture every detail
-        with care and creativity, so the memories stay alive and beautiful — not just today,
-        but forever. We'll treat it with the care it deserves.
+<div class="landing-container">
+  <header class="hero" [style.backgroundImage]="'url(' + heroBackgroundImage + ')'">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Event photography in Malta</h1>
+      <p class="subtitle">
+        Premium coverage for corporate events, private gatherings, launches, networking events, and special occasions. Content delivered for social media, websites, and brand communication.
       </p>
-      <button class="btn btn-primary" (click)="scrollToContact()">
-        Get Started Today
-      </button>
+      <a
+        class="btn-primary"
+        [href]="eventBookingUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book your event
+      </a>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- Contact Section -->
-<section id="contact" class="contact-section">
-  <div class="container">
-    <h2 class="section-title">Ready to book?</h2>
-    <p class="section-subtitle">Let's discuss your event and make it unforgettable</p>
-
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>Get in Touch</h3>
-        <div class="contact-item">
-          <span class="icon">📧</span>
-          <div>
-            <strong>Email</strong>
-            <p><a href="mailto:orlan9608@gmail.com">orlan9608&#64;gmail.com</a></p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <span class="icon">📱</span>
-          <div>
-            <strong>Phone</strong>
-            <p><a href="tel:35679552176">Call me at (+ 356) 79552176</a></p>
-            <br>
-            <p><a href="https://wa.me/35679552176?text=Hi%20Orlando!%20I%20saw%20your%20photography%20website%20and%20I’d%20love%20to%20book%20an%20event%20session.">or text me at (+ 356) 79552176</a></p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <span class="icon">📍</span>
-          <div>
-            <strong>Location</strong>
-            <p>Malta</p>
-          </div>
-        </div>
+  <section class="portfolio">
+    <div class="section-header">
+      <h2>Recent Events</h2>
+      <p>A quick look at event moments captured for brands, private clients, and organizations in Malta.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let img of portfolioImages; let i = index">
+        <img
+          [ngSrc]="img.src"
+          [alt]="img.alt"
+          fill
+          [priority]="i < 2"
+          class="gallery-img"
+        >
       </div>
-
-      <!--<div class="contact-form">
-        <form>
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" placeholder="Your name" />
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="your@email.com" />
-          </div>
-          <div class="form-group">
-            <label>Event Date</label>
-            <input type="date" />
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea rows="4" placeholder="Tell us about your event..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-      </div>-->
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="pricing">
+    <div class="section-header">
+      <h2>Event Packages</h2>
+      <p>Professional options with clear deliverables and flexible upgrades.</p>
+    </div>
+
+    <div class="pricing-cards">
+      <div class="card" *ngFor="let pkg of packages" [class.highlight]="pkg.isPopular">
+        <div class="card-tag" *ngIf="pkg.isPopular">Most popular</div>
+        <h3>{{ pkg.title }}</h3>
+        <p class="audience">{{ pkg.shortDescription }}</p>
+        <div class="price">
+          <span class="currency">Starting from</span>
+          <span class="amount">{{ pkg.startingFrom }}</span>
+        </div>
+        <p class="duration"><i class="icon-clock"></i> {{ pkg.duration }}</p>
+
+        <ul class="features">
+          <li *ngFor="let item of pkg.includes">
+            <span class="check">✓</span> {{ item }}
+          </li>
+        </ul>
+
+        <p class="exclusion"><strong>Ideal for:</strong> {{ pkg.idealClient }}</p>
+        <p class="exclusion"><strong>Delivery:</strong> {{ pkg.delivery }}</p>
+        <a
+          class="btn-outline"
+          [href]="eventBookingUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ pkg.cta }}
+        </a>
+        <ng-template #scrollCta>
+          <button class="btn-outline" (click)="scrollToBooking()">{{ pkg.cta }}</button>
+        </ng-template>
+      </div>
+    </div>
+  </section>
+
+  <section class="addons">
+    <h3>Extras & Add-ons</h3>
+    <div class="addon-grid">
+      <div class="addon-item" *ngFor="let item of addOns">
+        <div class="addon-info">
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.description }}</p>
+        </div>
+        <div class="addon-price">{{ item.startingFrom }}</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="booking">
+    <div class="booking-content">
+      <h2>Ready to plan your event coverage?</h2>
+      <p>Share your event date, location, and package preferences to receive availability and a custom quote.</p>
+      <div class="hero-buttons">
+        <a
+          class="btn-primary"
+          href="https://wa.me/35679552176?text=Hi%20Orlando!%20I%E2%80%99d%20like%20to%20request%20availability%20for%20event%20coverage."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <app-icon name="whatsapp" aria-hidden="true" />
+          Request availability
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

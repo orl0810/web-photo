@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/orlando-photo-web",
+            "outputPath": "dist/orlando-photo-web/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -42,8 +42,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "525kb",
+                  "maximumError": "650kb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -110,6 +110,72 @@
             },
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/orlando-photo-web/server",
+            "main": "src/server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "orlando-photo-web:build:development",
+              "serverTarget": "orlando-photo-web:server:development"
+            },
+            "production": {
+              "browserTarget": "orlando-photo-web:build:production",
+              "serverTarget": "orlando-photo-web:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "orlando-photo-web:build:production",
+              "serverTarget": "orlando-photo-web:server:production"
+            },
+            "development": {
+              "browserTarget": "orlando-photo-web:build:development",
+              "serverTarget": "orlando-photo-web:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

@@ -46,7 +46,21 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Vercel
+.vercel
+
 # Firebase
 .firebase
 *-debug.log
 .runtimeconfig.json
+
+# Blog (local-only, not for production yet)
+src/app/blog/
+
+# Portfolio images hosted on Cloudflare R2
+src/assets/home-gallery/
+src/assets/events/
+src/assets/photo-sessions/
+
+# Vercel
+.vercel

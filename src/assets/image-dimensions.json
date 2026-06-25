@@ -1,0 +1,1528 @@
+{
+  "home-gallery": {
+    "featured-01-session-portrait-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-01-session-portrait-malta-400.webp",
+        "1200": "featured-01-session-portrait-malta-1200.webp"
+      }
+    },
+    "featured-02-session-portrait-malta.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "featured-02-session-portrait-malta-400.webp",
+        "1200": "featured-02-session-portrait-malta-1200.webp"
+      }
+    },
+    "featured-03-session-portrait-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-03-session-portrait-malta-400.webp",
+        "1200": "featured-03-session-portrait-malta-1200.webp"
+      }
+    },
+    "featured-04-session-portrait-malta.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "featured-04-session-portrait-malta-400.webp",
+        "1200": "featured-04-session-portrait-malta-1200.webp"
+      }
+    },
+    "featured-05-session-portrait-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-05-session-portrait-malta-400.webp",
+        "1200": "featured-05-session-portrait-malta-1200.webp"
+      }
+    },
+    "featured-06-session-portrait-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-06-session-portrait-malta-400.webp",
+        "1200": "featured-06-session-portrait-malta-1200.webp"
+      }
+    },
+    "featured-07-session-portrait-malta.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "featured-07-session-portrait-malta-400.webp",
+        "1200": "featured-07-session-portrait-malta-1200.webp"
+      }
+    },
+    "featured-08-session-portrait-malta.webp": {
+      "width": 2624,
+      "height": 3936,
+      "variants": {
+        "400": "featured-08-session-portrait-malta-400.webp",
+        "1200": "featured-08-session-portrait-malta-1200.webp"
+      }
+    },
+    "featured-09-session-portrait-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-09-session-portrait-malta-400.webp",
+        "1200": "featured-09-session-portrait-malta-1200.webp"
+      }
+    },
+    "featured-10-antonella-portrait-sliema-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-10-antonella-portrait-sliema-malta-400.webp",
+        "1200": "featured-10-antonella-portrait-sliema-malta-1200.webp"
+      }
+    },
+    "featured-11-emilya-portrait-dingli-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-11-emilya-portrait-dingli-malta-400.webp",
+        "1200": "featured-11-emilya-portrait-dingli-malta-1200.webp"
+      }
+    },
+    "featured-12-martina-portrait-st-julians-malta.webp": {
+      "width": 3835,
+      "height": 5753,
+      "variants": {
+        "400": "featured-12-martina-portrait-st-julians-malta-400.webp",
+        "1200": "featured-12-martina-portrait-st-julians-malta-1200.webp"
+      }
+    },
+    "featured-13-excelencia-portrait-sliema-malta.webp": {
+      "width": 3958,
+      "height": 5937,
+      "variants": {
+        "400": "featured-13-excelencia-portrait-sliema-malta-400.webp",
+        "1200": "featured-13-excelencia-portrait-sliema-malta-1200.webp"
+      }
+    },
+    "featured-14-aru-portrait-valletta-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-14-aru-portrait-valletta-malta-400.webp",
+        "1200": "featured-14-aru-portrait-valletta-malta-1200.webp"
+      }
+    },
+    "featured-15-brihanna-portrait-st-julians-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-15-brihanna-portrait-st-julians-malta-400.webp",
+        "1200": "featured-15-brihanna-portrait-st-julians-malta-1200.webp"
+      }
+    },
+    "featured-16-andrea-portrait-golden-bay-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-16-andrea-portrait-golden-bay-malta-400.webp",
+        "1200": "featured-16-andrea-portrait-golden-bay-malta-1200.webp"
+      }
+    },
+    "featured-17-sofia-portrait-birgu-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-17-sofia-portrait-birgu-malta-400.webp",
+        "1200": "featured-17-sofia-portrait-birgu-malta-1200.webp"
+      }
+    },
+    "featured-18-masha-portrait-sliema-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-18-masha-portrait-sliema-malta-400.webp",
+        "1200": "featured-18-masha-portrait-sliema-malta-1200.webp"
+      }
+    },
+    "featured-19-sofia-portrait-sliema-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-19-sofia-portrait-sliema-malta-400.webp",
+        "1200": "featured-19-sofia-portrait-sliema-malta-1200.webp"
+      }
+    },
+    "featured-20-uchenna-portrait-valletta-malta.webp": {
+      "width": 2624,
+      "height": 3936,
+      "variants": {
+        "400": "featured-20-uchenna-portrait-valletta-malta-400.webp",
+        "1200": "featured-20-uchenna-portrait-valletta-malta-1200.webp"
+      }
+    },
+    "featured-21-jessica-portrait-marsaskala-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-21-jessica-portrait-marsaskala-malta-400.webp",
+        "1200": "featured-21-jessica-portrait-marsaskala-malta-1200.webp"
+      }
+    },
+    "featured-22-shir-portrait-luqa-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-22-shir-portrait-luqa-malta-400.webp",
+        "1200": "featured-22-shir-portrait-luqa-malta-1200.webp"
+      }
+    },
+    "featured-23-jelena-portrait-valletta-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-23-jelena-portrait-valletta-malta-400.webp",
+        "1200": "featured-23-jelena-portrait-valletta-malta-1200.webp"
+      }
+    },
+    "featured-24-maria-portrait-sliema-malta.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-24-maria-portrait-sliema-malta-400.webp",
+        "1200": "featured-24-maria-portrait-sliema-malta-1200.webp"
+      }
+    },
+    "featured-25-paulina-portrait-valletta-malta.webp": {
+      "width": 3927,
+      "height": 5890,
+      "variants": {
+        "400": "featured-25-paulina-portrait-valletta-malta-400.webp",
+        "1200": "featured-25-paulina-portrait-valletta-malta-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm0015.webp": {
+      "width": 3935,
+      "height": 5903,
+      "variants": {
+        "400": "session-portrait-malta-jcm0015-400.webp",
+        "1200": "session-portrait-malta-jcm0015-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm0700.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm0700-400.webp",
+        "1200": "session-portrait-malta-jcm0700-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm0787.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm0787-400.webp",
+        "1200": "session-portrait-malta-jcm0787-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1028.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm1028-400.webp",
+        "1200": "session-portrait-malta-jcm1028-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1290.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm1290-400.webp",
+        "1200": "session-portrait-malta-jcm1290-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1432.webp": {
+      "width": 3913,
+      "height": 5870,
+      "variants": {
+        "400": "session-portrait-malta-jcm1432-400.webp",
+        "1200": "session-portrait-malta-jcm1432-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1610.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm1610-400.webp",
+        "1200": "session-portrait-malta-jcm1610-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1855.webp": {
+      "width": 3995,
+      "height": 5992,
+      "variants": {
+        "400": "session-portrait-malta-jcm1855-400.webp",
+        "1200": "session-portrait-malta-jcm1855-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3136.webp": {
+      "width": 3917,
+      "height": 5875,
+      "variants": {
+        "400": "session-portrait-malta-jcm3136-400.webp",
+        "1200": "session-portrait-malta-jcm3136-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3433.webp": {
+      "width": 3565,
+      "height": 5347,
+      "variants": {
+        "400": "session-portrait-malta-jcm3433-400.webp",
+        "1200": "session-portrait-malta-jcm3433-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3494.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3494-400.webp",
+        "1200": "session-portrait-malta-jcm3494-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3651.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3651-400.webp",
+        "1200": "session-portrait-malta-jcm3651-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3882.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3882-400.webp",
+        "1200": "session-portrait-malta-jcm3882-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm5969.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm5969-400.webp",
+        "1200": "session-portrait-malta-jcm5969-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm7160.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm7160-400.webp",
+        "1200": "session-portrait-malta-jcm7160-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm7509.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm7509-400.webp",
+        "1200": "session-portrait-malta-jcm7509-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm8820.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm8820-400.webp",
+        "1200": "session-portrait-malta-jcm8820-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm8916.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm8916-400.webp",
+        "1200": "session-portrait-malta-jcm8916-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm9204.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm9204-400.webp",
+        "1200": "session-portrait-malta-jcm9204-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm9728.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm9728-400.webp",
+        "1200": "session-portrait-malta-jcm9728-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm9760.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm9760-400.webp",
+        "1200": "session-portrait-malta-jcm9760-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm9900.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm9900-400.webp",
+        "1200": "session-portrait-malta-jcm9900-1200.webp"
+      }
+    }
+  },
+  "photo-sessions": {
+    "session-portrait-malta-jcm0103.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm0103-400.webp",
+        "1200": "session-portrait-malta-jcm0103-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm0224.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm0224-400.webp",
+        "1200": "session-portrait-malta-jcm0224-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm0792.webp": {
+      "width": 3852,
+      "height": 5778,
+      "variants": {
+        "400": "session-portrait-malta-jcm0792-400.webp",
+        "1200": "session-portrait-malta-jcm0792-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm0825.webp": {
+      "width": 3895,
+      "height": 5842,
+      "variants": {
+        "400": "session-portrait-malta-jcm0825-400.webp",
+        "1200": "session-portrait-malta-jcm0825-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm0843.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm0843-400.webp",
+        "1200": "session-portrait-malta-jcm0843-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm0844.webp": {
+      "width": 4000,
+      "height": 2408,
+      "variants": {
+        "400": "session-portrait-malta-jcm0844-400.webp",
+        "1200": "session-portrait-malta-jcm0844-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm0976.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm0976-400.webp",
+        "1200": "session-portrait-malta-jcm0976-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm0985.webp": {
+      "width": 5837,
+      "height": 3891,
+      "variants": {
+        "400": "session-portrait-malta-jcm0985-400.webp",
+        "1200": "session-portrait-malta-jcm0985-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1019.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm1019-400.webp",
+        "1200": "session-portrait-malta-jcm1019-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1144.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm1144-400.webp",
+        "1200": "session-portrait-malta-jcm1144-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1208.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm1208-400.webp",
+        "1200": "session-portrait-malta-jcm1208-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1279.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm1279-400.webp",
+        "1200": "session-portrait-malta-jcm1279-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1350.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm1350-400.webp",
+        "1200": "session-portrait-malta-jcm1350-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1385.webp": {
+      "width": 3055,
+      "height": 5348,
+      "variants": {
+        "400": "session-portrait-malta-jcm1385-400.webp",
+        "1200": "session-portrait-malta-jcm1385-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm1547.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm1547-400.webp",
+        "1200": "session-portrait-malta-jcm1547-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm2945.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm2945-400.webp",
+        "1200": "session-portrait-malta-jcm2945-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm2946.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm2946-400.webp",
+        "1200": "session-portrait-malta-jcm2946-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm2953.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "session-portrait-malta-jcm2953-400.webp",
+        "1200": "session-portrait-malta-jcm2953-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm2973.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm2973-400.webp",
+        "1200": "session-portrait-malta-jcm2973-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm2983.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "session-portrait-malta-jcm2983-400.webp",
+        "1200": "session-portrait-malta-jcm2983-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3000.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3000-400.webp",
+        "1200": "session-portrait-malta-jcm3000-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3059.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3059-400.webp",
+        "1200": "session-portrait-malta-jcm3059-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3075.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3075-400.webp",
+        "1200": "session-portrait-malta-jcm3075-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3087.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3087-400.webp",
+        "1200": "session-portrait-malta-jcm3087-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3101.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3101-400.webp",
+        "1200": "session-portrait-malta-jcm3101-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3142.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3142-400.webp",
+        "1200": "session-portrait-malta-jcm3142-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3252.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3252-400.webp",
+        "1200": "session-portrait-malta-jcm3252-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3359.webp": {
+      "width": 3341,
+      "height": 4982,
+      "variants": {
+        "400": "session-portrait-malta-jcm3359-400.webp",
+        "1200": "session-portrait-malta-jcm3359-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3428.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3428-400.webp",
+        "1200": "session-portrait-malta-jcm3428-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3476.webp": {
+      "width": 3200,
+      "height": 5029,
+      "variants": {
+        "400": "session-portrait-malta-jcm3476-400.webp",
+        "1200": "session-portrait-malta-jcm3476-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3491.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3491-400.webp",
+        "1200": "session-portrait-malta-jcm3491-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm3561.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm3561-400.webp",
+        "1200": "session-portrait-malta-jcm3561-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm5248.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "session-portrait-malta-jcm5248-400.webp",
+        "1200": "session-portrait-malta-jcm5248-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm5256.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm5256-400.webp",
+        "1200": "session-portrait-malta-jcm5256-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm5262.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm5262-400.webp",
+        "1200": "session-portrait-malta-jcm5262-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm7072.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm7072-400.webp",
+        "1200": "session-portrait-malta-jcm7072-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm7324.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm7324-400.webp",
+        "1200": "session-portrait-malta-jcm7324-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm7451.webp": {
+      "width": 3927,
+      "height": 5890,
+      "variants": {
+        "400": "session-portrait-malta-jcm7451-400.webp",
+        "1200": "session-portrait-malta-jcm7451-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm9236.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm9236-400.webp",
+        "1200": "session-portrait-malta-jcm9236-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm9279.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm9279-400.webp",
+        "1200": "session-portrait-malta-jcm9279-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm9349.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm9349-400.webp",
+        "1200": "session-portrait-malta-jcm9349-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm9360.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm9360-400.webp",
+        "1200": "session-portrait-malta-jcm9360-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm9446.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm9446-400.webp",
+        "1200": "session-portrait-malta-jcm9446-1200.webp"
+      }
+    },
+    "session-portrait-malta-jcm9996.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "session-portrait-malta-jcm9996-400.webp",
+        "1200": "session-portrait-malta-jcm9996-1200.webp"
+      }
+    }
+  },
+  "events": {
+    "event-malta-jcm0016.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm0016-400.webp",
+        "1200": "event-malta-jcm0016-1200.webp"
+      }
+    },
+    "event-malta-jcm0028.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0028-400.webp",
+        "1200": "event-malta-jcm0028-1200.webp"
+      }
+    },
+    "event-malta-jcm0076.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0076-400.webp",
+        "1200": "event-malta-jcm0076-1200.webp"
+      }
+    },
+    "event-malta-jcm0087.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm0087-400.webp",
+        "1200": "event-malta-jcm0087-1200.webp"
+      }
+    },
+    "event-malta-jcm0096.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0096-400.webp",
+        "1200": "event-malta-jcm0096-1200.webp"
+      }
+    },
+    "event-malta-jcm0130.webp": {
+      "width": 5094,
+      "height": 3437,
+      "variants": {
+        "400": "event-malta-jcm0130-400.webp",
+        "1200": "event-malta-jcm0130-1200.webp"
+      }
+    },
+    "event-malta-jcm0178.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm0178-400.webp",
+        "1200": "event-malta-jcm0178-1200.webp"
+      }
+    },
+    "event-malta-jcm0187.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm0187-400.webp",
+        "1200": "event-malta-jcm0187-1200.webp"
+      }
+    },
+    "event-malta-jcm0199.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0199-400.webp",
+        "1200": "event-malta-jcm0199-1200.webp"
+      }
+    },
+    "event-malta-jcm0226.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0226-400.webp",
+        "1200": "event-malta-jcm0226-1200.webp"
+      }
+    },
+    "event-malta-jcm0238.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0238-400.webp",
+        "1200": "event-malta-jcm0238-1200.webp"
+      }
+    },
+    "event-malta-jcm0244.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0244-400.webp",
+        "1200": "event-malta-jcm0244-1200.webp"
+      }
+    },
+    "event-malta-jcm0390.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0390-400.webp",
+        "1200": "event-malta-jcm0390-1200.webp"
+      }
+    },
+    "event-malta-jcm0404.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0404-400.webp",
+        "1200": "event-malta-jcm0404-1200.webp"
+      }
+    },
+    "event-malta-jcm0420.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0420-400.webp",
+        "1200": "event-malta-jcm0420-1200.webp"
+      }
+    },
+    "event-malta-jcm0429.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm0429-400.webp",
+        "1200": "event-malta-jcm0429-1200.webp"
+      }
+    },
+    "event-malta-jcm0445.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm0445-400.webp",
+        "1200": "event-malta-jcm0445-1200.webp"
+      }
+    },
+    "event-malta-jcm0449.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm0449-400.webp",
+        "1200": "event-malta-jcm0449-1200.webp"
+      }
+    },
+    "event-malta-jcm0539.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0539-400.webp",
+        "1200": "event-malta-jcm0539-1200.webp"
+      }
+    },
+    "event-malta-jcm0570.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0570-400.webp",
+        "1200": "event-malta-jcm0570-1200.webp"
+      }
+    },
+    "event-malta-jcm0591.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm0591-400.webp",
+        "1200": "event-malta-jcm0591-1200.webp"
+      }
+    },
+    "event-malta-jcm0644.webp": {
+      "width": 5846,
+      "height": 3897,
+      "variants": {
+        "400": "event-malta-jcm0644-400.webp",
+        "1200": "event-malta-jcm0644-1200.webp"
+      }
+    },
+    "event-malta-jcm0729.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm0729-400.webp",
+        "1200": "event-malta-jcm0729-1200.webp"
+      }
+    },
+    "event-malta-jcm0765.webp": {
+      "width": 3737,
+      "height": 5605,
+      "variants": {
+        "400": "event-malta-jcm0765-400.webp",
+        "1200": "event-malta-jcm0765-1200.webp"
+      }
+    },
+    "event-malta-jcm2109.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm2109-400.webp",
+        "1200": "event-malta-jcm2109-1200.webp"
+      }
+    },
+    "event-malta-jcm2121.webp": {
+      "width": 5781,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm2121-400.webp",
+        "1200": "event-malta-jcm2121-1200.webp"
+      }
+    },
+    "event-malta-jcm2170.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm2170-400.webp",
+        "1200": "event-malta-jcm2170-1200.webp"
+      }
+    },
+    "event-malta-jcm2199.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm2199-400.webp",
+        "1200": "event-malta-jcm2199-1200.webp"
+      }
+    },
+    "event-malta-jcm2200.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm2200-400.webp",
+        "1200": "event-malta-jcm2200-1200.webp"
+      }
+    },
+    "event-malta-jcm2259.webp": {
+      "width": 3555,
+      "height": 5816,
+      "variants": {
+        "400": "event-malta-jcm2259-400.webp",
+        "1200": "event-malta-jcm2259-1200.webp"
+      }
+    },
+    "event-malta-jcm2285.webp": {
+      "width": 5800,
+      "height": 3867,
+      "variants": {
+        "400": "event-malta-jcm2285-400.webp",
+        "1200": "event-malta-jcm2285-1200.webp"
+      }
+    },
+    "event-malta-jcm2287.webp": {
+      "width": 3835,
+      "height": 5752,
+      "variants": {
+        "400": "event-malta-jcm2287-400.webp",
+        "1200": "event-malta-jcm2287-1200.webp"
+      }
+    },
+    "event-malta-jcm2305.webp": {
+      "width": 3506,
+      "height": 5689,
+      "variants": {
+        "400": "event-malta-jcm2305-400.webp",
+        "1200": "event-malta-jcm2305-1200.webp"
+      }
+    },
+    "event-malta-jcm2345.webp": {
+      "width": 3991,
+      "height": 5986,
+      "variants": {
+        "400": "event-malta-jcm2345-400.webp",
+        "1200": "event-malta-jcm2345-1200.webp"
+      }
+    },
+    "event-malta-jcm2384.webp": {
+      "width": 3936,
+      "height": 2624,
+      "variants": {
+        "400": "event-malta-jcm2384-400.webp",
+        "1200": "event-malta-jcm2384-1200.webp"
+      }
+    },
+    "event-malta-jcm2412.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm2412-400.webp",
+        "1200": "event-malta-jcm2412-1200.webp"
+      }
+    },
+    "event-malta-jcm2422.webp": {
+      "width": 5908,
+      "height": 3939,
+      "variants": {
+        "400": "event-malta-jcm2422-400.webp",
+        "1200": "event-malta-jcm2422-1200.webp"
+      }
+    },
+    "event-malta-jcm2519.webp": {
+      "width": 3644,
+      "height": 5948,
+      "variants": {
+        "400": "event-malta-jcm2519-400.webp",
+        "1200": "event-malta-jcm2519-1200.webp"
+      }
+    },
+    "event-malta-jcm2533.webp": {
+      "width": 5577,
+      "height": 3656,
+      "variants": {
+        "400": "event-malta-jcm2533-400.webp",
+        "1200": "event-malta-jcm2533-1200.webp"
+      }
+    },
+    "event-malta-jcm2742.webp": {
+      "width": 3725,
+      "height": 5587,
+      "variants": {
+        "400": "event-malta-jcm2742-400.webp",
+        "1200": "event-malta-jcm2742-1200.webp"
+      }
+    },
+    "event-malta-jcm2817.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm2817-400.webp",
+        "1200": "event-malta-jcm2817-1200.webp"
+      }
+    },
+    "event-malta-jcm3366.webp": {
+      "width": 3936,
+      "height": 2624,
+      "variants": {
+        "400": "event-malta-jcm3366-400.webp",
+        "1200": "event-malta-jcm3366-1200.webp"
+      }
+    },
+    "event-malta-jcm6735.webp": {
+      "width": 5494,
+      "height": 3663,
+      "variants": {
+        "400": "event-malta-jcm6735-400.webp",
+        "1200": "event-malta-jcm6735-1200.webp"
+      }
+    },
+    "event-malta-jcm6738.webp": {
+      "width": 5895,
+      "height": 3526,
+      "variants": {
+        "400": "event-malta-jcm6738-400.webp",
+        "1200": "event-malta-jcm6738-1200.webp"
+      }
+    },
+    "event-malta-jcm6745.webp": {
+      "width": 5928,
+      "height": 3952,
+      "variants": {
+        "400": "event-malta-jcm6745-400.webp",
+        "1200": "event-malta-jcm6745-1200.webp"
+      }
+    },
+    "event-malta-jcm6821.webp": {
+      "width": 5932,
+      "height": 3955,
+      "variants": {
+        "400": "event-malta-jcm6821-400.webp",
+        "1200": "event-malta-jcm6821-1200.webp"
+      }
+    },
+    "event-malta-jcm6824.webp": {
+      "width": 2847,
+      "height": 5693,
+      "variants": {
+        "400": "event-malta-jcm6824-400.webp",
+        "1200": "event-malta-jcm6824-1200.webp"
+      }
+    },
+    "event-malta-jcm6941.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm6941-400.webp",
+        "1200": "event-malta-jcm6941-1200.webp"
+      }
+    },
+    "event-malta-jcm7025.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm7025-400.webp",
+        "1200": "event-malta-jcm7025-1200.webp"
+      }
+    },
+    "event-malta-jcm7149.webp": {
+      "width": 5391,
+      "height": 3359,
+      "variants": {
+        "400": "event-malta-jcm7149-400.webp",
+        "1200": "event-malta-jcm7149-1200.webp"
+      }
+    },
+    "event-malta-jcm7154.webp": {
+      "width": 5940,
+      "height": 3526,
+      "variants": {
+        "400": "event-malta-jcm7154-400.webp",
+        "1200": "event-malta-jcm7154-1200.webp"
+      }
+    },
+    "event-malta-jcm7164.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm7164-400.webp",
+        "1200": "event-malta-jcm7164-1200.webp"
+      }
+    },
+    "event-malta-jcm7269.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm7269-400.webp",
+        "1200": "event-malta-jcm7269-1200.webp"
+      }
+    },
+    "event-malta-jcm7477.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm7477-400.webp",
+        "1200": "event-malta-jcm7477-1200.webp"
+      }
+    },
+    "event-malta-jcm7744.webp": {
+      "width": 6000,
+      "height": 3483,
+      "variants": {
+        "400": "event-malta-jcm7744-400.webp",
+        "1200": "event-malta-jcm7744-1200.webp"
+      }
+    },
+    "event-malta-jcm7755.webp": {
+      "width": 6000,
+      "height": 3541,
+      "variants": {
+        "400": "event-malta-jcm7755-400.webp",
+        "1200": "event-malta-jcm7755-1200.webp"
+      }
+    },
+    "event-malta-jcm7910.webp": {
+      "width": 5758,
+      "height": 3838,
+      "variants": {
+        "400": "event-malta-jcm7910-400.webp",
+        "1200": "event-malta-jcm7910-1200.webp"
+      }
+    },
+    "event-malta-jcm7978.webp": {
+      "width": 6000,
+      "height": 3651,
+      "variants": {
+        "400": "event-malta-jcm7978-400.webp",
+        "1200": "event-malta-jcm7978-1200.webp"
+      }
+    },
+    "event-malta-jcm8056.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm8056-400.webp",
+        "1200": "event-malta-jcm8056-1200.webp"
+      }
+    },
+    "event-malta-jcm8071.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm8071-400.webp",
+        "1200": "event-malta-jcm8071-1200.webp"
+      }
+    },
+    "event-malta-jcm8919.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm8919-400.webp",
+        "1200": "event-malta-jcm8919-1200.webp"
+      }
+    },
+    "event-malta-jcm8938.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm8938-400.webp",
+        "1200": "event-malta-jcm8938-1200.webp"
+      }
+    },
+    "event-malta-jcm8948.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm8948-400.webp",
+        "1200": "event-malta-jcm8948-1200.webp"
+      }
+    },
+    "event-malta-jcm8954.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm8954-400.webp",
+        "1200": "event-malta-jcm8954-1200.webp"
+      }
+    },
+    "event-malta-jcm8972.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm8972-400.webp",
+        "1200": "event-malta-jcm8972-1200.webp"
+      }
+    },
+    "event-malta-jcm9009.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9009-400.webp",
+        "1200": "event-malta-jcm9009-1200.webp"
+      }
+    },
+    "event-malta-jcm9012.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9012-400.webp",
+        "1200": "event-malta-jcm9012-1200.webp"
+      }
+    },
+    "event-malta-jcm9019.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9019-400.webp",
+        "1200": "event-malta-jcm9019-1200.webp"
+      }
+    },
+    "event-malta-jcm9024.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9024-400.webp",
+        "1200": "event-malta-jcm9024-1200.webp"
+      }
+    },
+    "event-malta-jcm9081.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9081-400.webp",
+        "1200": "event-malta-jcm9081-1200.webp"
+      }
+    },
+    "event-malta-jcm9085.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9085-400.webp",
+        "1200": "event-malta-jcm9085-1200.webp"
+      }
+    },
+    "event-malta-jcm9096.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm9096-400.webp",
+        "1200": "event-malta-jcm9096-1200.webp"
+      }
+    },
+    "event-malta-jcm9109.webp": {
+      "width": 3703,
+      "height": 5389,
+      "variants": {
+        "400": "event-malta-jcm9109-400.webp",
+        "1200": "event-malta-jcm9109-1200.webp"
+      }
+    },
+    "event-malta-jcm9182.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9182-400.webp",
+        "1200": "event-malta-jcm9182-1200.webp"
+      }
+    },
+    "event-malta-jcm9187.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9187-400.webp",
+        "1200": "event-malta-jcm9187-1200.webp"
+      }
+    },
+    "event-malta-jcm9202.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9202-400.webp",
+        "1200": "event-malta-jcm9202-1200.webp"
+      }
+    },
+    "event-malta-jcm9205.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9205-400.webp",
+        "1200": "event-malta-jcm9205-1200.webp"
+      }
+    },
+    "event-malta-jcm9217.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9217-400.webp",
+        "1200": "event-malta-jcm9217-1200.webp"
+      }
+    },
+    "event-malta-jcm9223.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9223-400.webp",
+        "1200": "event-malta-jcm9223-1200.webp"
+      }
+    },
+    "event-malta-jcm9295.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9295-400.webp",
+        "1200": "event-malta-jcm9295-1200.webp"
+      }
+    },
+    "event-malta-jcm9323.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9323-400.webp",
+        "1200": "event-malta-jcm9323-1200.webp"
+      }
+    },
+    "event-malta-jcm9350.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9350-400.webp",
+        "1200": "event-malta-jcm9350-1200.webp"
+      }
+    },
+    "event-malta-jcm9353.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "event-malta-jcm9353-400.webp",
+        "1200": "event-malta-jcm9353-1200.webp"
+      }
+    },
+    "event-malta-jcm9379.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9379-400.webp",
+        "1200": "event-malta-jcm9379-1200.webp"
+      }
+    },
+    "event-malta-jcm9385.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "event-malta-jcm9385-400.webp",
+        "1200": "event-malta-jcm9385-1200.webp"
+      }
+    },
+    "featured-01-1x-promotional-model-trade-show-booth.webp": {
+      "width": 3931,
+      "height": 5897,
+      "variants": {
+        "400": "featured-01-1x-promotional-model-trade-show-booth-400.webp",
+        "1200": "featured-01-1x-promotional-model-trade-show-booth-1200.webp"
+      }
+    },
+    "featured-02-1x-affiliates-corporate-event-booth.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-02-1x-affiliates-corporate-event-booth-400.webp",
+        "1200": "featured-02-1x-affiliates-corporate-event-booth-1200.webp"
+      }
+    },
+    "featured-03-sbc-summit-malta-networking.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-03-sbc-summit-malta-networking-400.webp",
+        "1200": "featured-03-sbc-summit-malta-networking-1200.webp"
+      }
+    },
+    "featured-04-social-dance-salsa-event.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "featured-04-social-dance-salsa-event-400.webp",
+        "1200": "featured-04-social-dance-salsa-event-1200.webp"
+      }
+    },
+    "featured-05-bachata-social-dance-night.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "featured-05-bachata-social-dance-night-400.webp",
+        "1200": "featured-05-bachata-social-dance-night-1200.webp"
+      }
+    },
+    "featured-06-1x-illuminated-event-booth-signage.webp": {
+      "width": 3759,
+      "height": 5638,
+      "variants": {
+        "400": "featured-06-1x-illuminated-event-booth-signage-400.webp",
+        "1200": "featured-06-1x-illuminated-event-booth-signage-1200.webp"
+      }
+    },
+    "featured-07-branded-cocktail-garnishes-event-catering.webp": {
+      "width": 3623,
+      "height": 5792,
+      "variants": {
+        "400": "featured-07-branded-cocktail-garnishes-event-catering-400.webp",
+        "1200": "featured-07-branded-cocktail-garnishes-event-catering-1200.webp"
+      }
+    },
+    "featured-08-mixologist-cocktail-corporate-event.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-08-mixologist-cocktail-corporate-event-400.webp",
+        "1200": "featured-08-mixologist-cocktail-corporate-event-1200.webp"
+      }
+    },
+    "featured-09-igniite-ai-annual-day-award-ceremony.webp": {
+      "width": 3919,
+      "height": 5879,
+      "variants": {
+        "400": "featured-09-igniite-ai-annual-day-award-ceremony-400.webp",
+        "1200": "featured-09-igniite-ai-annual-day-award-ceremony-1200.webp"
+      }
+    },
+    "featured-10-corporate-celebration-dancing-guests.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "featured-10-corporate-celebration-dancing-guests-400.webp",
+        "1200": "featured-10-corporate-celebration-dancing-guests-1200.webp"
+      }
+    },
+    "featured-11-formal-wedding-table-setting.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "featured-11-formal-wedding-table-setting-400.webp",
+        "1200": "featured-11-formal-wedding-table-setting-1200.webp"
+      }
+    },
+    "featured-12-elite-moment-awards-winners.webp": {
+      "width": 4000,
+      "height": 6000,
+      "variants": {
+        "400": "featured-12-elite-moment-awards-winners-400.webp",
+        "1200": "featured-12-elite-moment-awards-winners-1200.webp"
+      }
+    },
+    "featured-13-elite-moment-trophy-celebration.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "featured-13-elite-moment-trophy-celebration-400.webp",
+        "1200": "featured-13-elite-moment-trophy-celebration-1200.webp"
+      }
+    },
+    "featured-14-corporate-awards-presentation.webp": {
+      "width": 6000,
+      "height": 4000,
+      "variants": {
+        "400": "featured-14-corporate-awards-presentation-400.webp",
+        "1200": "featured-14-corporate-awards-presentation-1200.webp"
+      }
+    }
+  }
+}

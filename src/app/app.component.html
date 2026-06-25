@@ -20,7 +20,6 @@
       </a>
       <a class="site-header-link" routerLink="/portfolio">Portfolio</a>
       <a class="site-header-link" routerLink="/suggestions">Suggestions</a>
-      <a class="site-header-link" routerLink="/blog">Blog</a>
     </nav>
   </header>
 
@@ -83,14 +82,6 @@
       >
         Suggestions
       </a>
-
-      <a
-        class="fab-nav-item"
-        routerLink="/blog"
-        (click)="closeMenu()"
-      >
-        Blog
-      </a>
     </nav>
 
 
@@ -104,13 +95,13 @@
     <ul class="site-footer-contact" aria-label="Contact information">
       <li>
         <a href="mailto:orlan9608@gmail.com">
-          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          <app-icon name="envelope" aria-hidden="true" />
           <span>orlan9608&#64;gmail.com</span>
         </a>
       </li>
       <li>
         <a href="tel:35679552176">
-          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <app-icon name="phone" aria-hidden="true" />
           <span>Call me at (+356) 79552176</span>
         </a>
       </li>
@@ -120,12 +111,12 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <app-icon name="whatsapp" aria-hidden="true" />
           <span>Message on WhatsApp</span>
         </a>
       </li>
       <li class="site-footer-location">
-        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <app-icon name="location" aria-hidden="true" />
         <span>Malta</span>
       </li>
     </ul>
@@ -134,10 +125,10 @@
       <p class="site-footer-copy">&copy; 2026 Orlando.photo. All rights reserved.</p>
       <div class="social-links">
         <a href="https://instagram.com/orland.photo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
+          <app-icon name="instagram" />
         </a>
         <a href="https://tiktok.com/@orlando.photo" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <i class="fab fa-tiktok"></i>
+          <app-icon name="tiktok" />
         </a>
       </div>
     </div>

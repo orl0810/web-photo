@@ -1,122 +1,288 @@
-/*
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
-import {FilterCriteria, Photo} from "../models/photo.model";
+import { Injectable, isDevMode } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { forkJoin, Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { GalleryCategory, Photo } from '../models/photo.model';
+import { resolveMediaUrl, resolveMediaVariantUrl } from '../utils/media-url';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class PhotoService {
-  // MOCK DATA - In a real app, this comes from an API
-  private mockPhotos: Photo[] = Array.from({ length: 100 }).map((_, i) => ({
-    id: i.toString(),
-    url: `https://picsum.photos/id/${i + 10}/800/600`, // Placeholder
-    thumbnailUrl: `https://picsum.photos/id/${i + 10}/400/300`,
-    title: `Photo ${i + 1}`,
-    date: new Date(2023, i % 12, (i % 28) + 1),
-    category: ['Portrait', 'Landscape', 'Street', 'Fashion'][i % 4] as any,
-    modelGender: i % 2 === 0 ? 'Female' : 'Male',
-    modelNationality: i % 3 === 0 ? 'USA' : 'France',
-    location: { lat: 48.8566, lng: 2.3522, name: i % 2 === 0 ? 'Paris' : 'New York' },
-    orientation: 'Landscape',
-    cameraModel: 'Canon R5',
-    tags: []
-  }));
-
-  getPhotos(page: number, pageSize: number, filters: FilterCriteria): Observable<Photo[]> {
-    // Simulate API delay
-    return of(this.applyFilters(this.mockPhotos, filters).slice(0, page * pageSize)).pipe(delay(300));
-  }
-
-  private applyFilters(photos: Photo[], filters: FilterCriteria): Photo[] {
-    return photos.filter(photo => {
-      let matches = true;
-
-      if (filters.category && photo.category !== filters.category) matches = false;
-      if (filters.gender && photo.modelGender !== filters.gender) matches = false;
-      if (filters.nationality && !photo.modelNationality?.toLowerCase().includes(filters.nationality.toLowerCase())) matches = false;
-      if (filters.locationName && !photo.location.name.toLowerCase().includes(filters.locationName.toLowerCase())) matches = false;
-      if (filters.orientation && photo.orientation !== filters.orientation) matches = false;
-
-      if (filters.startDate && new Date(filters.startDate) > photo.date) matches = false;
-      if (filters.endDate && new Date(filters.endDate) < photo.date) matches = false;
-
-      return matches;
-    });
-  }
+interface PhotoDataEntry {
+  'image-url': string;
+  'model-name'?: string;
+  location?: string;
+  date?: string;
 }
-*/
 
+interface GalleryPhotoDataEntry {
+  folder: SessionFolder;
+  file: string;
+  title: string;
+  alt: string;
+  location?: string;
+  featuredOrder?: number;
+}
 
-import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, query, where, orderBy } from '@angular/fire/firestore';
-import {forkJoin, from, Observable, of, switchMap} from 'rxjs';
-import {catchError, map} from 'rxjs/operators';
-import {FilterCriteria, Photo} from "../models/photo.model";
-import {getDownloadURL, ref, Storage as FireStorage} from "@angular/fire/storage";
+interface ImageDimensionEntry {
+  width: number;
+  height: number;
+  thumbnail?: string;
+  variants?: Record<string, string>;
+}
+
+type ImageDimensionsByFolder = Record<string, Record<string, ImageDimensionEntry>>;
+
+type SessionFolder = 'home-gallery' | 'photo-sessions';
+
+const MALTA_LOCATION = { lat: 35.9375, lng: 14.3754, name: 'Malta' };
+const DEFAULT_DIMENSIONS = { width: 4000, height: 6000 };
+
+const FEATURED_EVENT_FILES = [
+  'featured-01-1x-promotional-model-trade-show-booth.webp',
+  'featured-02-1x-affiliates-corporate-event-booth.webp',
+  'featured-03-sbc-summit-malta-networking.webp',
+  'featured-04-social-dance-salsa-event.webp',
+  'featured-05-bachata-social-dance-night.webp',
+  'featured-06-1x-illuminated-event-booth-signage.webp',
+  'featured-07-branded-cocktail-garnishes-event-catering.webp',
+  'featured-08-mixologist-cocktail-corporate-event.webp',
+  'featured-09-igniite-ai-annual-day-award-ceremony.webp',
+  'featured-10-corporate-celebration-dancing-guests.webp',
+  'featured-11-formal-wedding-table-setting.webp',
+  'featured-12-elite-moment-awards-winners.webp',
+  'featured-13-elite-moment-trophy-celebration.webp',
+  'featured-14-corporate-awards-presentation.webp'
+];
+
+function buildEventsFileList(dimensionsByFolder: ImageDimensionsByFolder): string[] {
+  const allFiles = Object.keys(dimensionsByFolder['events'] ?? {});
+  const featuredSet = new Set(FEATURED_EVENT_FILES);
+  const featured = FEATURED_EVENT_FILES.filter(file => allFiles.includes(file));
+  const other = allFiles.filter(file => !featuredSet.has(file)).sort((a, b) => a.localeCompare(b));
+  return [...featured, ...other];
+}
+
+function buildPhotoSessionsFileList(
+  dimensionsByFolder: ImageDimensionsByFolder,
+  featuredMetadata: GalleryPhotoDataEntry[],
+  galleryOverrides: Map<string, GalleryPhotoDataEntry>
+): GalleryPhotoDataEntry[] {
+  const featured = featuredMetadata
+    .filter(entry => entry.featuredOrder != null)
+    .sort((a, b) => (a.featuredOrder ?? 0) - (b.featuredOrder ?? 0));
+
+  const featuredKeys = new Set(featured.map(entry => `${entry.folder}/${entry.file}`));
+  const sessionFolders: SessionFolder[] = ['home-gallery', 'photo-sessions'];
+  const other: GalleryPhotoDataEntry[] = [];
+  const seenKeys = new Set(featuredKeys);
+
+  for (const folder of sessionFolders) {
+    for (const file of Object.keys(dimensionsByFolder[folder] ?? {}).sort((a, b) => a.localeCompare(b))) {
+      const key = `${folder}/${file}`;
+      if (seenKeys.has(key)) {
+        continue;
+      }
+
+      seenKeys.add(key);
+      other.push(
+        galleryOverrides.get(key) ?? {
+          folder,
+          file,
+          title: 'Portrait session in Malta',
+          alt: 'Portrait photo session in Malta',
+          location: 'Malta'
+        }
+      );
+    }
+  }
+
+  return [...featured, ...other];
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class PhotoService {
+  private photosByCategory: Record<GalleryCategory, Photo[]> | null = null;
 
-  constructor(
-    private firestore: Firestore,
-    private storage: FireStorage
-  ) {}
+  constructor(private http: HttpClient) {}
 
-  private photosCollection = collection(this.firestore, 'photos');
-
-  getPhotos(filters: FilterCriteria): Observable<Photo[]> {
-    const q = query(this.photosCollection, orderBy('time', 'desc'));
-
-    return collectionData(q, { idField: 'id' }).pipe(
-      switchMap((photos: any[]) => {
-
-        if (photos.length === 0) return of([]);
-
-        const photosRequests = photos.map(p => {
-          const imageRef = ref(this.storage, p.url);
-
-          return from(getDownloadURL(imageRef)).pipe(
-            map(downloadUrl => ({
-              ...p,
-              date: p.time ? p.time.toDate() : new Date(),
-              url: downloadUrl
-            })),
-            catchError(error => {
-              console.error(`Error cargando imagen ${p.id}:`, error);
-              return of({
-                ...p,
-                date: p.time?.toDate(),
-                gender: p.gender,
-                url: null // O una imagen por defecto
-              });
-            })
-          );
-        });
-
-        return forkJoin(photosRequests);
-      }),
-      map((photosWithUrls) => this.applyFilters(photosWithUrls as Photo[], filters))
+  getPhotos(page: number, pageSize: number, galleryCategory: GalleryCategory): Observable<Photo[]> {
+    return this.loadPhotosByCategory().pipe(
+      map(photosByCategory => photosByCategory[galleryCategory].slice(0, page * pageSize))
     );
   }
 
-  private applyFilters(photos: Photo[], filters: FilterCriteria): Photo[] {
-    return photos.filter(photo => {
-      let matches = true;
+  getPhotoPage(page: number, pageSize: number, galleryCategory: GalleryCategory): Observable<Photo[]> {
+    return this.loadPhotosByCategory().pipe(
+      map(photosByCategory => {
+        const start = (page - 1) * pageSize;
+        return photosByCategory[galleryCategory].slice(start, start + pageSize);
+      })
+    );
+  }
 
-      if (filters.category && photo.category !== filters.category) matches = false;
-      if (filters.gender && photo.gender !== filters.gender) matches = false;
-      if (filters.nationality && !photo.nationality?.toLowerCase().includes(filters.nationality.toLowerCase())) matches = false;
-      if (filters.locationName && !photo.location.name.toLowerCase().includes(filters.locationName.toLowerCase())) matches = false;
-      if (filters.orientation && photo.orientation !== filters.orientation) matches = false;
+  private loadPhotosByCategory(): Observable<Record<GalleryCategory, Photo[]>> {
+    if (this.photosByCategory) {
+      return of(this.photosByCategory);
+    }
 
-      if (filters.startDate && new Date(filters.startDate) > photo.date) matches = false;
-      if (filters.endDate && new Date(filters.endDate) < photo.date) matches = false;
+    return forkJoin({
+      metadata: this.http.get<PhotoDataEntry[]>('assets/home-gallery-photo-data.json').pipe(
+        catchError(() => of([]))
+      ),
+      eventsMetadata: this.http.get<GalleryPhotoDataEntry[]>('assets/events-photo-data.json').pipe(
+        catchError(() => of([]))
+      ),
+      photoSessionsFeatured: this.http.get<GalleryPhotoDataEntry[]>('assets/photo-sessions-featured-data.json').pipe(
+        catchError(() => of([]))
+      ),
+      photoSessionsMetadata: this.http.get<GalleryPhotoDataEntry[]>('assets/photo-sessions-gallery-data.json').pipe(
+        catchError(() => of([]))
+      ),
+      dimensions: this.http.get<ImageDimensionsByFolder>('assets/image-dimensions.json').pipe(
+        catchError(() => of({}))
+      )
+    }).pipe(
+      map(({ metadata, eventsMetadata, photoSessionsFeatured, photoSessionsMetadata, dimensions }) => {
+        const metadataByFile = new Map<string, PhotoDataEntry>();
+        for (const entry of metadata) {
+          const fileName = entry['image-url'].split('/').pop();
+          if (fileName) {
+            metadataByFile.set(fileName, entry);
+          }
+        }
 
-      return matches;
-    });
+        const eventsMetadataByFile = new Map<string, GalleryPhotoDataEntry>();
+        for (const entry of eventsMetadata) {
+          eventsMetadataByFile.set(entry.file, entry);
+        }
+
+        const photoSessionsMetadataByKey = new Map<string, GalleryPhotoDataEntry>();
+        for (const entry of photoSessionsMetadata) {
+          photoSessionsMetadataByKey.set(`${entry.folder}/${entry.file}`, entry);
+        }
+
+        const photoSessions = buildPhotoSessionsFileList(
+          dimensions,
+          photoSessionsFeatured,
+          photoSessionsMetadataByKey
+        ).map(entry =>
+          this.buildPhoto(
+            entry.folder,
+            entry.file,
+            'photo-sessions',
+            metadataByFile,
+            dimensions,
+            photoSessionsMetadataByKey.get(`${entry.folder}/${entry.file}`) ?? entry
+          )
+        );
+
+        const events = buildEventsFileList(dimensions).map(file =>
+          this.buildPhoto(
+            'events',
+            file,
+            'events',
+            metadataByFile,
+            dimensions,
+            eventsMetadataByFile.get(file)
+          )
+        );
+
+        this.photosByCategory = {
+          'photo-sessions': photoSessions,
+          events
+        };
+
+        return this.photosByCategory;
+      })
+    );
+  }
+
+  private buildPhoto(
+    folder: SessionFolder | 'events',
+    file: string,
+    galleryCategory: GalleryCategory,
+    metadataByFile: Map<string, PhotoDataEntry>,
+    dimensionsByFolder: ImageDimensionsByFolder,
+    galleryMeta?: GalleryPhotoDataEntry
+  ): Photo {
+    const meta = metadataByFile.get(file);
+    const url = resolveMediaUrl(`${folder}/${file}`);
+    const category = galleryCategory === 'events' ? 'Street' : 'Portrait';
+    const { width, height } = this.resolveDimensions(file, folder, dimensionsByFolder);
+    const thumbnailUrl = this.resolveThumbnailUrl(file, folder, url, dimensionsByFolder);
+
+    return {
+      id: `${folder}/${file}`,
+      url,
+      thumbnailUrl,
+      width,
+      height,
+      title: galleryMeta?.title ?? meta?.['model-name'] ?? this.titleFromFile(file),
+      alt: galleryMeta?.alt,
+      galleryCategory,
+      date: meta?.date ? new Date(meta.date) : new Date(),
+      category,
+      location: {
+        ...MALTA_LOCATION,
+        name: galleryMeta?.location ?? meta?.location ?? MALTA_LOCATION.name
+      },
+      orientation: this.resolveOrientation(width, height),
+      tags: [folder]
+    };
+  }
+
+  private resolveDimensions(
+    file: string,
+    folder: string,
+    dimensionsByFolder: ImageDimensionsByFolder
+  ): { width: number; height: number } {
+    const entry = dimensionsByFolder[folder]?.[file];
+
+    if (!entry) {
+      if (isDevMode()) {
+        console.warn(`Missing dimensions for ${folder}/${file}; using default ${DEFAULT_DIMENSIONS.width}x${DEFAULT_DIMENSIONS.height}`);
+      }
+      return DEFAULT_DIMENSIONS;
+    }
+
+    return { width: entry.width, height: entry.height };
+  }
+
+  private resolveThumbnailUrl(
+    file: string,
+    folder: string,
+    url: string,
+    dimensionsByFolder: ImageDimensionsByFolder
+  ): string {
+    const entry = dimensionsByFolder[folder]?.[file];
+
+    if (entry?.variants?.['400']) {
+      return resolveMediaUrl(`${folder}/variants/${entry.variants['400']}`);
+    }
+
+    if (entry?.thumbnail) {
+      return resolveMediaUrl(`${folder}/${entry.thumbnail}`);
+    }
+
+    return url;
+  }
+
+  private resolveOrientation(width: number, height: number): Photo['orientation'] {
+    if (width === height) {
+      return 'Square';
+    }
+    return width > height ? 'Landscape' : 'Portrait';
+  }
+
+  private titleFromFile(file: string): string {
+    const withoutExt = file.replace(/\.[^.]+$/, '');
+    if (withoutExt.startsWith('featured-') || withoutExt.startsWith('session-') || withoutExt.startsWith('event-')) {
+      return withoutExt
+        .replace(/^featured-\d+-/, '')
+        .replace(/^session-/, '')
+        .replace(/^event-malta-/, '')
+        .replace(/-/g, ' ');
+    }
+    return withoutExt.replace(/^_JCM/, 'JCM ');
   }
 }

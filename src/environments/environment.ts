@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  mediaBaseUrl: 'https://pub-15fe3553cec3422280617fefdc5f945c.r2.dev',
+  siteUrl: 'https://orlando-photo.com'
 };
 
 /*

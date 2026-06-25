@@ -1,0 +1,29 @@
+# Angular build cache (can be several GB locally)
+.angular
+
+# Installed on Vercel during build
+node_modules
+
+# Produced by the Vercel build step
+dist
+
+# Portfolio images hosted on Cloudflare R2 (not bundled in deploy)
+src/assets/home-gallery
+src/assets/events
+src/assets/photo-sessions
+
+# Local dev / tooling
+.cursor
+.firebase
+coverage
+tmp
+out-tsc
+bazel-out
+docs
+scripts
+*.log
+.DS_Store
+Thumbs.db
+
+# Git metadata
+.git

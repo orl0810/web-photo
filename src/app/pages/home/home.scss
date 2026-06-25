@@ -2,6 +2,17 @@
 @use 'mixins' as *;
 @use 'functions' as fn;
 
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
 .homepage-wrapper {
   width: 100%;
 
@@ -40,8 +51,6 @@
   .hero-slide {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
     opacity: 0;
     z-index: 0;
     transition: opacity 1.4s ease-in-out;
@@ -54,6 +63,18 @@
 
     @media (prefers-reduced-motion: reduce) {
       transition-duration: 0.01ms;
+    }
+
+    &__image {
+      object-fit: cover;
+    }
+
+    &__scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0) 40%);
     }
   }
 
@@ -106,6 +127,12 @@
     padding: clamp(5rem, 12vh, 8rem) $spacing-lg $spacing-lg;
     text-align: center;
     color: $color-white;
+
+    @include respond-below($breakpoint-md) {
+      justify-content: flex-start;
+      padding-top: clamp(5rem, 28vh, 8rem);
+      padding-bottom: $spacing-xl;
+    }
 
     .logo {
       width: min(240px, 65vw);
@@ -282,6 +309,10 @@
     gap: $spacing-lg;
     width: 100%;
     max-width: $container-max-width;
+
+    &--placeholder {
+      pointer-events: none;
+    }
   }
 
   .service-card {
@@ -294,6 +325,13 @@
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
       box-shadow 0.4s ease;
     background-color: $color-white;
+
+    &--placeholder {
+      cursor: default;
+      animation: skeleton-pulse 1.5s ease-in-out infinite;
+      background-color: $color-border;
+      box-shadow: none;
+    }
 
     &:hover,
     &:focus {
@@ -320,15 +358,18 @@
     .card-background {
       position: absolute;
       inset: 0;
-      background-size: cover;
-      background-position: center;
       transition: transform 0.8s ease, opacity 0.4s ease;
       z-index: 0;
+
+      &__image {
+        object-fit: cover;
+      }
 
       &::after {
         content: '';
         position: absolute;
         inset: 0;
+        z-index: 1;
         background: linear-gradient(to bottom, rgba($color-white, 0.8), rgba($color-white, 0.95));
       }
     }
@@ -446,6 +487,10 @@
     gap: $spacing-lg;
     width: 100%;
     max-width: $container-max-width;
+
+    &--placeholder {
+      pointer-events: none;
+    }
   }
 
   .client-card {
@@ -456,31 +501,45 @@
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
       box-shadow 0.4s ease;
 
+    &--placeholder {
+      pointer-events: none;
+      box-shadow: none;
+    }
+
     &:hover {
       transform: translateY(-8px);
       box-shadow: $shadow-card;
 
-      .client-card-image img {
+      .client-card-image .client-card__image {
         transform: scale(1.05);
       }
     }
   }
 
   .client-card-image {
+    position: relative;
     aspect-ratio: 4 / 3;
     overflow: hidden;
 
-    img {
-      width: 100%;
-      height: 100%;
+    &--skeleton {
+      animation: skeleton-pulse 1.5s ease-in-out infinite;
+      background-color: $color-border;
+    }
+
+    .client-card__image {
       object-fit: cover;
-      display: block;
       transition: transform 0.6s ease;
     }
   }
 
   .client-card-body {
     padding: $spacing-md $spacing-lg $spacing-lg;
+
+    &--skeleton {
+      min-height: 120px;
+      animation: skeleton-pulse 1.5s ease-in-out infinite;
+      background-color: rgba($color-border, 0.5);
+    }
 
     h3 {
       @include heading-serif(1.4rem);
@@ -648,14 +707,32 @@
     padding-top: $spacing-xl;
   }
 
+  .logo-link {
+    width: min(210px, 42vw);
+    height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 0.8rem;
+    border-radius: $radius-sm;
+    text-decoration: none;
+
+    &:focus-visible {
+      outline: 2px solid $color-accent;
+      outline-offset: 4px;
+    }
+  }
+
   .logo-item {
-    height: 40px;
-    width: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     opacity: 0.65;
     filter: grayscale(100%);
     transition: opacity $transition-base, filter $transition-base;
 
-    &:hover {
+    .logo-link:hover &,
+    .logo-link:focus-visible & {
       opacity: 1;
       filter: grayscale(0%);
     }

@@ -5,8 +5,18 @@
         *ngFor="let src of desktopHeroSlides; let i = index"
         class="hero-slide"
         [class.is-active]="heroSlideIndex === i"
-        [style.backgroundImage]="heroSlideBackground(src)"
-      ></div>
+      >
+        @if (shouldLoadHeroSlide(i)) {
+          <img
+            [ngSrc]="src"
+            fill
+            alt=""
+            class="hero-slide__image"
+            [priority]="isPriorityHeroSlide(i)"
+          />
+        }
+        <div class="hero-slide__scrim" aria-hidden="true"></div>
+      </div>
     </div>
 
     <div class="hero-slideshow hero-slideshow--mobile" aria-hidden="true">
@@ -14,8 +24,18 @@
         *ngFor="let src of mobileHeroSlides; let i = index"
         class="hero-slide"
         [class.is-active]="heroSlideIndex === i"
-        [style.backgroundImage]="heroSlideBackground(src)"
-      ></div>
+      >
+        @if (shouldLoadHeroSlide(i)) {
+          <img
+            [ngSrc]="src"
+            fill
+            alt=""
+            class="hero-slide__image"
+            [priority]="isPriorityHeroSlide(i)"
+          />
+        }
+        <div class="hero-slide__scrim" aria-hidden="true"></div>
+      </div>
     </div>
 
     <div class="hero-overlay">
@@ -27,7 +47,7 @@
         rel="noopener noreferrer"
         class="whatsapp-cta"
       >
-        <i class="fab fa-whatsapp"></i>
+        <app-icon name="whatsapp" />
         Book a Session!
       </a>
     </div>
@@ -56,57 +76,106 @@
 
   <section id="services" class="services-container">
     <header class="services-header">
-      <h2 class="subtitle">What We Do</h2>
-      <h1 class="title">Our Premium Services</h1>
+      <h2 class="subtitle">What I Do</h2>
+      <h1 class="title">My Premium Services</h1>
       <p class="description">
         Elevate your visual storytelling with our dedicated professional services.
       </p>
     </header>
 
-    <div class="services-grid">
-      <div
-        class="service-card"
-        *ngFor="let service of services"
-        (click)="navigateToService(service.route)"
-        tabindex="0"
-        (keydown.enter)="navigateToService(service.route)"
-      >
-        <div class="card-background" [style.backgroundImage]="'url(' + service.image + ')'"></div>
-
-        <div class="card-content">
-          <div class="icon-wrapper">
-            <span class="icon">{{ service.icon }}</span>
+    @defer (on viewport) {
+      <div class="services-grid">
+        <div
+          class="service-card"
+          *ngFor="let service of services"
+          (click)="navigateToService(service.route)"
+          tabindex="0"
+          (keydown.enter)="navigateToService(service.route)"
+        >
+          <div class="card-background">
+            <img [ngSrc]="service.image" fill [alt]="service.title" class="card-background__image" />
           </div>
-          <h3>{{ service.title }}</h3>
-          <p>{{ service.description }}</p>
-          <span class="cta-link">
-            Explore Service <span class="arrow">→</span>
-          </span>
+
+          <div class="card-content">
+            <div class="icon-wrapper">
+              <span class="icon">{{ service.icon }}</span>
+            </div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+            <span class="cta-link">
+              Explore Service <span class="arrow">→</span>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+    } @placeholder (minimum 200ms) {
+      <div class="services-grid services-grid--placeholder" aria-hidden="true">
+        <div class="service-card service-card--placeholder" *ngFor="let _ of services"></div>
+      </div>
+    }
   </section>
 
   <section id="clients" class="clients-container">
     <header class="clients-header">
-      <h2 class="subtitle">Our Clients</h2>
+      <h2 class="subtitle">My Clients</h2>
       <h1 class="title">Results You Can Expect</h1>
       <p class="description">
-        Every session is tailored to your story—here’s what you get when you hire us.
+        Every session is tailored to your story—here’s what you get when you hire me.
       </p>
     </header>
 
-    <div class="clients-grid">
-      <article class="client-card" *ngFor="let category of clientCategories">
-        <div class="client-card-image">
-          <img [src]="category.image" [alt]="category.title" loading="lazy" />
+    @defer (on viewport) {
+      <div class="clients-grid">
+        @for (category of clientCategories; track category.title; let i = $index) {
+          @if (shouldRenderClientImmediately(i)) {
+            <article class="client-card">
+              <div class="client-card-image">
+                <img
+                  [ngSrc]="category.image"
+                  fill
+                  [alt]="category.title"
+                  [priority]="isPriorityClientImage(i)"
+                  class="client-card__image"
+                />
+              </div>
+              <div class="client-card-body">
+                <h3>{{ category.title }}</h3>
+                <p>{{ category.description }}</p>
+              </div>
+            </article>
+          } @else {
+            @defer (on viewport) {
+              <article class="client-card">
+                <div class="client-card-image">
+                  <img
+                    [ngSrc]="category.image"
+                    fill
+                    [alt]="category.title"
+                    class="client-card__image"
+                  />
+                </div>
+                <div class="client-card-body">
+                  <h3>{{ category.title }}</h3>
+                  <p>{{ category.description }}</p>
+                </div>
+              </article>
+            } @placeholder (minimum 200ms) {
+              <div class="client-card client-card--placeholder" aria-hidden="true">
+                <div class="client-card-image client-card-image--skeleton"></div>
+                <div class="client-card-body client-card-body--skeleton"></div>
+              </div>
+            }
+          }
+        }
+      </div>
+    } @placeholder (minimum 200ms) {
+      <div class="clients-grid clients-grid--placeholder" aria-hidden="true">
+        <div class="client-card client-card--placeholder" *ngFor="let _ of clientCategories">
+          <div class="client-card-image client-card-image--skeleton"></div>
+          <div class="client-card-body client-card-body--skeleton"></div>
         </div>
-        <div class="client-card-body">
-          <h3>{{ category.title }}</h3>
-          <p>{{ category.description }}</p>
-        </div>
-      </article>
-    </div>
+      </div>
+    }
   </section>
 
   <section id="testimonials" class="testimonials-container">
@@ -133,10 +202,11 @@
 
       <div class="testimonial-author">
         <img
-          [src]="activeTestimonial.photo"
+          [ngSrc]="activeTestimonial.photo"
           [alt]="activeTestimonial.name"
+          width="80"
+          height="80"
           class="author-photo"
-          loading="lazy"
         />
         <div class="author-info">
           <p class="author-name">{{ activeTestimonial.name }}</p>
@@ -155,13 +225,65 @@
     </div>
 
     <div class="logos-row">
-      <img
-        *ngFor="let _ of [1, 2, 3, 4]"
-        src="assets/placeholder-logo.svg"
-        alt="Client logo placeholder"
-        class="logo-item"
-        loading="lazy"
-      />
+      <a
+        href="https://1xbet.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="logo-link"
+        aria-label="Visit 1xBet website"
+      >
+        <img
+          src="assets/company-logos/1xbet malta logo.png"
+          alt="1xBet Malta logo"
+          class="logo-item"
+          loading="lazy"
+        />
+      </a>
+
+      <a
+        href="https://bestgymsmalta.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="logo-link"
+        aria-label="Visit Best Gyms Malta website"
+      >
+        <img
+          src="assets/company-logos/Bests Gym Malta logo.png"
+          alt="Best Gyms Malta logo"
+          class="logo-item"
+          loading="lazy"
+        />
+      </a>
+
+      <a
+        href="https://www.instagram.com/labachatadanceschool/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="logo-link"
+        aria-label="Visit La Bachata Dance School Malta Instagram profile"
+      >
+        <img
+          src="assets/company-logos/la bachata dance school malta logo.png"
+          alt="La Bachata Dance School Malta logo"
+          class="logo-item"
+          loading="lazy"
+        />
+      </a>
+
+      <a
+        href="https://alphattk.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="logo-link"
+        aria-label="Visit Alpha Table Tennis Klabb website"
+      >
+        <img
+          src="assets/company-logos/alpha table tennis club malta logo.png"
+          alt="Alpha Table Tennis Klabb logo"
+          class="logo-item"
+          loading="lazy"
+        />
+      </a>
     </div>
   </section>
 
@@ -183,7 +305,7 @@
         class="contact-cta-button"
         aria-label="Message Orlando on WhatsApp"
       >
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <app-icon name="whatsapp" aria-hidden="true" />
         Chat on WhatsApp
       </a>
     </div>

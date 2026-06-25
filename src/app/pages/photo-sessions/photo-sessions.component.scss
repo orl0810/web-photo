@@ -13,7 +13,9 @@
   }
 
   min-height: 100vh;
-  background: url('../../../assets/home-gallery/_JCM8644-min.jpg') center/cover no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #333;
   position: relative;
   display: flex;
@@ -103,12 +105,15 @@
     }
 
     .price {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: $spacing-xs;
 
       .currency {
-        font-size: 1.5rem;
+        font-size: 1rem;
         vertical-align: top;
       }
     }

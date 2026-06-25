@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: orlando-photo-app
+    restart: unless-stopped
+    expose:
+      - "4000"
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - ALLOWED_HOSTS=${TRAEFIK_HOST},www.${TRAEFIK_HOST},orlando-photo-app,localhost
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.orlando-photo.rule=Host(`${TRAEFIK_HOST}`) || Host(`www.${TRAEFIK_HOST}`)"
+      - "traefik.http.routers.orlando-photo.entrypoints=websecure"
+      - "traefik.http.routers.orlando-photo.tls=true"
+      - "traefik.http.routers.orlando-photo.tls.certresolver=mytlschallenge"
+      - "traefik.http.services.orlando-photo.loadbalancer.server.port=4000"
+    networks:
+      - n8n_evoapi
+
+networks:
+  n8n_evoapi:
+    external: true

@@ -1,0 +1,210 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.landing-container {
+  color: $color-text;
+  overflow-x: hidden;
+}
+
+.hero {
+  @include respond-above($breakpoint-md) {
+    margin-top: calc(-1 * var(--site-header-height));
+  }
+
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $color-white;
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: $color-overlay;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+
+    h1 {
+      @include heading-serif(3.2rem);
+      margin-bottom: $spacing-sm;
+      color: $color-white;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: $spacing-lg;
+      font-weight: 300;
+      color: rgba($color-white, 0.92);
+    }
+  }
+}
+
+.portfolio {
+  padding: $spacing-section $container-padding;
+  background: $color-white;
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: $spacing-md;
+  }
+
+  .gallery-item {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border-radius: $radius-sm;
+
+    .gallery-img {
+      object-fit: cover;
+      @include image-zoom-hover;
+    }
+  }
+}
+
+.pricing {
+  padding: $spacing-section $container-padding;
+  background: $color-bg-light;
+
+  .pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    @include card-surface;
+    padding: $spacing-xl $spacing-lg;
+    width: 360px;
+    text-align: center;
+
+    &.highlight {
+      border: 1px solid $color-accent;
+    }
+
+    .audience {
+      color: $color-text-muted;
+      font-size: 0.94rem;
+      margin-bottom: $spacing-md;
+    }
+
+    .price {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: $spacing-xs;
+
+      .currency {
+        font-size: 0.9rem;
+        color: $color-text-muted;
+      }
+
+      .amount {
+        font-size: 2.25rem;
+        font-weight: 700;
+      }
+    }
+
+    .duration {
+      font-weight: 600;
+      margin-bottom: $spacing-lg;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin-bottom: $spacing-lg;
+
+      li {
+        margin-bottom: 0.8rem;
+        font-size: 0.95rem;
+
+        .check {
+          color: $color-accent;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .exclusion {
+      font-size: 0.86rem;
+      color: $color-text-light;
+      margin-bottom: 0.45rem;
+    }
+  }
+}
+
+.addons {
+  padding: 4rem $container-padding;
+  background: $color-white;
+  max-width: 900px;
+  margin: 0 auto;
+
+  h3 {
+    @include heading-serif(1.8rem);
+    margin-bottom: $spacing-lg;
+    text-align: center;
+  }
+
+  .addon-grid {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  .addon-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: $spacing-md;
+    border-bottom: 1px solid $color-border;
+  }
+
+  .addon-info p {
+    margin: 0;
+    color: $color-text-muted;
+    font-size: 0.9rem;
+  }
+}
+
+.booking {
+  padding: $spacing-section $container-padding;
+  background: $color-primary;
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+
+  .booking-content {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+
+    h2 {
+      @include heading-serif(2.5rem);
+      color: $color-white;
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      color: rgba($color-white, 0.9);
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  .hero-buttons a {
+    display: inline-block;
+    text-decoration: none;
+  }
+}

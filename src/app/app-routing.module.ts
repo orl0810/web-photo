@@ -1,39 +1,57 @@
 import { NgModule } from '@angular/core';
+import { IMAGE_LOADER } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ContractComponent } from './pages/contract/contract.component';
 import { HomeComponent } from './pages/home/home.component';
-import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
-import { MoviesComponent } from './pages/movies/movies.component';
-import { SuggestionsComponent } from './pages/suggestions/suggestions.component';
-import { PhotoGalleryComponent } from './shared/components/portfolio/portfolio.component';
-import {CorporateComponent} from "./pages/corporate/corporate.component";
-import {GalleryComponent} from "./shared/components/gallery/gallery.component";
+import { portfolioImageLoader } from './shared/utils/portfolio-image.loader';
 
 const ROUTES: Routes = [
-	{ path: '', pathMatch:'full', redirectTo: 'home' },
-	{ path: 'home', component: HomeComponent },
-  { path: 'portfolio', component: GalleryComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent },
+  {
+    path: 'portfolio',
+    loadComponent: () =>
+      import('./shared/components/gallery/gallery.component').then((m) => m.GalleryComponent),
+    providers: [{ provide: IMAGE_LOADER, useValue: portfolioImageLoader }],
+  },
   {
     path: 'services',
     children: [
       {
         path: 'photo-sessions',
-        loadComponent: () => import('./pages/photo-sessions/photo-sessions.component').then(m => m.PhotoSessionsComponent),
-        title: 'Photo Sessions'
+        loadComponent: () =>
+          import('./pages/photo-sessions/photo-sessions.component').then(
+            (m) => m.PhotoSessionsComponent,
+          ),
+        title: 'Photo Sessions',
       },
       {
         path: 'events',
-        loadComponent: () => import('./pages/corporate/corporate.component').then(m => m.CorporateComponent),
-        title: 'Event Coverage'
+        loadComponent: () =>
+          import('./pages/corporate/corporate.component').then((m) => m.CorporateComponent),
+        title: 'Event Coverage',
       },
-    ]
+      {
+        path: 'social-media',
+        loadComponent: () =>
+          import('./pages/social-media/social-media.component').then(
+            (m) => m.SocialMediaComponent,
+          ),
+        title: 'Social Media Content',
+      },
+    ],
   },
-
   { path: 'about', component: HomeComponent },
-  { path: 'contract', component: ContractComponent },
-  { path: 'suggestions', component: SuggestionsComponent },
-  //{ path: 'movie/:slug', component: MovieDetailComponent },
-  { path: '**', redirectTo: '' }
+  {
+    path: 'contract',
+    loadComponent: () =>
+      import('./pages/contract/contract.component').then((m) => m.ContractComponent),
+  },
+  {
+    path: 'suggestions',
+    loadComponent: () =>
+      import('./pages/suggestions/suggestions.component').then((m) => m.SuggestionsComponent),
+  },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
@@ -41,9 +59,9 @@ const ROUTES: Routes = [
     RouterModule.forRoot(ROUTES, {
       anchorScrolling: 'enabled',
       scrollPositionRestoration: 'enabled',
+      bindToComponentInputs: true,
     }),
-    GalleryComponent,
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,12 +1,19 @@
 <div class="landing-container">
 
   <!-- Hero Section -->
-  <header class="hero">
+  <header class="hero" [style.backgroundImage]="'url(' + heroBackgroundImage + ')'">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Capture The Moment</h1>
-      <p class="subtitle">Professional Photography for Travelers, Couples & Visionaries</p>
-      <button class="btn-primary" (click)="scrollToBooking()">Book Your Session</button>
+      <h1>Photo Sessions in Malta</h1>
+      <p class="subtitle">Warm, natural photography for tourists, couples, portraits, and lifestyle memories.</p>
+      <a
+        class="btn-primary"
+        href="https://cal.com/orlando-benavides-ybka62/photosession"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book your session
+      </a>
     </div>
   </header>
 
@@ -35,74 +42,71 @@
   <!-- Services / Pricing Section -->
   <section class="pricing">
     <div class="section-header">
-      <h2>Investment</h2>
-      <p>Choose the experience that fits your journey.</p>
+      <h2>Session Packages</h2>
+      <p>Clear options designed for visitors, couples, and personal portraits in Malta.</p>
     </div>
 
     <div class="pricing-cards">
       <div class="card" *ngFor="let pkg of packages" [class.highlight]="pkg.isPopular">
-        <div class="card-tag" *ngIf="pkg.isPopular">Best Value</div>
+        <div class="card-tag" *ngIf="pkg.isPopular">Most booked</div>
         <h3>{{ pkg.title }}</h3>
-        <p class="audience">{{ pkg.targetAudience }}</p>
+        <p class="audience">{{ pkg.shortDescription }}</p>
         <div class="price">
-          <span class="currency">{{ pkg.currency }}</span>
-          <span class="amount">{{ pkg.price }}</span>
+          <span class="currency">Starting from</span>
+          <span class="amount">{{ pkg.startingFrom }}</span>
         </div>
-        <p class="duration"><i class="icon-clock"></i> {{ pkg.duration }}</p>
+        <p class="duration"><i class="icon-clock"></i> {{ pkg.duration }} session</p>
 
         <ul class="features">
-          <li *ngFor="let feature of pkg.features">
-            <span class="check">✓</span> {{ feature }}
+          <li *ngFor="let item of pkg.includes">
+            <span class="check">✓</span> {{ item }}
           </li>
         </ul>
 
-        <p class="exclusion">* {{ pkg.excluded }}</p>
-        <button class="btn-outline" (click)="scrollToBooking()">Select Package</button>
+        <p class="exclusion"><strong>Ideal for:</strong> {{ pkg.idealClient }}</p>
+        <p class="exclusion"><strong>Delivery:</strong> {{ pkg.delivery }}</p>
+        <a
+          class="btn-outline"
+          href="https://cal.com/orlando-benavides-ybka62/photosession"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book your shoot
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Add-Ons Section -->
   <section class="addons">
-    <h3>Enhance Your Experience</h3>
+    <h3>Extras & Add-ons</h3>
     <div class="addon-grid">
       <div class="addon-item" *ngFor="let item of addOns">
         <div class="addon-info">
           <h4>{{ item.title }}</h4>
           <p>{{ item.description }}</p>
         </div>
-        <div class="addon-price">+€{{ item.price }}</div>
+        <div class="addon-price">{{ item.startingFrom }}</div>
       </div>
     </div>
   </section>
 
- <!--  Booking / Contact Section
   <section id="booking" class="booking">
     <div class="booking-content">
-      <h2>Ready to Shoot?</h2>
-      <p>Let's plan your perfect session. Fill out the form below to check availability.</p>
-
-      <form class="booking-form">
-        <div class="form-group">
-          <input type="text" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" placeholder="Email Address" required>
-        </div>
-        <div class="form-group">
-          <select>
-            <option value="" disabled selected>Select Package</option>
-            <option *ngFor="let pkg of packages" [value]="pkg.title">{{ pkg.title }}</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <textarea placeholder="Tell me about your vision or desired dates..." rows="4"></textarea>
-        </div>
-        <button type="submit" class="btn-primary full-width">Inquire Now</button>
-      </form>
+      <h2>Ready to book your session?</h2>
+      <p>Share your travel dates, preferred location, and package. I will send availability and next steps quickly.</p>
+      <div class="hero-buttons">
+        <a
+          class="btn-primary"
+          href="https://cal.com/orlando-benavides-ybka62/photosession"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book your session
+        </a>
+      </div>
     </div>
   </section>
--->
 
   
 </div>

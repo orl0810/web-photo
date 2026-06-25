@@ -1,4 +1,5 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { scrollToElementId } from './shared/utils/scroll-to-element';
 
@@ -24,14 +25,23 @@ export class AppComponent implements OnInit {
       "Hi Orlando! I'd love to hear more about your photography services.",
     );
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) private readonly platformId: object,
+  ) {}
 
   ngOnInit(): void {
-    this.lastScrollY = window.scrollY;
+    if (isPlatformBrowser(this.platformId)) {
+      this.lastScrollY = window.scrollY;
+    }
   }
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     const scrollY = window.scrollY;
     const delta = scrollY - this.lastScrollY;
 

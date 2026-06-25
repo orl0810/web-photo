@@ -32,25 +32,27 @@ interface Testimonial {
 })
 export class HomeComponent implements OnInit {
   readonly heroSlideIntervalMs = 5000;
+  readonly immediateClientRenderCount = 2;
 
   private readonly destroyRef = inject(DestroyRef);
   private readonly cdr = inject(ChangeDetectorRef);
   private readonly heroAutoplayReset$ = new Subject<void>();
+  private readonly loadedHeroSlideIndices = new Set<number>([0]);
 
   readonly desktopHeroSlides: string[] = [
-    'assets/Portada.jpg',
-    'assets/home-gallery/_JCM9071.jpg',
-    'assets/home-gallery/_JCM5242.jpg',
-    'assets/home-gallery/_JCM0693.jpg',
-    'assets/home-gallery/_JCM0836-min.jpg',
+    'assets/site/portada.webp',
+    'assets/site/session-featured-02.webp',
+    'assets/site/session-featured-07.webp',
+    'assets/site/session-jcm0693.webp',
+    'assets/site/session-featured-13-excelencia.webp',
   ];
 
   readonly mobileHeroSlides: string[] = [
-    'assets/Portada.jpg',
-    'assets/home-gallery/_JCM1855.jpg',
-    'assets/home-gallery/_JCM5767-min.jpg',
-    'assets/home-gallery/_JCM3136.jpg',
-    'assets/home-gallery/_JCM0700.jpg',
+    'assets/site/portada.webp',
+    'assets/site/session-jcm1855.webp',
+    'assets/site/session-featured-20-uchenna.webp',
+    'assets/site/session-jcm3136.webp',
+    'assets/site/session-jcm0700.webp',
   ];
 
   heroSlideIndex = 0;
@@ -58,22 +60,22 @@ export class HomeComponent implements OnInit {
   services: Service[] = [
     {
       title: 'Photo Sessions',
-      description: 'Capture your best moments with our professional photography sessions.',
-      image: 'assets/home-gallery/_JCM1028-min.jpg',
+      description: 'Natural sessions for tourists, couples, portraits, and lifestyle memories in Malta.',
+      image: 'assets/site/session-featured-14-aru.webp',
       route: '/services/photo-sessions',
       icon: '📸'
     },
     {
       title: 'Events',
-      description: 'Comprehensive coverage for weddings, corporate gatherings, concerts and private parties.',
-      image: 'assets/home-gallery/_JCM0693.jpg',
+      description: 'Professional event coverage for corporate gatherings, private events, launches, and celebrations.',
+      image: 'assets/site/session-jcm0693.webp',
       route: '/services/events',
       icon: '🎉'
     },
     {
       title: 'Social Media Content',
-      description: 'Boost your brand presence with high-quality, engaging content tailored for your audience.',
-      image: 'assets/home-gallery/_JCM6693.jpg',
+      description: 'Photo and reel-ready content for businesses, creators, and local brands that need consistency.',
+      image: 'assets/site/session-jcm6693.webp',
       route: '/services/social-media',
       icon: '📱'
     }
@@ -84,68 +86,54 @@ export class HomeComponent implements OnInit {
       title: 'Tourist Photoshoot',
       description:
         'Stunning portraits at Malta’s iconic spots—memories you’ll want to share long after your trip ends.',
-      image: 'assets/home-gallery/_JCM3686.jpg',
+      image: 'assets/site/session-featured-03.webp',
     },
     {
       title: 'Couple Photoshoot',
       description:
         'Natural, romantic images that capture your connection—perfect for anniversaries, holidays, or just because.',
-      image: 'assets/home-gallery/_JCM5767-min.jpg',
+      image: 'assets/site/session-featured-20-uchenna.webp',
     },
     {
       title: 'Proposal Photoshoot',
       description:
         'Discreet coverage of the big moment plus beautiful couple shots—you’ll relive every second.',
-      image: 'assets/home-gallery/_JCM8820.jpg',
+      image: 'assets/site/session-jcm8820.webp',
     },
     {
       title: 'Maternity Photoshoot',
       description:
         'Beautiful maternity photoshoot at Malta’s iconic spots—memories you’ll want to share long after your pregnancy.',
-      image: 'assets/home-gallery/_JCM5823-min.jpg',
+      image: 'assets/site/session-featured-21-jessica.webp',
     },
     {
       title: 'Corporative Events',
       description:
         'Professional event coverage that strengthens your brand—team photos, key moments, and polished visuals.',
-      image: 'assets/home-gallery/_JCM2742.jpg',
+      image: 'assets/site/event-jcm2742.webp',
     },
     {
       title: 'Content Creation',
       description:
         'Scroll-stopping photos and reels-ready content tailored to grow your personal brand or business.',
-      image: 'assets/home-gallery/_JCM0849.jpg',
+      image: 'assets/site/session-jcm0849.webp',
     },
   ];
 
   testimonials: Testimonial[] = [
     {
-      name: 'Sarah & James',
-      description: 'Couple photoshoot, Valletta',
+      name: 'Madalina 💅🏻',
+      description: 'Street photoshoot, Valletta',
       quote:
-        'Orlando made us feel completely at ease. The photos are stunning—we still get compliments every time we share them.',
-      photo: 'assets/home-gallery/_JCM5767-min.jpg',
+        "OH MY GOD!!!! Orlando, they are amazing!!!! 😍😍😍 I'm sharing them already with my parents 😂😂😂 Thank you soo sooo much!!! Absolutely loved the editing 😍😍😍",
+      photo: 'assets/site/session-jcm3882.webp',
     },
     {
-      name: 'Marco R.',
-      description: 'Corporate event coverage',
+      name: 'Geeta & Graham 💍',
+      description: 'Engagement photoshoot, Ghadira Bay',
       quote:
-        'Professional from start to finish. He captured every key moment without being intrusive, and the deliverables exceeded our expectations.',
-      photo: 'assets/home-gallery/_JCM0836-min.jpg',
-    },
-    {
-      name: 'Elena V.',
-      description: 'Tourist portrait session',
-      quote:
-        'We wanted memories of our trip to Malta that actually felt like us. The results were natural, beautiful, and worth every euro.',
-      photo: 'assets/home-gallery/_JCM1087-min.jpg',
-    },
-    {
-      name: 'David M.',
-      description: 'Social media content',
-      quote:
-        'The content Orlando created for our brand looks polished and authentic. Our engagement went up noticeably after we posted the new shots.',
-      photo: 'assets/home-gallery/_JCM6553-min.jpg',
+        'Hi! It’s I who should be thanking you so much for your wonderful service and making my dream engagement photoshoot come to life, for being so easygoing and relaxed to work with and gaining a friend for life 🥹 we’ve received the most beautiful photos of us we will always look back at and cherish forever thanks to you! 😍🥰',
+      photo: 'assets/site/session-jcm1432.webp',
     },
   ];
 
@@ -172,8 +160,20 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  heroSlideBackground(src: string): string {
-    return `linear-gradient(to bottom, rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0) 40%), url('${src}')`;
+  shouldLoadHeroSlide(index: number): boolean {
+    return this.loadedHeroSlideIndices.has(index);
+  }
+
+  isPriorityHeroSlide(index: number): boolean {
+    return index === 0;
+  }
+
+  shouldRenderClientImmediately(index: number): boolean {
+    return index < this.immediateClientRenderCount;
+  }
+
+  isPriorityClientImage(index: number): boolean {
+    return index < this.immediateClientRenderCount;
   }
 
   goToHeroSlide(index: number): void {
@@ -181,6 +181,7 @@ export class HomeComponent implements OnInit {
       return;
     }
 
+    this.preloadHeroSlide(index);
     this.heroSlideIndex = index;
     this.cdr.detectChanges();
     this.heroAutoplayReset$.next();
@@ -221,6 +222,21 @@ export class HomeComponent implements OnInit {
   }
 
   private advanceHeroSlide(): void {
-    this.heroSlideIndex = (this.heroSlideIndex + 1) % this.desktopHeroSlides.length;
+    const nextIndex = this.nextHeroSlideIndex(this.heroSlideIndex);
+    this.preloadHeroSlide(nextIndex);
+    this.heroSlideIndex = nextIndex;
+  }
+
+  private nextHeroSlideIndex(currentIndex: number): number {
+    return (currentIndex + 1) % this.desktopHeroSlides.length;
+  }
+
+  private preloadHeroSlide(index: number): void {
+    if (this.loadedHeroSlideIndices.has(index)) {
+      return;
+    }
+
+    this.loadedHeroSlideIndices.add(index);
+    this.cdr.markForCheck();
   }
 }

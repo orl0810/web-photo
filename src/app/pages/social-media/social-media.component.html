@@ -1,0 +1,92 @@
+<div class="landing-container">
+  <header class="hero" [style.backgroundImage]="'url(' + heroImage + ')'">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Social Media Content in Malta</h1>
+      <p class="subtitle">
+        Photo and short-form video content for businesses, personal brands, and local teams that want to publish consistently.
+      </p>
+      <button class="btn-primary" (click)="scrollToBooking()">Get a custom quote</button>
+    </div>
+  </header>
+
+  <section class="portfolio">
+    <div class="section-header">
+      <h2>Recent Content Style</h2>
+      <p>A mix of brand photos, vertical clips, and reel-ready storytelling.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let img of portfolioImages; let i = index">
+        <img
+          [ngSrc]="img.src"
+          [alt]="img.alt"
+          fill
+          [priority]="i < 2"
+          class="gallery-img"
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <div class="section-header">
+      <h2>Content Packages</h2>
+      <p>Flexible options to support Instagram, websites, ads, and marketing campaigns.</p>
+    </div>
+
+    <div class="pricing-cards">
+      <div class="card" *ngFor="let pkg of packages" [class.highlight]="pkg.isPopular">
+        <div class="card-tag" *ngIf="pkg.isPopular">Consistent growth</div>
+        <h3>{{ pkg.title }}</h3>
+        <p class="audience">{{ pkg.shortDescription }}</p>
+        <div class="price">
+          <span class="currency">Starting from</span>
+          <span class="amount">{{ pkg.startingFrom }}</span>
+        </div>
+        <p class="duration"><i class="icon-clock"></i> {{ pkg.duration }}</p>
+
+        <ul class="features">
+          <li *ngFor="let item of pkg.includes">
+            <span class="check">✓</span> {{ item }}
+          </li>
+        </ul>
+
+        <p class="exclusion"><strong>Ideal for:</strong> {{ pkg.idealClient }}</p>
+        <p class="exclusion"><strong>Delivery:</strong> {{ pkg.delivery }}</p>
+        <button class="btn-outline" (click)="scrollToBooking()">Request availability</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="addons">
+    <h3>Extras & Add-ons</h3>
+    <div class="addon-grid">
+      <div class="addon-item" *ngFor="let item of addOns">
+        <div class="addon-info">
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.description }}</p>
+        </div>
+        <div class="addon-price">{{ item.startingFrom }}</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="booking">
+    <div class="booking-content">
+      <h2>Need content that keeps your brand active?</h2>
+      <p>
+        Share your business type, posting goals, and preferred package. Video editing can be included depending on the package and scope.
+      </p>
+      <div class="hero-buttons">
+        <a
+          class="btn-primary"
+          href="https://wa.me/35679552176?text=Hi%20Orlando!%20I%E2%80%99d%20like%20to%20book%20a%20social%20media%20content%20session%20in%20Malta."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Let’s plan your content shoot
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

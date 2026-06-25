@@ -1,9 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-	standalone: false,
-	templateUrl: './suggestions.component.html',
-	styleUrls: ['./suggestions.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './suggestions.component.html',
+  styleUrls: ['./suggestions.component.scss'],
 })
 export class SuggestionsComponent implements OnInit, OnDestroy {
 

@@ -1,0 +1,664 @@
+[
+  {
+    "folder": "home-gallery",
+    "file": "featured-01-session-portrait-malta.webp",
+    "title": "Valletta balcony portrait session",
+    "alt": "Portrait photo session with woman in straw hat against traditional red Maltese balconies in Valletta",
+    "location": "Valletta, Malta",
+    "featuredOrder": 1
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-02-session-portrait-malta.webp",
+    "title": "Harbor terrace portrait session",
+    "alt": "Portrait photo session with woman in white dress overlooking Malta harbor at golden hour",
+    "location": "Malta",
+    "featuredOrder": 2
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-03-session-portrait-malta.webp",
+    "title": "Valletta street portrait session",
+    "alt": "Portrait photo session with woman in emerald green dress on a sunlit Valletta street",
+    "location": "Valletta, Malta",
+    "featuredOrder": 3
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-04-session-portrait-malta.webp",
+    "title": "Coastal rocks portrait session",
+    "alt": "Portrait photo session with woman in white lace dress on Malta rocky coastline",
+    "location": "Malta",
+    "featuredOrder": 4
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-05-session-portrait-malta.webp",
+    "title": "Urban graffiti portrait session",
+    "alt": "Urban portrait photo session with woman in streetwear against colorful graffiti in Malta",
+    "location": "Malta",
+    "featuredOrder": 5
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-06-session-portrait-malta.webp",
+    "title": "Historic staircase portrait session",
+    "alt": "Portrait photo session with woman on a historic stone staircase in Malta",
+    "location": "Malta",
+    "featuredOrder": 6
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-07-session-portrait-malta.webp",
+    "title": "Mediterranean sea lifestyle portrait",
+    "alt": "Lifestyle portrait photo session with man in clear Mediterranean water in Malta",
+    "location": "Malta",
+    "featuredOrder": 7
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm7160.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta",
+    "featuredOrder": 8
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-09-session-portrait-malta.webp",
+    "title": "Monument portrait session",
+    "alt": "Portrait photo session with woman in floral skirt at a neoclassical monument in Malta",
+    "location": "Malta",
+    "featuredOrder": 9
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-10-antonella-portrait-sliema-malta.webp",
+    "title": "Antonella portrait in Sliema",
+    "alt": "Portrait photo session with Antonella in Sliema, Malta",
+    "location": "Sliema, Malta",
+    "featuredOrder": 10
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-11-emilya-portrait-dingli-malta.webp",
+    "title": "Emilya portrait in Dingli",
+    "alt": "Portrait photo session with Emilya in Dingli, Malta",
+    "location": "Dingli, Malta",
+    "featuredOrder": 11
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-12-martina-portrait-st-julians-malta.webp",
+    "title": "Martina portrait in St. Julian's",
+    "alt": "Portrait photo session with Martina in St. Julian's, Malta",
+    "location": "St. Julian's, Malta",
+    "featuredOrder": 12
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-13-excelencia-portrait-sliema-malta.webp",
+    "title": "Excelencia Group portrait in Sliema",
+    "alt": "Portrait photo session with Excelencia Group in Sliema, Malta",
+    "location": "Sliema, Malta",
+    "featuredOrder": 13
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-14-aru-portrait-valletta-malta.webp",
+    "title": "Aru portrait in Valletta",
+    "alt": "Portrait photo session with Aru in Valletta, Malta",
+    "location": "Valletta, Malta",
+    "featuredOrder": 14
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-15-brihanna-portrait-st-julians-malta.webp",
+    "title": "Brihanna portrait in St. Julian's",
+    "alt": "Portrait photo session with Brihanna in St. Julian's, Malta",
+    "location": "St. Julian's, Malta",
+    "featuredOrder": 15
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-16-andrea-portrait-golden-bay-malta.webp",
+    "title": "Andrea portrait in Golden Bay",
+    "alt": "Portrait photo session with Andrea in Golden Bay, Malta",
+    "location": "Golden Bay, Malta",
+    "featuredOrder": 16
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-17-sofia-portrait-birgu-malta.webp",
+    "title": "Sofia portrait in Birgu",
+    "alt": "Portrait photo session with Sofia in Birgu, Malta",
+    "location": "Birgu, Malta",
+    "featuredOrder": 17
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-18-masha-portrait-sliema-malta.webp",
+    "title": "Masha portrait in Sliema",
+    "alt": "Portrait photo session with Masha in Sliema, Malta",
+    "location": "Sliema, Malta",
+    "featuredOrder": 18
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-19-sofia-portrait-sliema-malta.webp",
+    "title": "Sofia portrait in Sliema",
+    "alt": "Portrait photo session with Sofia in Sliema, Malta",
+    "location": "Sliema, Malta",
+    "featuredOrder": 19
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-20-uchenna-portrait-valletta-malta.webp",
+    "title": "Uchenna & Zite portrait in Valletta",
+    "alt": "Portrait photo session with Uchenna & Zite in Valletta, Malta",
+    "location": "Valletta, Malta",
+    "featuredOrder": 20
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-21-jessica-portrait-marsaskala-malta.webp",
+    "title": "Jessica & Ricardo portrait in Marsaskala",
+    "alt": "Portrait photo session with Jessica & Ricardo in Marsaskala, Malta",
+    "location": "Marsaskala, Malta",
+    "featuredOrder": 21
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-22-shir-portrait-luqa-malta.webp",
+    "title": "Shir portrait in Luqa",
+    "alt": "Portrait photo session with Shir in Luqa, Malta",
+    "location": "Luqa, Malta",
+    "featuredOrder": 22
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-23-jelena-portrait-valletta-malta.webp",
+    "title": "Jelena portrait in Valletta",
+    "alt": "Portrait photo session with Jelena in Valletta, Malta",
+    "location": "Valletta, Malta",
+    "featuredOrder": 23
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-24-maria-portrait-sliema-malta.webp",
+    "title": "Maria portrait in Sliema",
+    "alt": "Portrait photo session with Maria in Sliema, Malta",
+    "location": "Sliema, Malta",
+    "featuredOrder": 24
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-25-paulina-portrait-valletta-malta.webp",
+    "title": "Paulina portrait in Valletta",
+    "alt": "Portrait photo session with Paulina in Valletta, Malta",
+    "location": "Valletta, Malta",
+    "featuredOrder": 25
+  },
+  {
+    "folder": "home-gallery",
+    "file": "featured-08-session-portrait-malta.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm0015.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm0700.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm0787.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm1028.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm1290.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm1432.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm1610.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm1855.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm3136.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm3433.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm3494.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm3651.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm3882.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm5969.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm7509.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm8820.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm8916.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm9204.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm9728.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm9760.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "home-gallery",
+    "file": "session-portrait-malta-jcm9900.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm0103.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm0224.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm0792.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm0825.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm0843.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm0844.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm0976.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm0985.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm1019.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm1144.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm1208.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm1279.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm1350.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm1385.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm1547.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm2945.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm2946.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm2953.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm2973.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm2983.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3000.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3059.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3075.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3087.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3101.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3142.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3252.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3359.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3428.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3476.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3491.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm3561.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm5248.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm5256.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm5262.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm7072.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm7324.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm7451.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm9236.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm9279.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm9349.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm9360.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm9446.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  },
+  {
+    "folder": "photo-sessions",
+    "file": "session-portrait-malta-jcm9996.webp",
+    "title": "Portrait session in Malta",
+    "alt": "Portrait photo session in Malta",
+    "location": "Malta"
+  }
+]

@@ -1,111 +1,116 @@
 <div class="gallery-container">
 
-  <!-- 1. Botón para Móvil (Solo visible en pantallas pequeñas) -->
-  <button class="mobile-filter-toggle" (click)="toggleFilters()">
-    <span class="icon">⚙️</span> Filters
-  </button>
-
-  <!-- 2. Fondo oscuro (Overlay) para cerrar al hacer clic fuera -->
-  <div class="filter-overlay"
-       [class.active]="isFiltersOpen"
-       (click)="toggleFilters()">
-  </div>
-
-  <!-- 3. Tu Sidebar con la clase dinámica -->
-  <aside class="filters" [class.open]="isFiltersOpen">
-
-    <div class="filter-header">
-      <h3>Filters</h3>
-      <!-- Botón X para cerrar dentro del menú -->
-      <button class="close-btn" (click)="toggleFilters()">✕</button>
-    </div>
-
-    <!-- TUS FILTROS ORIGINALES (Sin cambios) -->
-    <div class="filter-group">
-      <label>Category</label>
-      <select [(ngModel)]="filters.category" (change)="onFilterChange()">
-        <option value="">All</option>
-        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
-      </select>
-    </div>
-
-    <div class="filter-group">
-      <label>Date Range</label>
-      <input type="date" [(ngModel)]="filters.startDate" (change)="onFilterChange()">
-      <input type="date" [(ngModel)]="filters.endDate" (change)="onFilterChange()">
-    </div>
-
-    <!-- ... resto de tus filtros ... -->
-    <div class="filter-group">
-      <label>Model Gender</label>
-      <select [(ngModel)]="filters.gender" (change)="onFilterChange()">
-        <option value="">All</option>
-        <option *ngFor="let g of genders" [value]="g">{{ g }}</option>
-      </select>
-    </div>
-
-    <div class="filter-group">
-      <label>Nationality</label>
-      <input type="text" [(ngModel)]="filters.nationality" (input)="onFilterChange()" placeholder="e.g. French">
-    </div>
-
-    <div class="filter-group">
-      <label>Location</label>
-      <input type="text" [(ngModel)]="filters.locationName" (input)="onFilterChange()" placeholder="e.g. Paris">
-    </div>
-
-  </aside>
-
-  <!-- Photo Grid -->
-  <main class="grid-area">
-    <!-- GRID PRINCIPAL (Estilo Pinterest) -->
-    <div class="photo-grid">
-      <div class="photo-card" *ngFor="let photo of photos; trackBy: trackByPhotoId" (click)="openPhoto(photo)">
-        <img [src]="photo.url" [alt]="photo.title" loading="lazy">
-        <!-- Opcional: Overlay con título al pasar mouse -->
-        <div class="info-overlay">
-          <!--<span>{{ photo.title }}</span>-->
-        </div>
-      </div>
-    </div>
-
-    <!-- MODAL (Se muestra solo si selectedPhoto existe) -->
-    <div class="photo-modal" *ngIf="selectedPhoto" (click)="closeModal()">
-
-      <!-- Botón cerrar -->
-      <button class="close-btn" (click)="closeModal()">✕</button>
-
-      <!-- Contenido (stopPropagatin para que al clickear la foto no se cierre el modal) -->
-      <div class="modal-content" (click)="$event.stopPropagation()">
-
-        <!-- Foto Grande -->
-        <img [src]="selectedPhoto.url" class="main-photo">
-
-        <div class="details">
-          <h1>{{ selectedPhoto.title }}</h1>
-          <p>{{ selectedPhoto.category }} • {{ selectedPhoto.location }}</p>
-          <button class="btn-map" (click)="openMap(selectedPhoto.location)">📍 Ver ubicación</button>
-        </div>
-
-        <!-- Sección "Más de esta sesión" -->
-        <div class="session-section" *ngIf="relatedPhotos.length > 0">
-          <h3>More like this</h3>
-          <div class="related-grid">
-            <img
-              *ngFor="let related of relatedPhotos"
-              [src]="related.url"
-              (click)="switchPhoto(related)"
-            >
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <!-- Load More / Infinite Scroll Trigger -->
-    <div class="actions">
-      <button class="btn-load" (click)="loadMore()" [disabled]="isLoading">
-        {{ isLoading ? 'Loading...' : 'Load More' }}
+  <nav class="category-tabs" aria-label="Gallery categories">
+    @for (category of categories; track category.id) {
+      <button
+        type="button"
+        class="category-tab"
+        [class.active]="selectedCategory === category.id"
+        (click)="selectCategory(category.id)"
+      >
+        {{ category.label }}
       </button>
-    </div>
+    }
+  </nav>
+
+  <main class="grid-area">
+    @if (isLoading && photos.length === 0) {
+      <div class="photo-grid photo-grid--skeleton" aria-hidden="true">
+        @for (item of skeletonItems; track item) {
+          <div class="photo-card photo-card--skeleton">
+            <div class="photo-card__media photo-card__media--skeleton"></div>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="photo-grid">
+        @for (photo of photos; track photo.id; let i = $index) {
+          @if (shouldRenderImmediately(i)) {
+            <ng-container *ngTemplateOutlet="photoCardTpl; context: { photo, i }" />
+          } @else {
+            @defer (on viewport) {
+              <ng-container *ngTemplateOutlet="photoCardTpl; context: { photo, i }" />
+            } @placeholder (minimum 200ms) {
+              <div class="photo-card photo-card--skeleton">
+                <div
+                  class="photo-card__media photo-card__media--skeleton"
+                  [style.aspect-ratio]="aspectRatio(photo)"
+                ></div>
+              </div>
+            }
+          }
+        }
+      </div>
+    }
+
+    @if (selectedPhoto) {
+      <div class="photo-modal" (click)="closeModal()">
+        <button class="close-btn" (click)="closeModal()">✕</button>
+
+        <div class="modal-content" (click)="$event.stopPropagation()">
+          <img
+            [ngSrc]="selectedPhoto.url"
+            [width]="selectedPhoto.width"
+            [height]="selectedPhoto.height"
+            [alt]="imageAlt(selectedPhoto)"
+            [loaderParams]="{ variant: 'large' }"
+            sizes="90vw"
+            class="main-photo"
+          >
+
+          <!-- <div class="details">
+            <h1>{{ selectedPhoto.title }}</h1>
+            <p>{{ selectedPhoto.location.name }}</p>
+            <button class="btn-map" (click)="openMap(selectedPhoto.location)">📍 Ver ubicación</button>
+          </div> -->
+
+          @if (relatedPhotos.length > 0) {
+            <div class="session-section">
+              <h3>More like this</h3>
+              <div class="related-grid">
+                @for (related of relatedPhotos; track related.id) {
+                  <img
+                    [ngSrc]="gridImageSrc(related)"
+                    [width]="related.width"
+                    [height]="related.height"
+                    [alt]="imageAlt(related)"
+                    [sizes]="relatedSizes"
+                    class="related-thumb"
+                    (click)="switchPhoto(related)"
+                  >
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    @if (hasMore) {
+      <div class="actions">
+        <button class="btn-load" (click)="loadMore()" [disabled]="isLoading">
+          {{ isLoading ? 'Loading...' : 'Load More' }}
+        </button>
+      </div>
+    }
   </main>
 </div>
+
+<ng-template #photoCardTpl let-photo="photo" let-i="i">
+  <div class="photo-card" (click)="openPhoto(photo)">
+    <div class="photo-card__media" [style.aspect-ratio]="aspectRatio(photo)">
+      <img
+        [ngSrc]="gridImageSrc(photo)"
+        [width]="photo.width"
+        [height]="photo.height"
+        [alt]="imageAlt(photo)"
+        [sizes]="gridSizes"
+        [priority]="isPriorityImage(i)"
+        class="photo-card__image"
+        [class.photo-card__image--priority]="isPriorityImage(i)"
+        (load)="onImageLoad($event)"
+      >
+    </div>
+    <div class="info-overlay"></div>
+  </div>
+</ng-template>
